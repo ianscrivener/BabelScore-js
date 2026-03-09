@@ -15,7 +15,7 @@
     "max_sentences": 100,
     "translator_threads": 4,
     "judge_threads": 6,
-    "translator_models": [
+    "translator_models_not": [
         {
             "id": "byteplus-seed-2-0-mini-260215",
             "provider": "byteplus",
@@ -24,6 +24,19 @@
             "api_key": "${ARK_API_KEY}",
             "max_tokens": 1024,
             "temperature": 0.0
+        }
+    ],
+    "translator_models": [
+        {
+            "id": "byteplus-glm-5",
+            "provider": "openrouter",
+            "model": "z-ai/glm-5",
+            "base_url": "https://openrouter.ai/api/v1",
+            "api_key": "${OPENROUTER_API_KEY}",
+            "max_tokens": 8192,
+            "temperature": 0.0,
+            "verbosity": "low",
+            "structured_outputs": true
         }
     ],
     "judge_models": [

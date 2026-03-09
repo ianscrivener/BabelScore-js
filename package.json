@@ -11,6 +11,7 @@
   "license": "ISC",
   "type": "module",
   "dependencies": {
+    "@openrouter/sdk": "^0.9.11",
     "csv-parse": "^6.1.0",
     "dotenv": "^17.3.1",
     "prettier": "^3.8.1"

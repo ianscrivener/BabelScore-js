@@ -1,0 +1,596 @@
+{
+  "project": "ZH-YUE",
+  "paradigm": 5,
+  "srcLang": "Cantonese",
+  "tgtLang": "Mandarin",
+  "directions_count": 2,
+  "total_sentences": 40,
+  "started_at": "2026-03-09T08:16:07.457Z",
+  "status": "interrupted",
+  "directions": [
+    {
+      "label": "Mandarin → Cantonese",
+      "sentences": [
+        {
+          "source": "我的普通話很爛，經常被人笑是港式普通話，不過去旅遊還算能溝通。",
+          "reference": "我啲普通話好爛，成日俾人笑係港普，不過去旅行總算可以溝通到。",
+          "translations": {
+            "byteplus-lfm-2-24b-a2b": {
+              "text": "我嘅普通話好唔好，常常被人嘅笑成廣州話，雖然去旅遊時同行都能溝通。",
+              "scores": {
+                "openrouter-gemini-3.1-pro": {
+                  "score": 20,
+                  "reasoning": "The translation contains severe mistranslations, such as changing 'very bad' to 'good or not' and 'Hong Kong-style Mandarin' to 'Guangzhou dialect', along with unnatural grammar like '被人嘅笑'."
+                },
+                "openrouter-openai-gpt-4o": {
+                  "score": 65,
+                  "reasoning": "The translation captures the general meaning but contains inaccuracies in word choice and structure, affecting fluency and accuracy."
+                },
+                "openrouter-claude-sonnet-4.6": {
+                  "score": 18,
+                  "reasoning": "The translation contains significant errors: '好唔好' mistranslates '很爛' (very poor), '被人嘅笑成廣州話' mistranslates '被人笑是港式普通話' (laughed at for Hong Kong-style Mandarin), and '同行都能溝通' mistranslates '還算能溝通' (still able to communicate), resulting in a meaning that substantially differs from the source."
+                }
+              }
+            }
+          }
+        },
+        {
+          "source": "既然那些衣服已經不合身，不妨看看有沒有慈善機構會接收？既環保又能幫助別人。",
+          "reference": "既然嗰啲衫已經唔啱着，不妨睇下有冇慈善機構會接收？環保之餘又可以幫到其他人。",
+          "translations": {
+            "byteplus-lfm-2-24b-a2b": {
+              "text": "既然那些衣服已經不合身，不妨看看有沒有慈善機構會接收？既環保又能幫助別人。",
+              "scores": {
+                "openrouter-gemini-3.1-pro": {
+                  "score": 10,
+                  "reasoning": "The translation is identical to the source text and completely fails to adapt the vocabulary and grammar into Cantonese."
+                },
+                "openrouter-openai-gpt-4o": {
+                  "score": 85,
+                  "reasoning": "The translation maintains accuracy but lacks some Cantonese-specific vocabulary and expressions, affecting fluency."
+                },
+                "openrouter-claude-sonnet-4.6": {
+                  "score": 30,
+                  "reasoning": "The translation is identical to the Mandarin source and makes no conversion to Cantonese vocabulary or grammar, failing to use Cantonese-specific terms like 嗰啲, 唔啱着, 睇下, 有冇, etc., making it unnatural and non-fluent in Cantonese despite being technically understandable."
+                }
+              }
+            }
+          }
+        },
+        {
+          "source": "我今天剛滿十八週，雖然不是第一胎，但是感受到寶寶在我肚子裏舞動還是覺得好奇妙。",
+          "reference": "我今日剛滿十八週，雖然唔係第一胎，但係感受到BB喺我肚入面郁動都係覺得好奇妙。",
+          "translations": {
+            "byteplus-lfm-2-24b-a2b": {
+              "text": "我今日嘅十八週刚滿，雖然唔係第一胎，但依然覺得寶寶在我肚子裡舞動真有趣。",
+              "scores": {
+                "openrouter-gemini-3.1-pro": {
+                  "score": 65,
+                  "reasoning": "The translation contains awkward phrasing ('今日嘅十八週刚滿'), retains Mandarin vocabulary ('在我肚子裡'), omits the verb '感受到' (feel), and slightly alters the meaning of '奇妙' (amazing) to '有趣' (interesting)."
+                },
+                "openrouter-openai-gpt-4o": {
+                  "score": 85,
+                  "reasoning": "The translation is mostly accurate but uses '真有趣' instead of '好奇妙', which slightly alters the nuance of the original sentence."
+                },
+                "openrouter-claude-sonnet-4.6": {
+                  "score": 52,
+                  "reasoning": "The translation partially conveys the meaning but has issues: mixing Mandarin characters like '刚' and '裡' instead of Cantonese equivalents, awkward word order ('十八週刚滿' instead of '剛滿十八週'), replacing '奇妙' with '有趣' which changes the nuance, and missing the natural Cantonese feel that the reference translation achieves with terms like 'BB', '喺', and '郁動'."
+                }
+              }
+            }
+          }
+        },
+        {
+          "source": "難道你二十年後仍然要靠岳父養嗎？拜託你腳踏實地去找工作吧。",
+          "reference": "唔通你二十年後仲要靠外父養咩？拜託你腳踏實地去揾工啦。",
+          "translations": {
+            "byteplus-lfm-2-24b-a2b": {
+              "text": "你咁樣等到二十年後還要依賴岳父養嗎？唔該，你應該好好去找工作啦！",
+              "scores": {
+                "openrouter-gemini-3.1-pro": {
+                  "score": 55,
+                  "reasoning": "The translation conveys the general meaning but lacks Cantonese fluency due to retained Mandarin vocabulary like '還要', '嗎', and '找工作', while also missing the rhetorical tone of '難道' and the idiom '腳踏實地'."
+                },
+                "openrouter-openai-gpt-4o": {
+                  "score": 85,
+                  "reasoning": "The translation is mostly accurate and fluent, but there are slight differences in word choice and phrasing compared to the reference."
+                },
+                "openrouter-claude-sonnet-4.6": {
+                  "score": 62,
+                  "reasoning": "The translation conveys the general meaning but loses the rhetorical '難道...嗎' structure (replaced with a weaker 'you wait like this'), uses '岳父' instead of the more natural Cantonese '外父', and replaces '拜託...腳踏實地' with a softer '唔該...好好' which weakens the frustrated, pleading tone of the original, while also using '找工作' instead of the more natural Cantonese '揾工'."
+                }
+              }
+            }
+          }
+        },
+        {
+          "source": "我們打算下個週末去鳳凰山看日出，你有興趣一齊去嗎？",
+          "reference": "我哋打算下個週末去鳳凰山睇日出，你有冇興趣一齊去？",
+          "translations": {
+            "byteplus-lfm-2-24b-a2b": {
+              "text": "我哋打算下個週末去鳳凰山看日出，你有興趣一齊去嗎？",
+              "scores": {
+                "openrouter-gemini-3.1-pro": {
+                  "score": 65,
+                  "reasoning": "The translation accurately conveys the meaning but lacks Cantonese fluency because it retains Mandarin vocabulary and grammar, such as using '看' instead of '睇' and the question particle '嗎' instead of the native '有冇' structure."
+                },
+                "openrouter-openai-gpt-4o": {
+                  "score": 90,
+                  "reasoning": "The translation is mostly accurate, but it uses '看' instead of the more colloquial '睇' for 'see' in Cantonese, which slightly affects fluency."
+                },
+                "openrouter-claude-sonnet-4.6": {
+                  "score": 78,
+                  "reasoning": "The translation correctly converts 我們 to 我哋 and preserves the meaning, but uses 看 instead of the more natural Cantonese 睇, and misses the more idiomatic Cantonese phrasing 有冇興趣 instead of 有興趣, making it sound slightly Mandarin-influenced."
+                }
+              }
+            }
+          }
+        },
+        {
+          "source": "你別看阿伯衣着光鮮，他以吝惜出名，一塊錢小費都不會給的。",
+          "reference": "你唔好睇阿伯衣着光鮮，他出晒名孤寒，一蚊小費都唔會俾㗎。",
+          "translations": {
+            "byteplus-lfm-2-24b-a2b": {
+              "text": "佢唔係咁看阿伯衣好光鮮，佢唔係吓人出名，嘅一塊錢幾個小費都唔會給。",
+              "scores": {
+                "openrouter-gemini-3.1-pro": {
+                  "score": 10,
+                  "reasoning": "The translation completely distorts the meaning of the source sentence, mistranslating key terms like 'stingy' and using incorrect pronouns, resulting in an incomprehensible and unnatural Cantonese sentence."
+                },
+                "openrouter-openai-gpt-4o": {
+                  "score": 40,
+                  "reasoning": "The translation has significant inaccuracies in meaning and lacks fluency, with incorrect word choices and grammar issues."
+                },
+                "openrouter-claude-sonnet-4.6": {
+                  "score": 8,
+                  "reasoning": "The translation is largely inaccurate and disfluent, failing to convey the core meaning of 'don't be fooled by the uncle's sharp dressing' and 'famous for being stingy,' with garbled phrases like '佢唔係咁看' and '佢唔係吓人出名' that don't make sense in Cantonese."
+                }
+              }
+            }
+          }
+        },
+        {
+          "source": "他最大的心願就是希望兒女們快點成家立室。",
+          "reference": "佢最大嘅心願就係希望啲仔女快啲成家立室。",
+          "translations": {
+            "byteplus-lfm-2-24b-a2b": {
+              "text": "佢最嘅心願係希望兒女們早日成家立室。",
+              "scores": {
+                "openrouter-gemini-3.1-pro": {
+                  "score": 70,
+                  "reasoning": "The translation omits the crucial character '大' (big), resulting in the grammatically incorrect phrase '最嘅心願', and uses the somewhat formal '兒女們' instead of the more natural Cantonese '啲仔女'."
+                },
+                "openrouter-openai-gpt-4o": {
+                  "score": 85,
+                  "reasoning": "The translation is mostly accurate but slightly less fluent due to the use of '兒女們' instead of '啲仔女'."
+                },
+                "openrouter-claude-sonnet-4.6": {
+                  "score": 62,
+                  "reasoning": "The translation omits '大' after '最' (making '最嘅心願' grammatically incomplete), replaces '快點/快啲' with '早日' (which is more formal/Mandarin-influenced), and retains '兒女們' instead of the more natural Cantonese '啲仔女', reducing both accuracy and fluency."
+                }
+              }
+            }
+          }
+        },
+        {
+          "source": "先忍一下，牙齒會有點麻麻的，等麻醉藥生效之後就會好很多。",
+          "reference": "忍一忍先，啲牙會有啲痺痺地，等麻醉藥生效之後就會好好多。",
+          "translations": {
+            "byteplus-lfm-2-24b-a2b": {
+              "text": "先忍一下，牙齒會有點麻麻的，等藥生效後就會好多了。",
+              "scores": {
+                "openrouter-gemini-3.1-pro": {
+                  "score": 25,
+                  "reasoning": "The translation fails to use natural Cantonese vocabulary and grammar, reading almost entirely like Mandarin, and inaccurately omits the word for 'anesthetic' (麻醉)."
+                },
+                "openrouter-openai-gpt-4o": {
+                  "score": 85,
+                  "reasoning": "The translation maintains the original meaning but lacks some Cantonese-specific expressions and nuances present in the reference."
+                },
+                "openrouter-claude-sonnet-4.6": {
+                  "score": 52,
+                  "reasoning": "The translation retains the general meaning but fails to convert the Mandarin text into natural Cantonese, keeping Mandarin grammatical structures and vocabulary (e.g., '先忍一下', '好多了') instead of using authentic Cantonese expressions (e.g., '忍一忍先', '好好多'), and omits '麻醉' from '麻醉藥' which reduces accuracy."
+                }
+              }
+            }
+          }
+        },
+        {
+          "source": "你不要高估自己酒量呀，受不了就先坐下挨着，不然先召車回家吧。",
+          "reference": "你唔好高估自己酒量呀，頂唔順就坐低挨下先，如果唔係就叫車返歸先啦。",
+          "translations": {
+            "byteplus-lfm-2-24b-a2b": {
+              "text": "你唔該高估咗自己酒量，喺咁受不住嘅話先坐下休息，否則先叫車回家啦。",
+              "scores": {
+                "openrouter-gemini-3.1-pro": {
+                  "score": 20,
+                  "reasoning": "The translation contains a critical accuracy error by translating '不要' (do not) as '唔該' (please) and uses unnatural, Mandarin-influenced vocabulary throughout instead of authentic Cantonese expressions."
+                },
+                "openrouter-openai-gpt-4o": {
+                  "score": 85,
+                  "reasoning": "The translation is mostly accurate but slightly deviates in tone and phrasing compared to the reference, affecting fluency."
+                },
+                "openrouter-claude-sonnet-4.6": {
+                  "score": 52,
+                  "reasoning": "The translation conveys the general meaning but has several issues: '唔該' (thank you/excuse me) is used incorrectly instead of '唔好' (don't), '受不住' mixes Mandarin and Cantonese rather than using natural Cantonese like '頂唔順', '回家' is Mandarin rather than Cantonese '返歸', and the overall phrasing feels unnatural and code-switched rather than fluent Cantonese."
+                }
+              }
+            }
+          }
+        },
+        {
+          "source": "小孩子玩捉迷藏，最喜歡躲在窗簾後面。",
+          "reference": "細路仔玩捉伊人，最鍾意匿埋喺窗簾後面。",
+          "translations": {
+            "byteplus-lfm-2-24b-a2b": {
+              "text": "小孩子玩捉迷藏，最喜歡躲在窗簾後面。",
+              "scores": {
+                "openrouter-gemini-3.1-pro": {
+                  "score": 0,
+                  "reasoning": "The translation receives a score of zero because it completely fails to translate the text into Cantonese, merely repeating the original Mandarin source text without using any appropriate Cantonese vocabulary or grammar."
+                },
+                "openrouter-openai-gpt-4o": {
+                  "score": 50,
+                  "reasoning": "The translation retains the original Mandarin text without converting it to Cantonese, affecting both accuracy and fluency."
+                },
+                "openrouter-claude-sonnet-4.6": {
+                  "score": 20,
+                  "reasoning": "The translation is identical to the Mandarin source and fails to convert any vocabulary or grammar into natural Cantonese, missing key Cantonese-specific terms like '細路仔' (children), '捉伊人' (hide-and-seek), '鍾意' (like), and '匿埋喺' (hiding at)."
+                }
+              }
+            }
+          }
+        },
+        {
+          "source": "昨天那場表演完結時，幾千人衝去巴士站等車，幸好我走得快可以排在最前面。",
+          "reference": "尋日嗰場表演完結嗰時，幾千人衝去巴士站等車，好彩我走得快可以排最頭。",
+          "translations": {
+            "byteplus-lfm-2-24b-a2b": {
+              "text": "昨天那場表演結束時，幾千人衝向巴士站等車，幸好我走得快可以排在最前面。",
+              "scores": {
+                "openrouter-gemini-3.1-pro": {
+                  "score": 0,
+                  "reasoning": "The translation fails entirely to convert the text into Cantonese, retaining Standard Mandarin vocabulary such as '昨天', '那', and '幸好' instead of their Cantonese equivalents."
+                },
+                "openrouter-openai-gpt-4o": {
+                  "score": 85,
+                  "reasoning": "The translation is accurate but lacks some Cantonese-specific expressions, affecting fluency slightly."
+                },
+                "openrouter-claude-sonnet-4.6": {
+                  "score": 20,
+                  "reasoning": "The translation is essentially just slightly modified Mandarin written in Chinese characters rather than authentic Cantonese, failing to use key Cantonese vocabulary and grammar structures such as 尋日 (yesterday), 嗰場/嗰時 (that/when), 好彩 (fortunately), and 最頭 (front of the line) that distinguish written Cantonese from Mandarin."
+                }
+              }
+            }
+          }
+        },
+        {
+          "source": "這款遊戲有很多關卡，我玩了整個禮拜還沒全部通關。",
+          "reference": "呢款遊戲有很多關卡，我玩咗成個禮拜都未過晒全部關。",
+          "translations": {
+            "byteplus-lfm-2-24b-a2b": {
+              "text": "佢有好多單元，我玩一整週都唔完全通關。",
+              "scores": {
+                "openrouter-gemini-3.1-pro": {
+                  "score": 45,
+                  "reasoning": "The translation suffers from inaccurate vocabulary choices such as replacing 'this game' with 'it' and 'levels' with 'units', while also using Mandarin-influenced phrasing and incorrect negation ('唔' instead of '未') that severely impact Cantonese fluency."
+                },
+                "openrouter-openai-gpt-4o": {
+                  "score": 85,
+                  "reasoning": "The translation is mostly accurate but uses '單元' instead of '關卡', which slightly affects the fluency and precision."
+                },
+                "openrouter-claude-sonnet-4.6": {
+                  "score": 52,
+                  "reasoning": "The translation conveys the general meaning but has several issues: '佢' loses the subject clarity (referring to the game), '一整週' is Mandarin rather than Cantonese '成個禮拜', '唔完全通關' is unnatural compared to the proper Cantonese '未過晒全部關', and the opening context about the game type is omitted."
+                }
+              }
+            }
+          }
+        },
+        {
+          "source": "小時候我媽常常嚇我，說不聽話到處亂跑的話會被巫婆抓走。 ",
+          "reference": "細個嗰時我阿媽成日嚇我，話唔聽話周圍亂走嘅話會俾巫婆捉走。 ",
+          "translations": {
+            "byteplus-lfm-2-24b-a2b": {
+              "text": "小時候我媽常常嚇我，唔講話咗到處亂跑，佢哋就會帶我去巫婆家。",
+              "scores": {
+                "openrouter-gemini-3.1-pro": {
+                  "score": 20,
+                  "reasoning": "The translation mixes Mandarin vocabulary with broken Cantonese grammar and significantly alters the meaning of the second half of the sentence."
+                },
+                "openrouter-openai-gpt-4o": {
+                  "score": 65,
+                  "reasoning": "The translation captures the general meaning but deviates in structure and introduces inaccuracies, affecting both accuracy and fluency."
+                },
+                "openrouter-claude-sonnet-4.6": {
+                  "score": 42,
+                  "reasoning": "The translation loses key meaning by changing '不聽話' (disobedient) to '唔講話咗' (stopped talking), alters the consequence from 'being taken by the witch' to 'being taken to the witch's house,' and introduces '佢哋' (they) without a clear referent, while also not fully adopting natural Cantonese expressions like '細個' or '成日.'"
+                }
+              }
+            }
+          }
+        },
+        {
+          "source": "這房子最大的賣點就是這個落地玻璃加無敵大海景，感覺像身處露天風呂一樣。",
+          "reference": "呢間屋最大嘅賣點就係呢個落地玻璃加無敵大海景，感覺好似置身露天風呂一樣。",
+          "translations": {
+            "byteplus-lfm-2-24b-a2b": {
+              "text": "佢最重點嘅賣點係這個落地玻璃同無敵大海景，感覺就好像身處露天風呂一樣。",
+              "scores": {
+                "openrouter-gemini-3.1-pro": {
+                  "score": 65,
+                  "reasoning": "The translation conveys the general meaning but contains unnatural phrasing and retains Mandarin vocabulary like \"這個\" and \"好像\" instead of using proper Cantonese terms like \"呢個\" and \"好似\"."
+                },
+                "openrouter-openai-gpt-4o": {
+                  "score": 85,
+                  "reasoning": "The translation is mostly accurate but uses '佢最重點嘅賣點' instead of '呢間屋最大嘅賣點', which slightly affects fluency and clarity."
+                },
+                "openrouter-claude-sonnet-4.6": {
+                  "score": 72,
+                  "reasoning": "The translation captures the overall meaning but uses '這個' instead of the Cantonese '呢個', replaces '房子' with the vague '佢' losing specificity, uses '同' instead of '加' (changing the nuance slightly), and '好像' instead of the more natural Cantonese '好似', making it less fluent and natural-sounding in Cantonese."
+                }
+              }
+            }
+          }
+        },
+        {
+          "source": "這酒店有點偏僻，等了十五分鐘都沒有計程車願意過來。",
+          "reference": "呢間酒店有啲偏僻，等咗十五分鐘都冇的士肯過嚟。",
+          "translations": {
+            "byteplus-lfm-2-24b-a2b": {
+              "text": "佢啲酒店有點偏鄉，等咗十五鐘都唔有計車願意過來。",
+              "scores": {
+                "openrouter-gemini-3.1-pro": {
+                  "score": 20,
+                  "reasoning": "The translation contains numerous severe errors, including incorrect pronouns ('佢啲' instead of '呢間'), unnatural vocabulary ('偏鄉', '計車'), grammatical mistakes ('唔有', missing '分' in '十五分鐘'), and failure to use proper Cantonese terms ('過來' instead of '過嚟')."
+                },
+                "openrouter-openai-gpt-4o": {
+                  "score": 70,
+                  "reasoning": "The translation captures the general meaning but contains inaccuracies in word choice and grammar, affecting fluency."
+                },
+                "openrouter-claude-sonnet-4.6": {
+                  "score": 32,
+                  "reasoning": "The translation has multiple issues: '佢啲酒店' incorrectly introduces a third-person pronoun not in the source, '偏鄉' is not natural Cantonese for 偏僻, '十五鐘' omits '分' making it ambiguous, '唔有' is non-standard (should be '冇'), and '計車' is not the correct Cantonese term for taxi (should be '的士'), though the overall meaning is partially preserved."
+                }
+              }
+            }
+          }
+        },
+        {
+          "source": "雨這麼大下山還開這麼快，你以為自己是賽車手呀？",
+          "reference": "咁大雨落山仲揸咁快，你以為自己係賽車手呀？",
+          "translations": {
+            "byteplus-lfm-2-24b-a2b": {
+              "text": "雨這麼大下山還開這麼快，你以為自己係賽車手呀？",
+              "scores": {
+                "openrouter-gemini-3.1-pro": {
+                  "score": 30,
+                  "reasoning": "The translation merely replaces '是' with '係' while leaving the rest of the sentence in Mandarin vocabulary ('這麼', '下山', '還', '開'), resulting in highly unnatural spoken Cantonese."
+                },
+                "openrouter-openai-gpt-4o": {
+                  "score": 85,
+                  "reasoning": "The translation maintains accuracy but lacks fluency due to not fully adapting to Cantonese colloquial expressions."
+                },
+                "openrouter-claude-sonnet-4.6": {
+                  "score": 45,
+                  "reasoning": "The translation only partially converts to Cantonese by changing 是 to 係, but retains Mandarin structures and vocabulary (雨這麼大, 下山, 開這麼快) instead of using natural Cantonese expressions (咁大雨, 落山, 揸咁快) as shown in the reference translation."
+                }
+              }
+            }
+          }
+        },
+        {
+          "source": "前一陣子換工作有一個月的空檔，去了一趟南美看馬丘比丘跟天空之鏡。",
+          "reference": "前排轉工有一個月空檔，去咗轉南美睇馬丘比丘同天空之鏡。",
+          "translations": {
+            "byteplus-lfm-2-24b-a2b": {
+              "text": "前一陣子換工作有一個月的空檔，去了一趟南美看馬丘比丘跟天空之鏡。",
+              "scores": {
+                "openrouter-gemini-3.1-pro": {
+                  "score": 0,
+                  "reasoning": "The translation is identical to the Mandarin source text and fails to use any Cantonese vocabulary or grammar."
+                },
+                "openrouter-openai-gpt-4o": {
+                  "score": 85,
+                  "reasoning": "The translation maintains accuracy but lacks some Cantonese-specific expressions, affecting fluency slightly."
+                },
+                "openrouter-claude-sonnet-4.6": {
+                  "score": 30,
+                  "reasoning": "The translation is identical to the Mandarin source and fails to convert any elements into Cantonese, missing key Cantonese vocabulary and grammar such as '前排' (recently), '去咗' (went), '轉' (a trip), '睇' (see/watch), and '同' (and) instead of '跟'."
+                }
+              }
+            }
+          }
+        },
+        {
+          "source": "他丈夫去世後家庭收入大減。為了讓兒子繼續學小提琴，他只好做兩份工作賺多點錢。",
+          "reference": "佢老公死咗之後屋企收入大減。為咗俾仔仔繼續學小提琴，佢唯有做兩份工賺多啲錢。",
+          "translations": {
+            "byteplus-lfm-2-24b-a2b": {
+              "text": "佢嘅丈夫去世後，家庭收入嚟大幅度減少。為咗讓佢嘅兒子繼續學小提琴，他只得做兩份工作賺多錢。",
+              "scores": {
+                "openrouter-gemini-3.1-pro": {
+                  "score": 45,
+                  "reasoning": "The translation relies heavily on Mandarin vocabulary and phrasing, contains a grammatical error with the misplaced '嚟', and fails to use the correct Cantonese pronoun '佢' in the second sentence."
+                },
+                "openrouter-openai-gpt-4o": {
+                  "score": 85,
+                  "reasoning": "The translation is mostly accurate but uses some Mandarin-influenced structures and vocabulary, affecting fluency."
+                },
+                "openrouter-claude-sonnet-4.6": {
+                  "score": 42,
+                  "reasoning": "The translation contains several issues: it mixes Mandarin vocabulary and grammar (他, 兒子, 讓) with Cantonese particles, uses unnatural phrasing like '嚟大幅度減少' (awkward insertion of 嚟), and fails to use natural Cantonese expressions like '老公', '死咗', '屋企', '仔', '唯有', and '啲' that the reference translation correctly employs, resulting in a hybrid text that reads more like transliterated Mandarin than authentic Cantonese."
+                }
+              }
+            }
+          }
+        },
+        {
+          "source": "園丁很用心打理學校的天台花園，學生們在課間休息時都很喜歡上來坐坐。",
+          "reference": "園丁好用心打理學校嘅天台花園，啲學生喺轉堂休息時都好鍾意上嚟坐下。",
+          "translations": {
+            "byteplus-lfm-2-24b-a2b": {
+              "text": "園丁非常用心地打理學校的天台花園，學生們在課間休息時都很喜歡來坐坐。",
+              "scores": {
+                "openrouter-gemini-3.1-pro": {
+                  "score": 10,
+                  "reasoning": "The translation completely fails to translate the text into Cantonese, retaining Standard Mandarin vocabulary and grammar throughout (e.g., using '的' instead of '嘅', and '喜歡' instead of '鍾意')."
+                },
+                "openrouter-openai-gpt-4o": {
+                  "score": 85,
+                  "reasoning": "The translation is accurate but lacks some Cantonese-specific expressions and colloquialisms present in the reference translation."
+                },
+                "openrouter-claude-sonnet-4.6": {
+                  "score": 30,
+                  "reasoning": "The translation preserves the meaning accurately but fails to convert the text into Cantonese, instead remaining in written Mandarin/Standard Chinese form without using Cantonese-specific vocabulary (e.g., '好' instead of '非常', '嘅' instead of '的', '啲學生' instead of '學生們', '鍾意' instead of '喜歡', '上嚟' instead of '上來') or Cantonese grammatical structures."
+                }
+              }
+            }
+          }
+        },
+        {
+          "source": "打工打到只剩下半條命，把自己身體弄成這樣，賺了的錢也不夠你去看醫生。",
+          "reference": "打工打到得返半條人命，將自己身體搞成噉，賺咗嘅錢都唔夠你去睇醫生。",
+          "translations": {
+            "byteplus-lfm-2-24b-a2b": {
+              "text": "打工打到只剩下半條命，把自己身體弄成這樣，賺得嘅錢也唔夠你去醫生。",
+              "scores": {
+                "openrouter-gemini-3.1-pro": {
+                  "score": 45,
+                  "reasoning": "The translation retains too much Mandarin vocabulary and grammar (e.g., '只剩下', '把', '弄成這樣', '也') and misses the essential verb '睇' before '醫生', resulting in poor fluency and unnatural Cantonese."
+                },
+                "openrouter-openai-gpt-4o": {
+                  "score": 85,
+                  "reasoning": "The translation is mostly accurate but has minor fluency issues, such as the use of '去醫生' instead of '去睇醫生'."
+                },
+                "openrouter-claude-sonnet-4.6": {
+                  "score": 52,
+                  "reasoning": "The translation partially converts Mandarin to Cantonese but retains several Mandarin structures (也 instead of 都, 賺得嘅 instead of 賺咗嘅) and omits the verb 睇 before 醫生, which is a significant fluency error in Cantonese."
+                }
+              }
+            }
+          }
+        }
+      ],
+      "stats": [
+        {
+          "modelId": "byteplus-lfm-2-24b-a2b",
+          "perJudge": {
+            "openrouter-gemini-3.1-pro": {
+              "mean": 31,
+              "count": 20
+            },
+            "openrouter-openai-gpt-4o": {
+              "mean": 78.5,
+              "count": 20
+            },
+            "openrouter-claude-sonnet-4.6": {
+              "mean": 42.55,
+              "count": 20
+            }
+          },
+          "overallMean": 50.68,
+          "variance": 47.5
+        }
+      ]
+    },
+    {
+      "label": "Cantonese → Mandarin",
+      "sentences": [
+        {
+          "source": "我D普通話好屎，成日俾人笑係「港普」，不過去旅行都叫溝通到。",
+          "reference": "我的普通話很爛，經常被人笑是港式普通話，不過去旅遊還算能溝通。",
+          "translations": {
+            "byteplus-lfm-2-24b-a2b": {
+              "text": "我普通话说得很好，平时让人笑的是“港普”，不用出国旅行也叫通通。",
+              "scores": {
+                "openrouter-gemini-3.1-pro": {
+                  "score": 15,
+                  "reasoning": "The translation completely reverses the meaning of the source by stating the speaker's Mandarin is good instead of bad, and the final clause is translated into nonsensical gibberish."
+                },
+                "openrouter-openai-gpt-4o": {
+                  "score": 40,
+                  "reasoning": "The translation inaccurately conveys the meaning of the source text and contains fluency issues, particularly in the second part of the sentence."
+                },
+                "openrouter-claude-sonnet-4.6": {
+                  "score": 8,
+                  "reasoning": "The translation contains a critical meaning error by translating '好屎' (very bad/terrible) as '说得很好' (speak very well), completely reversing the meaning, and the ending '不用出国旅行也叫通通' is garbled and nonsensical compared to the original meaning of 'but can still communicate when traveling.'"
+                }
+              }
+            }
+          }
+        },
+        {
+          "source": "啲衫既然已經唔啱着，不如睇下有冇NGO會接收？環保得嚟又幫到人。",
+          "reference": "既然那些衣服已經不合身，不妨看看有沒有慈善機構會接收？既環保又能幫助別人。",
+          "translations": {
+            "byteplus-lfm-2-24b-a2b": {
+              "text": "衬衫已经不合身了，不如看看有没有NGO来接收？环保又能帮到人。",
+              "scores": {
+                "openrouter-gemini-3.1-pro": {
+                  "score": 80,
+                  "reasoning": "The translation is highly fluent, but it inaccurately translates '啲衫' (those clothes) as '衬衫' (shirts) and omits the conjunction '既然' (since)."
+                },
+                "openrouter-openai-gpt-4o": {
+                  "score": 85,
+                  "reasoning": "The translation is mostly accurate but uses '衬衫' instead of a more general term for 'clothes' and 'NGO' instead of '慈善機構', slightly affecting fluency and precision."
+                },
+                "openrouter-claude-sonnet-4.6": {
+                  "score": 72,
+                  "reasoning": "The translation captures the core meaning but mistranslates '啲衫' (clothes/garments in general) as '衬衫' (shirts specifically), loses the nuance of '既然' (since/given that), and omits the emphatic structure '環保得嚟又' which should convey 'both environmentally friendly AND helpful to others'."
+                }
+              }
+            }
+          }
+        },
+        {
+          "source": "我今日啱啱十八週，雖然唔係第一胎，但係感受到BB喺我肚入面郁都仲係覺得好奇妙。",
+          "reference": "我今天剛滿十八週，雖然不是第一胎，但是感受到寶寶在我肚子裏舞動還是覺得好奇妙。",
+          "translations": {
+            "byteplus-lfm-2-24b-a2b": {
+              "text": "我今天已经怀孕十八周了，虽然不是第一个孩子，但我仍然能感受到宝宝在我肚子里的动静，真是觉得很神奇。",
+              "scores": {
+                "openrouter-gemini-3.1-pro": {
+                  "score": 88,
+                  "reasoning": "The translation is highly fluent and captures the overall meaning well, but it slightly alters the nuance by translating '啱啱' (just/exactly) as '已经' (already) and shifting the emphasis of '仲係' (still)."
+                },
+                "openrouter-openai-gpt-4o": {
+                  "score": 95,
+                  "reasoning": "The translation is accurate and fluent, with only minor differences in word choice that do not affect the overall meaning."
+                },
+                "openrouter-claude-sonnet-4.6": {
+                  "score": 88,
+                  "reasoning": "The translation accurately conveys the core meaning of being 18 weeks pregnant and feeling the baby move, with natural Mandarin fluency, though '动静' is slightly less precise than '动/舞动' for describing fetal movement, and '已经' adds a nuance not in the original '啱啱' (just/exactly)."
+                }
+              }
+            }
+          }
+        },
+        {
+          "source": "你唔通廿年後都靠外父養咩？好心你就腳踏實地出去揾工啦。",
+          "reference": "難道你二十年後仍然要靠岳父養嗎？拜託你腳踏實地去找工作吧。",
+          "translations": {
+            "byteplus-lfm-2-24b-a2b": {
+              "text": "你怎么在二十年后还靠继父养活？要是你真心实在，就脚踏实地去找工作吧。",
+              "scores": {
+                "openrouter-gemini-3.1-pro": {
+                  "score": 40,
+                  "reasoning": "The translation contains major lexical errors, mistranslating \"外父\" (father-in-law) as \"继父\" (stepfather) and \"好心你\" (please/do yourself a favor) as \"要是你真心实在\" (if you are truly honest)."
+                },
+                "openrouter-openai-gpt-4o": {
+                  "score": 85,
+                  "reasoning": "The translation is mostly accurate but uses '继父' instead of '岳父', which slightly affects the meaning."
+                },
+                "openrouter-claude-sonnet-4.6": {
+                  "score": 42,
+                  "reasoning": "The translation contains a critical error by translating '外父' (wife's father/father-in-law) as '继父' (stepfather), and '好心你' is mistranslated as '要是你真心实在' instead of conveying the sense of 'please' or 'I beg you', though the overall sentence structure and '脚踏实地去找工作' portion are reasonably fluent."
+                }
+              }
+            }
+          }
+        }
+      ],
+      "stats": null
+    }
+  ]
+}

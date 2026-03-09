@@ -282,6 +282,8 @@ async function callLLM(model, messages, maxTokens = 512, responseFormat = null) 
     max_tokens: model.max_tokens ?? maxTokens,
   };
   if (responseFormat) payload.response_format = responseFormat;
+  if (model.structured_outputs) payload.structured_outputs = true;
+  if (model.verbosity) payload.verbosity = model.verbosity;
 
   const body = JSON.stringify(payload);
 
@@ -298,6 +300,10 @@ async function callLLM(model, messages, maxTokens = 512, responseFormat = null) 
     const data = await res.json();
     // Strip leaked EOS/control tokens some local models emit
     const raw = data.choices[0].message.content;
+    if (raw == null) {
+      console.error(`    ✗ [${model.id}] null content — reasoning model may need higher max_tokens`);
+      return null;
+    }
     const cleaned = raw.replace(/<\|im_end\|>[\s\S]*/g, '')
                        .replace(/<\|end_of_text\|>[\s\S]*/g, '')
                        .replace(/<\|eot_id\|>[\s\S]*/g, '')
