@@ -2,9 +2,12 @@
 
 > *Score the translation capability of any LLM. A reproducible, LLM-as-judge based translation quality metric.*
 
-BabelScore is a language-agnostic translation benchmarking harness. It feeds source sentences through one or more **translator** models, then has one or more **judge** models score each translation, and produces an aggregated scorecard in Markdown and JSON.
+BabelScore is a language-agnostic LLM translation benchmarking harness. It feeds source sentences through one or more **LLM translator** models, then has one or more **LLM judge** models score each translation and produces an aggregated scorecard in Markdown and JSON.
 
-Any OpenAI-compatible endpoint can act as translator or judge — local models via LM Studio or Ollama, or cloud APIs via OpenRouter, OpenAI, Anthropic, etc.
+Any OpenAI-compatible endpoint can act as translator or judge — local models via LM Studio, vLLM or Ollama, or cloud APIs via OpenRouter, OpenAI, Anthropic, etc.
+
+The app currently supports translated language pairs (see _PROJECTS/ZH-YUE/data/yue_zh_test.json), though there is the intention to add more language test data formats as well generating synthetic data with known good SOTA LLMs. 
+
 
 ---
 
