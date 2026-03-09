@@ -17,9 +17,9 @@
     "judge_threads": 6,
     "translator_models": [
         {
-            "id": "byteplus-seed-2-0-lite-260228",
+            "id": "byteplus-seed-2-0-mini-260215",
             "provider": "byteplus",
-            "model": "seed-2-0-lite-260228",
+            "model": "seed-2-0-mini-260215",
             "base_url": "https://ark.ap-southeast.bytepluses.com/api/v3",
             "api_key": "${ARK_API_KEY}",
             "max_tokens": 1024,

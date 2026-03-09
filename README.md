@@ -45,6 +45,7 @@ Local providers (LM Studio, Ollama) do not require an API key.
 ```
 BabelScore_js/
 ├── main.js               # Core evaluation runner
+├── make_report.js         # Cross-project report generator
 ├── getModelList.js        # Utility: refresh cached model lists
 ├── config.json            # Global provider registry
 ├── .env                   # API keys (never commit this)
@@ -85,6 +86,30 @@ node main.js -project _example
 Results are written to `_PROJECTS/<project-name>/results/` as both a Markdown scorecard and a JSON data file, timestamped. Progress is saved incrementally after each sentence so a partial run is never lost.
 
 Press **Ctrl+C** at any time to abort — results so far are saved with `status: "interrupted"`.
+
+---
+
+## Generating a cross-project report
+
+Aggregate all scorecard JSON files across every project into a single Markdown report:
+
+```bash
+# Print to stdout
+node make_report.js
+
+# Write to a file
+node make_report.js --output _PROJECTS/report.md
+
+# Custom projects directory
+node make_report.js --projects-dir /path/to/_PROJECTS --output report.md
+```
+
+The report contains two tables, both sorted by average score descending:
+
+- **Summary** — one row per translator (all directions merged)
+- **Detail** — one row per translator × direction
+
+Columns: `Project`, `Translator`, `n` (scored data points), `Avg`, then one column per judge.
 
 ---
 
@@ -207,6 +232,24 @@ Two-column CSV with a header row. First column = source, second = reference. Dir
 
 Set `"auto_load": true` on a translator model to have BabelScore automatically load it via the LM Studio management API before the run starts, and `"auto_unload": true` to unload it afterwards. Requires LM Studio to be running with the server enabled.
 
+### BytePlus (Volcano Engine ARK)
+
+Byteplus cloud models use the same OpenAI-compatible `/v1/chat/completions` endpoint. Set `base_url` to your ARK regional endpoint:
+
+```json
+{
+  "id": "byteplus-seed-2-0-lite",
+  "provider": "byteplus",
+  "model": "seed-2-0-lite-260228",
+  "base_url": "https://ark.ap-southeast.bytepluses.com/api/v3",
+  "api_key": "${ARK_API_KEY}",
+  "max_tokens": 1024,
+  "temperature": 0.0
+}
+```
+
+> **Note:** `seed-translation-250915` (the dedicated translation model) does not support Chinese/Cantonese pairs. Use a general chat model such as `seed-2-0-lite-260228` for those language pairs.
+
 ---
 
 ## Prompt templates
@@ -228,3 +271,7 @@ Each run produces two files in `_PROJECTS/<project>/results/`:
 - `scorecard_<timestamp>.json` — full machine-readable results including all translations, scores, and judge reasoning
 
 Scores are on a **0–100** scale.
+
+Judge parse failures are logged to `judge_errors_<timestamp>.jsonl` in the same directory (only written if errors occur).
+
+To roll up results across all projects into one report, see [Generating a cross-project report](#generating-a-cross-project-report).
