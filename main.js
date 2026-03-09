@@ -79,6 +79,36 @@ try {
 // Take the first two columns regardless of their names
 const [srcCol, tgtCol] = Object.keys(rows[0]);
 
+// ---------------------------------------------------------------------------
+// Load prompt templates
+// ---------------------------------------------------------------------------
+
+function parseTemplate(template) {
+  const sysMatch = template.match(/\[system\]([\s\S]*?)(?=\[user\])/i);
+  const userMatch = template.match(/\[user\]([\s\S]*$)/i);
+  return {
+    system: sysMatch?.[1].trim() ?? '',
+    user: userMatch?.[1].trim() ?? '',
+  };
+}
+
+function render(str, vars) {
+  return str.replace(/\{\{(\w+)\}\}/g, (_, k) => vars[k] ?? '');
+}
+
+function loadTemplate(name) {
+  const p = resolve(__dirname, 'DATA', 'PROMPTS', 'default', `${name}_template.txt`);
+  try {
+    return parseTemplate(readFileSync(p, 'utf8'));
+  } catch {
+    console.warn(`Warning: could not load ${p}, using built-in defaults.`);
+    return null;
+  }
+}
+
+const translateTpl = loadTemplate('translate');
+const judgeTpl = loadTemplate('judge');
+
 console.log(`\n╔═══════════════════════════════════════╗`);
 console.log(`  BabelScore — ${cfg.description || projectName}`);
 console.log(`  Paradigm ${paradigm} | ${rows.length} sentences`);
@@ -143,8 +173,8 @@ async function callLLM(model, messages, maxTokens = 512) {
   const body = JSON.stringify({
     model: model.model,
     messages,
-    temperature: 0.1,
-    max_tokens: maxTokens,
+    temperature: model.temperature ?? 0.1,
+    max_tokens: model.max_tokens ?? maxTokens,
   });
 
   try {
@@ -172,36 +202,42 @@ async function callLLM(model, messages, maxTokens = 512) {
 }
 
 async function translateText(model, text, fromLang, toLang) {
-  const messages = [
-    {
-      role: 'system',
-      content: 'You are a professional translator. Translate accurately and naturally.',
-    },
-    {
-      role: 'user',
-      content: `Translate the following ${fromLang} text to ${toLang}. Respond with only the translation, nothing else.\n\n${text}`,
-    },
-  ];
-  return callLLM(model, messages, 1024);
+  const vars = { from_lang: fromLang, to_lang: toLang, text };
+  const messages = translateTpl
+    ? [
+        { role: 'system', content: render(translateTpl.system, vars) },
+        { role: 'user',   content: render(translateTpl.user, vars) },
+      ]
+    : [
+        { role: 'system', content: 'You are a professional translator. Translate accurately and naturally.' },
+        { role: 'user',   content: `Translate the following ${fromLang} text to ${toLang}. Respond with only the translation, nothing else.\n\n${text}` },
+      ];
+  return callLLM(model, messages);
 }
 
 async function judgeTranslation(judgeModel, fromLang, toLang, source, translation, reference) {
-  const refLine = reference ? `\nReference translation: ${reference}` : '';
-  const messages = [
-    {
-      role: 'system',
-      content: 'You are an expert translation quality evaluator. Respond only with valid JSON.',
-    },
-    {
-      role: 'user',
-      content:
-        `Evaluate this translation from ${fromLang} to ${toLang}.\n\n` +
-        `Source (${fromLang}): ${source}\n` +
-        `Translation: ${translation}${refLine}\n\n` +
-        `Score the translation on accuracy and fluency from 0 to 10.\n` +
-        `Respond with only valid JSON: {"score": <number 0-10>, "reasoning": "<one sentence>"}`,
-    },
-  ];
+  const vars = {
+    from_lang: fromLang,
+    to_lang: toLang,
+    source,
+    translation,
+    reference_line: reference ? `Reference translation: ${reference}` : '',
+  };
+  const messages = judgeTpl
+    ? [
+        { role: 'system', content: render(judgeTpl.system, vars) },
+        { role: 'user',   content: render(judgeTpl.user, vars) },
+      ]
+    : [
+        { role: 'system', content: 'You are an expert translation quality evaluator. Respond only with valid JSON.' },
+        { role: 'user',   content:
+            `Evaluate this translation from ${fromLang} to ${toLang}.\n\n` +
+            `Source (${fromLang}): ${source}\n` +
+            `Translation: ${translation}${reference ? `\nReference translation: ${reference}` : ''}\n\n` +
+            `Score the translation on accuracy and fluency from 0 to 100.\n` +
+            `Respond with only valid JSON: {"score": <number 0-100>, "reasoning": "<one sentence>"}`,
+        },
+      ];
 
   const raw = await callLLM(judgeModel, messages, 256);
   if (!raw) return null;
@@ -221,7 +257,7 @@ async function judgeTranslation(judgeModel, fromLang, toLang, source, translatio
 // Run one evaluation direction
 // ---------------------------------------------------------------------------
 
-async function runDirection(fromLang, toLang, sentences) {
+async function runDirection(fromLang, toLang, sentences, onProgress = null) {
   const hasReference = paradigm >= 3;
   const results = [];
 
@@ -253,7 +289,7 @@ async function runDirection(fromLang, toLang, sentences) {
         const result = await judgeTranslation(jm, fromLang, toLang, sentence.source, translation, ref);
         if (result) {
           scores[jm.id] = result;
-          console.log(`${result.score}/10`);
+          console.log(`${result.score}/100`);
         } else {
           console.log('failed');
         }
@@ -263,6 +299,7 @@ async function runDirection(fromLang, toLang, sentences) {
     }
 
     results.push(sentenceResult);
+    onProgress?.(results);
     console.log();
   }
 
@@ -317,6 +354,19 @@ function buildScorecard(directions) {
   md += `| **Judges** | ${judges.map((j) => j.model).join(', ')} |\n`;
   md += `| **Run** | ${now} |\n\n${sep}`;
 
+  // Summary scores: mean of all model means per direction
+  md += `## Summary\n\n`;
+  md += `| Translation | Score |\n`;
+  md += `|---|---|\n`;
+  for (const { label, stats } of directions) {
+    const validMeans = stats.map((s) => s.overallMean).filter((m) => m !== null);
+    const dirScore = validMeans.length
+      ? (validMeans.reduce((a, b) => a + b, 0) / validMeans.length).toFixed(1)
+      : '—';
+    md += `| ${label} | **${dirScore}** |\n`;
+  }
+  md += `\n${sep}`;
+
   for (const { label, stats, sentences } of directions) {
     md += `## ${label}\n\n`;
 
@@ -352,7 +402,7 @@ function buildScorecard(directions) {
             if (!s) {
               md += `  - \`${jm.id}\`: *(judge failed)*\n`;
             } else {
-              md += `  - \`${jm.id}\`: **${s.score}/10** — ${s.reasoning}\n`;
+              md += `  - \`${jm.id}\`: **${s.score}/100** — ${s.reasoning}\n`;
             }
           }
         }
@@ -374,28 +424,42 @@ function buildScorecard(directions) {
 // LM Studio: load all lm_studio models before evaluation
 // ---------------------------------------------------------------------------
 
-const lmStudioModels = [...translators, ...judges].filter(
-  (m) => m.provider === 'lm_studio'
-);
+const lmStudioAutoLoad   = [...translators, ...judges].filter((m) => m.provider === 'lm_studio' && m.auto_load   === true);
+const lmStudioAutoUnload = [...translators, ...judges].filter((m) => m.provider === 'lm_studio' && m.auto_unload === true);
 
 async function unloadAllLmStudio() {
-  if (lmStudioModels.length > 0) {
+  if (lmStudioAutoUnload.length > 0) {
     console.log('\nUnloading LM Studio models...');
-    for (const m of lmStudioModels) {
+    for (const m of lmStudioAutoUnload) {
       await lmStudioUnload(m.base_url, m.model);
     }
   }
 }
 
-// Unload on Ctrl+C
+// ---------------------------------------------------------------------------
+// Incremental results state
+// ---------------------------------------------------------------------------
+
+let runState = null;
+let jsonPath = null;
+
+function saveProgress() {
+  if (jsonPath && runState) {
+    writeFileSync(jsonPath, JSON.stringify(runState, null, 2));
+  }
+}
+
+// Unload on Ctrl+C and save partial progress
 process.on('SIGINT', async () => {
+  if (runState) runState.status = 'interrupted';
+  saveProgress();
   await unloadAllLmStudio();
   process.exit(130);
 });
 
-if (lmStudioModels.length > 0) {
+if (lmStudioAutoLoad.length > 0) {
   console.log('Loading LM Studio models...');
-  for (const m of lmStudioModels) {
+  for (const m of lmStudioAutoLoad) {
     await lmStudioLoad(m.base_url, m.model);
   }
   console.log();
@@ -414,6 +478,24 @@ if (paradigm >= 4) {
   });
 }
 
+// Set up incremental JSON output before run starts
+const resultsDir = resolve(projectDir, outputCfg.results_dir ?? 'results');
+mkdirSync(resultsDir, { recursive: true });
+const timestamp = new Date().toISOString().replace(/[:.]/g, '-').slice(0, 19);
+jsonPath = resolve(resultsDir, `scorecard_${timestamp}.json`);
+const mdPath = resolve(resultsDir, `scorecard_${timestamp}.md`);
+
+runState = {
+  project: projectName,
+  paradigm,
+  srcLang,
+  tgtLang,
+  started_at: new Date().toISOString(),
+  status: 'in_progress',
+  directions: [],
+};
+saveProgress();
+
 const directionResults = [];
 
 try {
@@ -425,27 +507,22 @@ try {
       reference: r[dir.sentenceKey[1]],
     }));
 
-    const sentenceResults = await runDirection(dir.fromLang, dir.toLang, sentences);
+    const dirEntry = { label: dir.label, sentences: [], stats: null };
+    runState.directions.push(dirEntry);
+
+    const sentenceResults = await runDirection(dir.fromLang, dir.toLang, sentences, (accumulated) => {
+      dirEntry.sentences = accumulated;
+      saveProgress();
+    });
+
     const stats = aggregateStats(sentenceResults);
+    dirEntry.stats = stats;
     directionResults.push({ label: dir.label, sentences: sentenceResults, stats });
   }
 
-  // -------------------------------------------------------------------------
-  // Save results
-  // -------------------------------------------------------------------------
+  runState.status = 'complete';
+  saveProgress();
 
-  const resultsDir = resolve(projectDir, outputCfg.results_dir ?? 'results');
-  mkdirSync(resultsDir, { recursive: true });
-
-  const timestamp = new Date().toISOString().replace(/[:.]/g, '-').slice(0, 19);
-
-  const jsonPath = resolve(resultsDir, `scorecard_${timestamp}.json`);
-  writeFileSync(
-    jsonPath,
-    JSON.stringify({ project: projectName, paradigm, srcLang, tgtLang, directionResults }, null, 2)
-  );
-
-  const mdPath = resolve(resultsDir, `scorecard_${timestamp}.md`);
   writeFileSync(mdPath, buildScorecard(directionResults));
 
   // -------------------------------------------------------------------------

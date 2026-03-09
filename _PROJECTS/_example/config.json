@@ -10,9 +10,13 @@
         {
             "id": "lmstudio-qwen3.5-35b-a3b",
             "provider": "lm_studio",
-            "model": "qwen3.5-35b-a3b",
+            "model": "qwen/qwen3.5-35b-a3b",
             "base_url": "http://localhost:1234/v1",
-            "api_key": ""
+            "api_key": "",
+            "auto_load": false,
+            "auto_unload": false,
+            "max_tokens": 1024,
+            "temperature": 0.0
         }
     ],
 
@@ -31,6 +35,6 @@
         "results_dir": "results",
         "show_judge_reasoning": true,
         "flag_high_variance": true,
-        "variance_threshold": 1.5
+        "variance_threshold": 15
     }
 }
