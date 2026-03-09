@@ -150,6 +150,8 @@ Two-column CSV with a header row. First column = source, second = reference. Dir
     "data/eng_yue_test.json",
     "data/yue_eng_test.json"
   ],
+  "max_sentences": 10,          // optional — total sentences across all directions
+                                // each direction gets floor(max_sentences / numDirections)
 
   // Single CSV (legacy)
   // "data_file": "data/sentences.csv",

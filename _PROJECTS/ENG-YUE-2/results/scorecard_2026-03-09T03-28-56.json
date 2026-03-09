@@ -6,7 +6,7 @@
   "directions_count": 2,
   "total_sentences": 10,
   "started_at": "2026-03-09T03:28:56.968Z",
-  "status": "in_progress",
+  "status": "interrupted",
   "directions": [
     {
       "label": "zh → Cantonese",
@@ -21,6 +21,36 @@
                 "openrouter-gemini-3.1-pro": {
                   "score": 95,
                   "reasoning": "The translation accurately conveys the source meaning using natural Cantonese expressions, though '旅行' might be slightly more colloquial than '旅遊'."
+                }
+              }
+            }
+          }
+        },
+        {
+          "source": "既然那些衣服已經不合身，不妨看看有沒有慈善機構會接收？既環保又能幫助別人。",
+          "reference": "既然嗰啲衫已經唔啱着，不妨睇下有冇慈善機構會接收？環保之餘又可以幫到其他人。",
+          "translations": {
+            "lmstudio-qwen3.5-35b-a3b": {
+              "text": "既然嗰啲衫已經唔合身，唔如睇下有無慈善機構會接收？咁樣既環保又能幫到其他人。",
+              "scores": {
+                "openrouter-gemini-3.1-pro": {
+                  "score": 70,
+                  "reasoning": "The translation contains an incorrect vocabulary choice ('唔如' instead of '不如' or '不妨') and uses slightly less idiomatic phrasing ('唔合身' instead of '唔啱着'), which negatively impacts fluency."
+                }
+              }
+            }
+          }
+        },
+        {
+          "source": "我今天剛滿十八週，雖然不是第一胎，但是感受到寶寶在我肚子裏舞動還是覺得好奇妙。",
+          "reference": "我今日剛滿十八週，雖然唔係第一胎，但係感受到BB喺我肚入面郁動都係覺得好奇妙。",
+          "translations": {
+            "lmstudio-qwen3.5-35b-a3b": {
+              "text": "我今日剛滿十八個星期，雖然唔係第一胎，但係感受到個寶寶喺我肚入面舞動，都覺得好奇妙。",
+              "scores": {
+                "openrouter-gemini-3.1-pro": {
+                  "score": 95,
+                  "reasoning": "The translation accurately conveys the meaning of the source text and uses natural Cantonese phrasing, though 'BB' and '郁動' would be slightly more colloquial than '個寶寶' and '舞動'."
                 }
               }
             }
