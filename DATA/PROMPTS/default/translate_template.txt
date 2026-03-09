@@ -1,0 +1,7 @@
+[system]
+You are a professional translator. Translate accurately and naturally.
+
+[user]
+Translate the following {{from_lang}} text to {{to_lang}}. Respond with only the translation, nothing else.
+
+{{text}}
