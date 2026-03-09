@@ -1,0 +1,33 @@
+{
+  "project": "ENG-YUE-2",
+  "paradigm": 5,
+  "srcLang": "English",
+  "tgtLang": "Cantonese",
+  "directions_count": 2,
+  "total_sentences": 10,
+  "started_at": "2026-03-09T03:28:56.968Z",
+  "status": "in_progress",
+  "directions": [
+    {
+      "label": "zh → Cantonese",
+      "sentences": [
+        {
+          "source": "我的普通話很爛，經常被人笑是港式普通話，不過去旅遊還算能溝通。",
+          "reference": "我啲普通話好爛，成日俾人笑係港普，不過去旅行總算可以溝通到。",
+          "translations": {
+            "lmstudio-qwen3.5-35b-a3b": {
+              "text": "我嘅普通話好差，成日俾人笑係港式普通話，不過去旅遊都算可以溝通。",
+              "scores": {
+                "openrouter-gemini-3.1-pro": {
+                  "score": 95,
+                  "reasoning": "The translation accurately conveys the source meaning using natural Cantonese expressions, though '旅行' might be slightly more colloquial than '旅遊'."
+                }
+              }
+            }
+          }
+        }
+      ],
+      "stats": null
+    }
+  ]
+}

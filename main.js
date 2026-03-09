@@ -121,11 +121,17 @@ function loadDataFile(filePath, format) {
 
 function buildDirections() {
   const format = cfg.data_file_format || 'csv';
+  const maxTotal = cfg.max_sentences ?? null;
+
+  // cap(arr, n) — slice to n if n is set, otherwise return all
+  function cap(arr, n) { return n != null ? arr.slice(0, n) : arr; }
 
   if (cfg.data_files && cfg.data_file_combined === false) {
     // Each file is one direction — SourceL/TargetL in the data define from/to
+    // Per-direction cap = floor(max_sentences / numFiles)
+    const perDir = maxTotal != null ? Math.floor(maxTotal / cfg.data_files.length) : null;
     return cfg.data_files.map((fp) => {
-      const sentences = loadDataFile(fp, format);
+      const sentences = cap(loadDataFile(fp, format), perDir);
       const first = sentences[0];
       const label = `${first.fromLang} → ${first.toLang}`;
       return { label, fromLang: first.fromLang, toLang: first.toLang, sentences };
@@ -133,7 +139,7 @@ function buildDirections() {
   }
 
   if (cfg.data_files && cfg.data_file_combined === true) {
-    // Single combined file — split by SourceL/TargetL
+    // Single combined file — split by SourceL/TargetL, then cap per direction
     const all = loadDataFile(cfg.data_files[0], format);
     const byDir = {};
     for (const s of all) {
@@ -141,16 +147,20 @@ function buildDirections() {
       if (!byDir[key]) byDir[key] = { fromLang: s.fromLang, toLang: s.toLang, sentences: [] };
       byDir[key].sentences.push(s);
     }
-    return Object.values(byDir).map((d) => ({
+    const dirs = Object.values(byDir);
+    const perDir = maxTotal != null ? Math.floor(maxTotal / dirs.length) : null;
+    return dirs.map((d) => ({
       label: `${d.fromLang} → ${d.toLang}`,
       fromLang: d.fromLang,
       toLang: d.toLang,
-      sentences: d.sentences,
+      sentences: cap(d.sentences, perDir),
     }));
   }
 
   // Legacy: single data_file (CSV)
-  const sentences = loadDataFile(cfg.data_file, format);
+  const numDirs = paradigm >= 4 ? 2 : 1;
+  const perDir = maxTotal != null ? Math.floor(maxTotal / numDirs) : null;
+  const sentences = cap(loadDataFile(cfg.data_file, format), perDir);
   const directions = [{ label: `${srcLang} → ${tgtLang}`, fromLang: srcLang, toLang: tgtLang, sentences }];
   if (paradigm >= 4) {
     directions.push({
@@ -326,18 +336,42 @@ async function judgeTranslation(judgeModel, fromLang, toLang, source, translatio
         },
       ];
 
-  const raw = await callLLM(judgeModel, messages, 256);
+  const raw = await callLLM(judgeModel, messages, 512);
   if (!raw) return null;
 
+  // Strip <think>...</think> blocks that some reasoning models emit
+  const stripped = raw.replace(/<think>[\s\S]*?<\/think>/gi, '').trim();
+
+  // Attempt 1: direct parse after stripping markdown fences
+  const fenceStripped = stripped
+    .replace(/^```(?:json)?\s*/im, '')
+    .replace(/```\s*$/m, '')
+    .trim();
   try {
-    const cleaned = raw.replace(/^```(?:json)?\s*/i, '').replace(/```\s*$/, '').trim();
-    const parsed = JSON.parse(cleaned);
-    if (typeof parsed.score !== 'number') throw new Error('Missing score field');
-    return parsed;
-  } catch {
-    console.error(`    ✗ Judge parse error [${judgeModel.id}]: ${raw.slice(0, 120)}`);
-    return null;
+    const parsed = JSON.parse(fenceStripped);
+    if (typeof parsed.score === 'number') return parsed;
+  } catch { /* fall through */ }
+
+  // Attempt 2: extract first {...} JSON object from anywhere in the response
+  const match = stripped.match(/\{[\s\S]*?\}/);
+  if (match) {
+    try {
+      const parsed = JSON.parse(match[0]);
+      if (typeof parsed.score === 'number') return parsed;
+    } catch { /* fall through */ }
   }
+
+  // Attempt 3: broader match for nested/multiline JSON object
+  const deepMatch = stripped.match(/\{[\s\S]*\}/);
+  if (deepMatch) {
+    try {
+      const parsed = JSON.parse(deepMatch[0]);
+      if (typeof parsed.score === 'number') return parsed;
+    } catch { /* fall through */ }
+  }
+
+  console.error(`    ✗ Judge parse error [${judgeModel.id}]: ${raw.slice(0, 300)}`);
+  return null;
 }
 
 // ---------------------------------------------------------------------------

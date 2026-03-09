@@ -1,0 +1,138 @@
+{
+  "project": "ENG-YUE-2",
+  "paradigm": 5,
+  "srcLang": "English",
+  "tgtLang": "Cantonese",
+  "directions_count": 2,
+  "total_sentences": 40,
+  "started_at": "2026-03-09T03:24:31.776Z",
+  "status": "in_progress",
+  "directions": [
+    {
+      "label": "zh → Cantonese",
+      "sentences": [
+        {
+          "source": "我的普通話很爛，經常被人笑是港式普通話，不過去旅遊還算能溝通。",
+          "reference": "我啲普通話好爛，成日俾人笑係港普，不過去旅行總算可以溝通到。",
+          "translations": {
+            "lmstudio-qwen3.5-35b-a3b": {
+              "text": "我嘅普通話好差，成日俾人笑係港式普通話，不過去旅遊都算可以溝通。",
+              "scores": {
+                "openrouter-gemini-3.1-pro": {
+                  "score": 95,
+                  "reasoning": "The translation is highly accurate and fluent, using natural Cantonese vocabulary and grammar, though '旅行' might be slightly more colloquial than '旅遊'."
+                }
+              }
+            }
+          }
+        },
+        {
+          "source": "既然那些衣服已經不合身，不妨看看有沒有慈善機構會接收？既環保又能幫助別人。",
+          "reference": "既然嗰啲衫已經唔啱着，不妨睇下有冇慈善機構會接收？環保之餘又可以幫到其他人。",
+          "translations": {
+            "lmstudio-qwen3.5-35b-a3b": {
+              "text": "既然嗰啲衫已經唔合身，唔如睇下有無慈善機構會接收？咁樣既環保又能幫到其他人。",
+              "scores": {
+                "openrouter-gemini-3.1-pro": {
+                  "score": 75,
+                  "reasoning": "The translation conveys the correct meaning, but it uses the non-existent Cantonese word '唔如' instead of '不如' or '不妨', and '唔合身' is less natural than '唔啱着'."
+                }
+              }
+            }
+          }
+        },
+        {
+          "source": "我今天剛滿十八週，雖然不是第一胎，但是感受到寶寶在我肚子裏舞動還是覺得好奇妙。",
+          "reference": "我今日剛滿十八週，雖然唔係第一胎，但係感受到BB喺我肚入面郁動都係覺得好奇妙。",
+          "translations": {
+            "lmstudio-qwen3.5-35b-a3b": {
+              "text": "我今日剛滿十八個星期，雖然唔係第一胎，但係感受到個寶寶喺我肚入面舞動，都覺得好奇妙。",
+              "scores": {
+                "openrouter-gemini-3.1-pro": {
+                  "score": 95,
+                  "reasoning": "The translation accurately conveys the source text into natural Cantonese, with only minor stylistic differences from the reference such as using '十八個星期' instead of '十八週' and '寶寶' instead of 'BB'."
+                }
+              }
+            }
+          }
+        },
+        {
+          "source": "難道你二十年後仍然要靠岳父養嗎？拜託你腳踏實地去找工作吧。",
+          "reference": "唔通你二十年後仲要靠外父養咩？拜託你腳踏實地去揾工啦。",
+          "translations": {
+            "lmstudio-qwen3.5-35b-a3b": {
+              "text": "點解你廿年之後仲要靠老丈人養？求你踏踏實實搵份工啦。",
+              "scores": {
+                "openrouter-gemini-3.1-pro": {
+                  "score": 75,
+                  "reasoning": "The translation changes the rhetorical 'could it be that' (難道) to 'why' (點解) and uses the Mandarin-influenced term '老丈人' instead of the standard Cantonese '外父'."
+                }
+              }
+            }
+          }
+        },
+        {
+          "source": "我們打算下個週末去鳳凰山看日出，你有興趣一齊去嗎？",
+          "reference": "我哋打算下個週末去鳳凰山睇日出，你有冇興趣一齊去？",
+          "translations": {
+            "lmstudio-qwen3.5-35b-a3b": {
+              "text": "我哋打算下個週末去鳳凰山睇日出，你有無興趣一齊去啊？",
+              "scores": {
+                "openrouter-gemini-3.1-pro": {
+                  "score": 98,
+                  "reasoning": "The translation accurately conveys the source meaning and uses natural Cantonese vocabulary and sentence structure, with only minor acceptable variations from the reference such as using '無' instead of '冇' and adding the sentence-final particle '啊'."
+                }
+              }
+            }
+          }
+        },
+        {
+          "source": "你別看阿伯衣着光鮮，他以吝惜出名，一塊錢小費都不會給的。",
+          "reference": "你唔好睇阿伯衣着光鮮，他出晒名孤寒，一蚊小費都唔會俾㗎。",
+          "translations": {
+            "lmstudio-qwen3.5-35b-a3b": {
+              "text": "唔好睇阿伯著得咁光鮮，佢以吝嗇出名，連一塊錢小費都唔肯畀。",
+              "scores": {
+                "openrouter-gemini-3.1-pro": {
+                  "score": 80,
+                  "reasoning": "The translation accurately conveys the meaning but uses Mandarin-influenced vocabulary like '一塊錢' instead of the natural Cantonese '一蚊', and '吝嗇' instead of the more colloquial '孤寒', which reduces its fluency."
+                }
+              }
+            }
+          }
+        },
+        {
+          "source": "他最大的心願就是希望兒女們快點成家立室。",
+          "reference": "佢最大嘅心願就係希望啲仔女快啲成家立室。",
+          "translations": {
+            "lmstudio-qwen3.5-35b-a3b": {
+              "text": "佢最大嘅心願就係希望啲仔女快啲成家立室。",
+              "scores": {
+                "openrouter-gemini-3.1-pro": {
+                  "score": 100,
+                  "reasoning": "The translation perfectly matches the reference and accurately conveys the source meaning in fluent Cantonese."
+                }
+              }
+            }
+          }
+        },
+        {
+          "source": "先忍一下，牙齒會有點麻麻的，等麻醉藥生效之後就會好很多。",
+          "reference": "忍一忍先，啲牙會有啲痺痺地，等麻醉藥生效之後就會好好多。",
+          "translations": {
+            "lmstudio-qwen3.5-35b-a3b": {
+              "text": "忍一忍啦，牙齒會有少少麻麻嘅感覺，等麻藥生效之後就會好好多。",
+              "scores": {
+                "openrouter-gemini-3.1-pro": {
+                  "score": 85,
+                  "reasoning": "The translation accurately conveys the source meaning and is generally fluent, but uses slightly Mandarin-influenced phrasing ('麻麻嘅感覺' instead of the more native '痺痺地') and misses the '先' (first) nuance present in the source."
+                }
+              }
+            }
+          }
+        }
+      ],
+      "stats": null
+    }
+  ]
+}
