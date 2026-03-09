@@ -1,0 +1,56 @@
+{
+  "data": [
+    { "id": "qwen3.5-9b", "object": "model", "owned_by": "organization_owner" },
+    {
+      "id": "qwen3.5-0.8b",
+      "object": "model",
+      "owned_by": "organization_owner"
+    },
+    {
+      "id": "qwen3.5-27b-text-heretic-mlx",
+      "object": "model",
+      "owned_by": "organization_owner"
+    },
+    {
+      "id": "qwen3.5-27b",
+      "object": "model",
+      "owned_by": "organization_owner"
+    },
+    {
+      "id": "qwen/qwen3.5-35b-a3b",
+      "object": "model",
+      "owned_by": "organization_owner"
+    },
+    {
+      "id": "zai-org/glm-4.7-flash",
+      "object": "model",
+      "owned_by": "organization_owner"
+    },
+    {
+      "id": "qwen3-coder-reap-25b-a3b-mlx",
+      "object": "model",
+      "owned_by": "organization_owner"
+    },
+    {
+      "id": "ibm/granite-4-micro",
+      "object": "model",
+      "owned_by": "organization_owner"
+    },
+    {
+      "id": "mirothinker-v1.5-30b-mlx-mlx",
+      "object": "model",
+      "owned_by": "organization_owner"
+    },
+    {
+      "id": "text-embedding-nomic-embed-text-v1.5",
+      "object": "model",
+      "owned_by": "organization_owner"
+    },
+    {
+      "id": "zai-org/glm-4.6v-flash",
+      "object": "model",
+      "owned_by": "organization_owner"
+    }
+  ],
+  "object": "list"
+}

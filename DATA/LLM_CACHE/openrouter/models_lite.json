@@ -1,0 +1,2773 @@
+{
+  "object": "list",
+  "data": [
+    {
+      "id": "openai/gpt-5.4-pro",
+      "provider": "openai",
+      "model": "gpt-5.4-pro",
+      "base_url": "https://openrouter.ai/api/v1",
+      "api_key": "${OPENROUTER_API_KEY}",
+      "hugging_face_id": ""
+    },
+    {
+      "id": "openai/gpt-5.4",
+      "provider": "openai",
+      "model": "gpt-5.4",
+      "base_url": "https://openrouter.ai/api/v1",
+      "api_key": "${OPENROUTER_API_KEY}",
+      "hugging_face_id": ""
+    },
+    {
+      "id": "inception/mercury-2",
+      "provider": "inception",
+      "model": "mercury-2",
+      "base_url": "https://openrouter.ai/api/v1",
+      "api_key": "${OPENROUTER_API_KEY}",
+      "hugging_face_id": ""
+    },
+    {
+      "id": "openai/gpt-5.3-chat",
+      "provider": "openai",
+      "model": "gpt-5.3-chat",
+      "base_url": "https://openrouter.ai/api/v1",
+      "api_key": "${OPENROUTER_API_KEY}",
+      "hugging_face_id": ""
+    },
+    {
+      "id": "google/gemini-3.1-flash-lite-preview",
+      "provider": "google",
+      "model": "gemini-3.1-flash-lite-preview",
+      "base_url": "https://openrouter.ai/api/v1",
+      "api_key": "${OPENROUTER_API_KEY}",
+      "hugging_face_id": ""
+    },
+    {
+      "id": "bytedance-seed/seed-2.0-mini",
+      "provider": "bytedance-seed",
+      "model": "seed-2.0-mini",
+      "base_url": "https://openrouter.ai/api/v1",
+      "api_key": "${OPENROUTER_API_KEY}",
+      "hugging_face_id": ""
+    },
+    {
+      "id": "google/gemini-3.1-flash-image-preview",
+      "provider": "google",
+      "model": "gemini-3.1-flash-image-preview",
+      "base_url": "https://openrouter.ai/api/v1",
+      "api_key": "${OPENROUTER_API_KEY}",
+      "hugging_face_id": ""
+    },
+    {
+      "id": "qwen/qwen3.5-35b-a3b",
+      "provider": "qwen",
+      "model": "qwen3.5-35b-a3b",
+      "base_url": "https://openrouter.ai/api/v1",
+      "api_key": "${OPENROUTER_API_KEY}",
+      "hugging_face_id": "Qwen/Qwen3.5-35B-A3B"
+    },
+    {
+      "id": "qwen/qwen3.5-27b",
+      "provider": "qwen",
+      "model": "qwen3.5-27b",
+      "base_url": "https://openrouter.ai/api/v1",
+      "api_key": "${OPENROUTER_API_KEY}",
+      "hugging_face_id": "Qwen/Qwen3.5-27B"
+    },
+    {
+      "id": "qwen/qwen3.5-122b-a10b",
+      "provider": "qwen",
+      "model": "qwen3.5-122b-a10b",
+      "base_url": "https://openrouter.ai/api/v1",
+      "api_key": "${OPENROUTER_API_KEY}",
+      "hugging_face_id": "Qwen/Qwen3.5-122B-A10B"
+    },
+    {
+      "id": "qwen/qwen3.5-flash-02-23",
+      "provider": "qwen",
+      "model": "qwen3.5-flash-02-23",
+      "base_url": "https://openrouter.ai/api/v1",
+      "api_key": "${OPENROUTER_API_KEY}",
+      "hugging_face_id": ""
+    },
+    {
+      "id": "liquid/lfm-2-24b-a2b",
+      "provider": "liquid",
+      "model": "lfm-2-24b-a2b",
+      "base_url": "https://openrouter.ai/api/v1",
+      "api_key": "${OPENROUTER_API_KEY}",
+      "hugging_face_id": "LiquidAI/LFM2-24B-A2B"
+    },
+    {
+      "id": "google/gemini-3.1-pro-preview-customtools",
+      "provider": "google",
+      "model": "gemini-3.1-pro-preview-customtools",
+      "base_url": "https://openrouter.ai/api/v1",
+      "api_key": "${OPENROUTER_API_KEY}",
+      "hugging_face_id": ""
+    },
+    {
+      "id": "openai/gpt-5.3-codex",
+      "provider": "openai",
+      "model": "gpt-5.3-codex",
+      "base_url": "https://openrouter.ai/api/v1",
+      "api_key": "${OPENROUTER_API_KEY}",
+      "hugging_face_id": ""
+    },
+    {
+      "id": "aion-labs/aion-2.0",
+      "provider": "aion-labs",
+      "model": "aion-2.0",
+      "base_url": "https://openrouter.ai/api/v1",
+      "api_key": "${OPENROUTER_API_KEY}",
+      "hugging_face_id": ""
+    },
+    {
+      "id": "google/gemini-3.1-pro-preview",
+      "provider": "google",
+      "model": "gemini-3.1-pro-preview",
+      "base_url": "https://openrouter.ai/api/v1",
+      "api_key": "${OPENROUTER_API_KEY}",
+      "hugging_face_id": ""
+    },
+    {
+      "id": "anthropic/claude-sonnet-4.6",
+      "provider": "anthropic",
+      "model": "claude-sonnet-4.6",
+      "base_url": "https://openrouter.ai/api/v1",
+      "api_key": "${OPENROUTER_API_KEY}",
+      "hugging_face_id": ""
+    },
+    {
+      "id": "qwen/qwen3.5-plus-02-15",
+      "provider": "qwen",
+      "model": "qwen3.5-plus-02-15",
+      "base_url": "https://openrouter.ai/api/v1",
+      "api_key": "${OPENROUTER_API_KEY}",
+      "hugging_face_id": ""
+    },
+    {
+      "id": "qwen/qwen3.5-397b-a17b",
+      "provider": "qwen",
+      "model": "qwen3.5-397b-a17b",
+      "base_url": "https://openrouter.ai/api/v1",
+      "api_key": "${OPENROUTER_API_KEY}",
+      "hugging_face_id": "Qwen/Qwen3.5-397B-A17B"
+    },
+    {
+      "id": "minimax/minimax-m2.5",
+      "provider": "minimax",
+      "model": "minimax-m2.5",
+      "base_url": "https://openrouter.ai/api/v1",
+      "api_key": "${OPENROUTER_API_KEY}",
+      "hugging_face_id": "MiniMaxAI/MiniMax-M2.5"
+    },
+    {
+      "id": "z-ai/glm-5",
+      "provider": "z-ai",
+      "model": "glm-5",
+      "base_url": "https://openrouter.ai/api/v1",
+      "api_key": "${OPENROUTER_API_KEY}",
+      "hugging_face_id": "zai-org/GLM-5"
+    },
+    {
+      "id": "qwen/qwen3-max-thinking",
+      "provider": "qwen",
+      "model": "qwen3-max-thinking",
+      "base_url": "https://openrouter.ai/api/v1",
+      "api_key": "${OPENROUTER_API_KEY}",
+      "hugging_face_id": ""
+    },
+    {
+      "id": "anthropic/claude-opus-4.6",
+      "provider": "anthropic",
+      "model": "claude-opus-4.6",
+      "base_url": "https://openrouter.ai/api/v1",
+      "api_key": "${OPENROUTER_API_KEY}",
+      "hugging_face_id": ""
+    },
+    {
+      "id": "qwen/qwen3-coder-next",
+      "provider": "qwen",
+      "model": "qwen3-coder-next",
+      "base_url": "https://openrouter.ai/api/v1",
+      "api_key": "${OPENROUTER_API_KEY}",
+      "hugging_face_id": "Qwen/Qwen3-Coder-Next"
+    },
+    {
+      "id": "openrouter/free",
+      "provider": "openrouter",
+      "model": "free",
+      "base_url": "https://openrouter.ai/api/v1",
+      "api_key": "${OPENROUTER_API_KEY}",
+      "hugging_face_id": ""
+    },
+    {
+      "id": "stepfun/step-3.5-flash:free",
+      "provider": "stepfun",
+      "model": "step-3.5-flash:free",
+      "base_url": "https://openrouter.ai/api/v1",
+      "api_key": "${OPENROUTER_API_KEY}",
+      "hugging_face_id": "stepfun-ai/Step-3.5-Flash"
+    },
+    {
+      "id": "stepfun/step-3.5-flash",
+      "provider": "stepfun",
+      "model": "step-3.5-flash",
+      "base_url": "https://openrouter.ai/api/v1",
+      "api_key": "${OPENROUTER_API_KEY}",
+      "hugging_face_id": "stepfun-ai/Step-3.5-Flash"
+    },
+    {
+      "id": "arcee-ai/trinity-large-preview:free",
+      "provider": "arcee-ai",
+      "model": "trinity-large-preview:free",
+      "base_url": "https://openrouter.ai/api/v1",
+      "api_key": "${OPENROUTER_API_KEY}",
+      "hugging_face_id": "arcee-ai/Trinity-Large-Preview"
+    },
+    {
+      "id": "moonshotai/kimi-k2.5",
+      "provider": "moonshotai",
+      "model": "kimi-k2.5",
+      "base_url": "https://openrouter.ai/api/v1",
+      "api_key": "${OPENROUTER_API_KEY}",
+      "hugging_face_id": "moonshotai/Kimi-K2.5"
+    },
+    {
+      "id": "upstage/solar-pro-3",
+      "provider": "upstage",
+      "model": "solar-pro-3",
+      "base_url": "https://openrouter.ai/api/v1",
+      "api_key": "${OPENROUTER_API_KEY}",
+      "hugging_face_id": ""
+    },
+    {
+      "id": "minimax/minimax-m2-her",
+      "provider": "minimax",
+      "model": "minimax-m2-her",
+      "base_url": "https://openrouter.ai/api/v1",
+      "api_key": "${OPENROUTER_API_KEY}",
+      "hugging_face_id": ""
+    },
+    {
+      "id": "writer/palmyra-x5",
+      "provider": "writer",
+      "model": "palmyra-x5",
+      "base_url": "https://openrouter.ai/api/v1",
+      "api_key": "${OPENROUTER_API_KEY}",
+      "hugging_face_id": ""
+    },
+    {
+      "id": "liquid/lfm-2.5-1.2b-thinking:free",
+      "provider": "liquid",
+      "model": "lfm-2.5-1.2b-thinking:free",
+      "base_url": "https://openrouter.ai/api/v1",
+      "api_key": "${OPENROUTER_API_KEY}",
+      "hugging_face_id": "LiquidAI/LFM2.5-1.2B-Thinking"
+    },
+    {
+      "id": "liquid/lfm-2.5-1.2b-instruct:free",
+      "provider": "liquid",
+      "model": "lfm-2.5-1.2b-instruct:free",
+      "base_url": "https://openrouter.ai/api/v1",
+      "api_key": "${OPENROUTER_API_KEY}",
+      "hugging_face_id": "LiquidAI/LFM2.5-1.2B-Instruct"
+    },
+    {
+      "id": "openai/gpt-audio",
+      "provider": "openai",
+      "model": "gpt-audio",
+      "base_url": "https://openrouter.ai/api/v1",
+      "api_key": "${OPENROUTER_API_KEY}",
+      "hugging_face_id": ""
+    },
+    {
+      "id": "openai/gpt-audio-mini",
+      "provider": "openai",
+      "model": "gpt-audio-mini",
+      "base_url": "https://openrouter.ai/api/v1",
+      "api_key": "${OPENROUTER_API_KEY}",
+      "hugging_face_id": ""
+    },
+    {
+      "id": "z-ai/glm-4.7-flash",
+      "provider": "z-ai",
+      "model": "glm-4.7-flash",
+      "base_url": "https://openrouter.ai/api/v1",
+      "api_key": "${OPENROUTER_API_KEY}",
+      "hugging_face_id": "zai-org/GLM-4.7-Flash"
+    },
+    {
+      "id": "openai/gpt-5.2-codex",
+      "provider": "openai",
+      "model": "gpt-5.2-codex",
+      "base_url": "https://openrouter.ai/api/v1",
+      "api_key": "${OPENROUTER_API_KEY}",
+      "hugging_face_id": ""
+    },
+    {
+      "id": "allenai/molmo-2-8b",
+      "provider": "allenai",
+      "model": "molmo-2-8b",
+      "base_url": "https://openrouter.ai/api/v1",
+      "api_key": "${OPENROUTER_API_KEY}",
+      "hugging_face_id": "allenai/Molmo2-8B"
+    },
+    {
+      "id": "allenai/olmo-3.1-32b-instruct",
+      "provider": "allenai",
+      "model": "olmo-3.1-32b-instruct",
+      "base_url": "https://openrouter.ai/api/v1",
+      "api_key": "${OPENROUTER_API_KEY}",
+      "hugging_face_id": "allenai/Olmo-3.1-32B-Instruct"
+    },
+    {
+      "id": "bytedance-seed/seed-1.6-flash",
+      "provider": "bytedance-seed",
+      "model": "seed-1.6-flash",
+      "base_url": "https://openrouter.ai/api/v1",
+      "api_key": "${OPENROUTER_API_KEY}",
+      "hugging_face_id": ""
+    },
+    {
+      "id": "bytedance-seed/seed-1.6",
+      "provider": "bytedance-seed",
+      "model": "seed-1.6",
+      "base_url": "https://openrouter.ai/api/v1",
+      "api_key": "${OPENROUTER_API_KEY}",
+      "hugging_face_id": ""
+    },
+    {
+      "id": "minimax/minimax-m2.1",
+      "provider": "minimax",
+      "model": "minimax-m2.1",
+      "base_url": "https://openrouter.ai/api/v1",
+      "api_key": "${OPENROUTER_API_KEY}",
+      "hugging_face_id": "MiniMaxAI/MiniMax-M2.1"
+    },
+    {
+      "id": "z-ai/glm-4.7",
+      "provider": "z-ai",
+      "model": "glm-4.7",
+      "base_url": "https://openrouter.ai/api/v1",
+      "api_key": "${OPENROUTER_API_KEY}",
+      "hugging_face_id": "zai-org/GLM-4.7"
+    },
+    {
+      "id": "google/gemini-3-flash-preview",
+      "provider": "google",
+      "model": "gemini-3-flash-preview",
+      "base_url": "https://openrouter.ai/api/v1",
+      "api_key": "${OPENROUTER_API_KEY}",
+      "hugging_face_id": ""
+    },
+    {
+      "id": "mistralai/mistral-small-creative",
+      "provider": "mistralai",
+      "model": "mistral-small-creative",
+      "base_url": "https://openrouter.ai/api/v1",
+      "api_key": "${OPENROUTER_API_KEY}",
+      "hugging_face_id": ""
+    },
+    {
+      "id": "allenai/olmo-3.1-32b-think",
+      "provider": "allenai",
+      "model": "olmo-3.1-32b-think",
+      "base_url": "https://openrouter.ai/api/v1",
+      "api_key": "${OPENROUTER_API_KEY}",
+      "hugging_face_id": "allenai/Olmo-3.1-32B-Think"
+    },
+    {
+      "id": "xiaomi/mimo-v2-flash",
+      "provider": "xiaomi",
+      "model": "mimo-v2-flash",
+      "base_url": "https://openrouter.ai/api/v1",
+      "api_key": "${OPENROUTER_API_KEY}",
+      "hugging_face_id": "XiaomiMiMo/MiMo-V2-Flash"
+    },
+    {
+      "id": "nvidia/nemotron-3-nano-30b-a3b:free",
+      "provider": "nvidia",
+      "model": "nemotron-3-nano-30b-a3b:free",
+      "base_url": "https://openrouter.ai/api/v1",
+      "api_key": "${OPENROUTER_API_KEY}",
+      "hugging_face_id": "nvidia/NVIDIA-Nemotron-3-Nano-30B-A3B-BF16"
+    },
+    {
+      "id": "nvidia/nemotron-3-nano-30b-a3b",
+      "provider": "nvidia",
+      "model": "nemotron-3-nano-30b-a3b",
+      "base_url": "https://openrouter.ai/api/v1",
+      "api_key": "${OPENROUTER_API_KEY}",
+      "hugging_face_id": "nvidia/NVIDIA-Nemotron-3-Nano-30B-A3B-BF16"
+    },
+    {
+      "id": "openai/gpt-5.2-chat",
+      "provider": "openai",
+      "model": "gpt-5.2-chat",
+      "base_url": "https://openrouter.ai/api/v1",
+      "api_key": "${OPENROUTER_API_KEY}",
+      "hugging_face_id": ""
+    },
+    {
+      "id": "openai/gpt-5.2-pro",
+      "provider": "openai",
+      "model": "gpt-5.2-pro",
+      "base_url": "https://openrouter.ai/api/v1",
+      "api_key": "${OPENROUTER_API_KEY}",
+      "hugging_face_id": ""
+    },
+    {
+      "id": "openai/gpt-5.2",
+      "provider": "openai",
+      "model": "gpt-5.2",
+      "base_url": "https://openrouter.ai/api/v1",
+      "api_key": "${OPENROUTER_API_KEY}",
+      "hugging_face_id": ""
+    },
+    {
+      "id": "mistralai/devstral-2512",
+      "provider": "mistralai",
+      "model": "devstral-2512",
+      "base_url": "https://openrouter.ai/api/v1",
+      "api_key": "${OPENROUTER_API_KEY}",
+      "hugging_face_id": "mistralai/Devstral-2-123B-Instruct-2512"
+    },
+    {
+      "id": "relace/relace-search",
+      "provider": "relace",
+      "model": "relace-search",
+      "base_url": "https://openrouter.ai/api/v1",
+      "api_key": "${OPENROUTER_API_KEY}",
+      "hugging_face_id": ""
+    },
+    {
+      "id": "z-ai/glm-4.6v",
+      "provider": "z-ai",
+      "model": "glm-4.6v",
+      "base_url": "https://openrouter.ai/api/v1",
+      "api_key": "${OPENROUTER_API_KEY}",
+      "hugging_face_id": "zai-org/GLM-4.6V"
+    },
+    {
+      "id": "nex-agi/deepseek-v3.1-nex-n1",
+      "provider": "nex-agi",
+      "model": "deepseek-v3.1-nex-n1",
+      "base_url": "https://openrouter.ai/api/v1",
+      "api_key": "${OPENROUTER_API_KEY}",
+      "hugging_face_id": "nex-agi/DeepSeek-V3.1-Nex-N1"
+    },
+    {
+      "id": "essentialai/rnj-1-instruct",
+      "provider": "essentialai",
+      "model": "rnj-1-instruct",
+      "base_url": "https://openrouter.ai/api/v1",
+      "api_key": "${OPENROUTER_API_KEY}",
+      "hugging_face_id": "EssentialAI/rnj-1-instruct"
+    },
+    {
+      "id": "openrouter/bodybuilder",
+      "provider": "openrouter",
+      "model": "bodybuilder",
+      "base_url": "https://openrouter.ai/api/v1",
+      "api_key": "${OPENROUTER_API_KEY}",
+      "hugging_face_id": ""
+    },
+    {
+      "id": "openai/gpt-5.1-codex-max",
+      "provider": "openai",
+      "model": "gpt-5.1-codex-max",
+      "base_url": "https://openrouter.ai/api/v1",
+      "api_key": "${OPENROUTER_API_KEY}",
+      "hugging_face_id": ""
+    },
+    {
+      "id": "amazon/nova-2-lite-v1",
+      "provider": "amazon",
+      "model": "nova-2-lite-v1",
+      "base_url": "https://openrouter.ai/api/v1",
+      "api_key": "${OPENROUTER_API_KEY}",
+      "hugging_face_id": ""
+    },
+    {
+      "id": "mistralai/ministral-14b-2512",
+      "provider": "mistralai",
+      "model": "ministral-14b-2512",
+      "base_url": "https://openrouter.ai/api/v1",
+      "api_key": "${OPENROUTER_API_KEY}",
+      "hugging_face_id": "mistralai/Ministral-3-14B-Instruct-2512"
+    },
+    {
+      "id": "mistralai/ministral-8b-2512",
+      "provider": "mistralai",
+      "model": "ministral-8b-2512",
+      "base_url": "https://openrouter.ai/api/v1",
+      "api_key": "${OPENROUTER_API_KEY}",
+      "hugging_face_id": "mistralai/Ministral-3-8B-Instruct-2512"
+    },
+    {
+      "id": "mistralai/ministral-3b-2512",
+      "provider": "mistralai",
+      "model": "ministral-3b-2512",
+      "base_url": "https://openrouter.ai/api/v1",
+      "api_key": "${OPENROUTER_API_KEY}",
+      "hugging_face_id": "mistralai/Ministral-3-3B-Instruct-2512"
+    },
+    {
+      "id": "mistralai/mistral-large-2512",
+      "provider": "mistralai",
+      "model": "mistral-large-2512",
+      "base_url": "https://openrouter.ai/api/v1",
+      "api_key": "${OPENROUTER_API_KEY}",
+      "hugging_face_id": ""
+    },
+    {
+      "id": "arcee-ai/trinity-mini:free",
+      "provider": "arcee-ai",
+      "model": "trinity-mini:free",
+      "base_url": "https://openrouter.ai/api/v1",
+      "api_key": "${OPENROUTER_API_KEY}",
+      "hugging_face_id": "arcee-ai/Trinity-Mini"
+    },
+    {
+      "id": "arcee-ai/trinity-mini",
+      "provider": "arcee-ai",
+      "model": "trinity-mini",
+      "base_url": "https://openrouter.ai/api/v1",
+      "api_key": "${OPENROUTER_API_KEY}",
+      "hugging_face_id": "arcee-ai/Trinity-Mini"
+    },
+    {
+      "id": "deepseek/deepseek-v3.2-speciale",
+      "provider": "deepseek",
+      "model": "deepseek-v3.2-speciale",
+      "base_url": "https://openrouter.ai/api/v1",
+      "api_key": "${OPENROUTER_API_KEY}",
+      "hugging_face_id": "deepseek-ai/DeepSeek-V3.2-Speciale"
+    },
+    {
+      "id": "deepseek/deepseek-v3.2",
+      "provider": "deepseek",
+      "model": "deepseek-v3.2",
+      "base_url": "https://openrouter.ai/api/v1",
+      "api_key": "${OPENROUTER_API_KEY}",
+      "hugging_face_id": "deepseek-ai/DeepSeek-V3.2"
+    },
+    {
+      "id": "prime-intellect/intellect-3",
+      "provider": "prime-intellect",
+      "model": "intellect-3",
+      "base_url": "https://openrouter.ai/api/v1",
+      "api_key": "${OPENROUTER_API_KEY}",
+      "hugging_face_id": "PrimeIntellect/INTELLECT-3-FP8"
+    },
+    {
+      "id": "anthropic/claude-opus-4.5",
+      "provider": "anthropic",
+      "model": "claude-opus-4.5",
+      "base_url": "https://openrouter.ai/api/v1",
+      "api_key": "${OPENROUTER_API_KEY}",
+      "hugging_face_id": ""
+    },
+    {
+      "id": "allenai/olmo-3-32b-think",
+      "provider": "allenai",
+      "model": "olmo-3-32b-think",
+      "base_url": "https://openrouter.ai/api/v1",
+      "api_key": "${OPENROUTER_API_KEY}",
+      "hugging_face_id": "allenai/Olmo-3-32B-Think"
+    },
+    {
+      "id": "allenai/olmo-3-7b-instruct",
+      "provider": "allenai",
+      "model": "olmo-3-7b-instruct",
+      "base_url": "https://openrouter.ai/api/v1",
+      "api_key": "${OPENROUTER_API_KEY}",
+      "hugging_face_id": "allenai/Olmo-3-7B-Instruct"
+    },
+    {
+      "id": "allenai/olmo-3-7b-think",
+      "provider": "allenai",
+      "model": "olmo-3-7b-think",
+      "base_url": "https://openrouter.ai/api/v1",
+      "api_key": "${OPENROUTER_API_KEY}",
+      "hugging_face_id": "allenai/Olmo-3-7B-Think"
+    },
+    {
+      "id": "google/gemini-3-pro-image-preview",
+      "provider": "google",
+      "model": "gemini-3-pro-image-preview",
+      "base_url": "https://openrouter.ai/api/v1",
+      "api_key": "${OPENROUTER_API_KEY}",
+      "hugging_face_id": ""
+    },
+    {
+      "id": "x-ai/grok-4.1-fast",
+      "provider": "x-ai",
+      "model": "grok-4.1-fast",
+      "base_url": "https://openrouter.ai/api/v1",
+      "api_key": "${OPENROUTER_API_KEY}",
+      "hugging_face_id": ""
+    },
+    {
+      "id": "google/gemini-3-pro-preview",
+      "provider": "google",
+      "model": "gemini-3-pro-preview",
+      "base_url": "https://openrouter.ai/api/v1",
+      "api_key": "${OPENROUTER_API_KEY}",
+      "hugging_face_id": ""
+    },
+    {
+      "id": "deepcogito/cogito-v2.1-671b",
+      "provider": "deepcogito",
+      "model": "cogito-v2.1-671b",
+      "base_url": "https://openrouter.ai/api/v1",
+      "api_key": "${OPENROUTER_API_KEY}",
+      "hugging_face_id": ""
+    },
+    {
+      "id": "openai/gpt-5.1",
+      "provider": "openai",
+      "model": "gpt-5.1",
+      "base_url": "https://openrouter.ai/api/v1",
+      "api_key": "${OPENROUTER_API_KEY}",
+      "hugging_face_id": ""
+    },
+    {
+      "id": "openai/gpt-5.1-chat",
+      "provider": "openai",
+      "model": "gpt-5.1-chat",
+      "base_url": "https://openrouter.ai/api/v1",
+      "api_key": "${OPENROUTER_API_KEY}",
+      "hugging_face_id": ""
+    },
+    {
+      "id": "openai/gpt-5.1-codex",
+      "provider": "openai",
+      "model": "gpt-5.1-codex",
+      "base_url": "https://openrouter.ai/api/v1",
+      "api_key": "${OPENROUTER_API_KEY}",
+      "hugging_face_id": ""
+    },
+    {
+      "id": "openai/gpt-5.1-codex-mini",
+      "provider": "openai",
+      "model": "gpt-5.1-codex-mini",
+      "base_url": "https://openrouter.ai/api/v1",
+      "api_key": "${OPENROUTER_API_KEY}",
+      "hugging_face_id": ""
+    },
+    {
+      "id": "kwaipilot/kat-coder-pro",
+      "provider": "kwaipilot",
+      "model": "kat-coder-pro",
+      "base_url": "https://openrouter.ai/api/v1",
+      "api_key": "${OPENROUTER_API_KEY}",
+      "hugging_face_id": ""
+    },
+    {
+      "id": "moonshotai/kimi-k2-thinking",
+      "provider": "moonshotai",
+      "model": "kimi-k2-thinking",
+      "base_url": "https://openrouter.ai/api/v1",
+      "api_key": "${OPENROUTER_API_KEY}",
+      "hugging_face_id": "moonshotai/Kimi-K2-Thinking"
+    },
+    {
+      "id": "amazon/nova-premier-v1",
+      "provider": "amazon",
+      "model": "nova-premier-v1",
+      "base_url": "https://openrouter.ai/api/v1",
+      "api_key": "${OPENROUTER_API_KEY}",
+      "hugging_face_id": ""
+    },
+    {
+      "id": "perplexity/sonar-pro-search",
+      "provider": "perplexity",
+      "model": "sonar-pro-search",
+      "base_url": "https://openrouter.ai/api/v1",
+      "api_key": "${OPENROUTER_API_KEY}",
+      "hugging_face_id": ""
+    },
+    {
+      "id": "mistralai/voxtral-small-24b-2507",
+      "provider": "mistralai",
+      "model": "voxtral-small-24b-2507",
+      "base_url": "https://openrouter.ai/api/v1",
+      "api_key": "${OPENROUTER_API_KEY}",
+      "hugging_face_id": "mistralai/Voxtral-Small-24B-2507"
+    },
+    {
+      "id": "openai/gpt-oss-safeguard-20b",
+      "provider": "openai",
+      "model": "gpt-oss-safeguard-20b",
+      "base_url": "https://openrouter.ai/api/v1",
+      "api_key": "${OPENROUTER_API_KEY}",
+      "hugging_face_id": "openai/gpt-oss-safeguard-20b"
+    },
+    {
+      "id": "nvidia/nemotron-nano-12b-v2-vl:free",
+      "provider": "nvidia",
+      "model": "nemotron-nano-12b-v2-vl:free",
+      "base_url": "https://openrouter.ai/api/v1",
+      "api_key": "${OPENROUTER_API_KEY}",
+      "hugging_face_id": "nvidia/NVIDIA-Nemotron-Nano-12B-v2-VL-BF16"
+    },
+    {
+      "id": "nvidia/nemotron-nano-12b-v2-vl",
+      "provider": "nvidia",
+      "model": "nemotron-nano-12b-v2-vl",
+      "base_url": "https://openrouter.ai/api/v1",
+      "api_key": "${OPENROUTER_API_KEY}",
+      "hugging_face_id": "nvidia/NVIDIA-Nemotron-Nano-12B-v2-VL-BF16"
+    },
+    {
+      "id": "minimax/minimax-m2",
+      "provider": "minimax",
+      "model": "minimax-m2",
+      "base_url": "https://openrouter.ai/api/v1",
+      "api_key": "${OPENROUTER_API_KEY}",
+      "hugging_face_id": "MiniMaxAI/MiniMax-M2"
+    },
+    {
+      "id": "qwen/qwen3-vl-32b-instruct",
+      "provider": "qwen",
+      "model": "qwen3-vl-32b-instruct",
+      "base_url": "https://openrouter.ai/api/v1",
+      "api_key": "${OPENROUTER_API_KEY}",
+      "hugging_face_id": "Qwen/Qwen3-VL-32B-Instruct"
+    },
+    {
+      "id": "liquid/lfm2-8b-a1b",
+      "provider": "liquid",
+      "model": "lfm2-8b-a1b",
+      "base_url": "https://openrouter.ai/api/v1",
+      "api_key": "${OPENROUTER_API_KEY}",
+      "hugging_face_id": "LiquidAI/LFM2-8B-A1B"
+    },
+    {
+      "id": "liquid/lfm-2.2-6b",
+      "provider": "liquid",
+      "model": "lfm-2.2-6b",
+      "base_url": "https://openrouter.ai/api/v1",
+      "api_key": "${OPENROUTER_API_KEY}",
+      "hugging_face_id": "LiquidAI/LFM2-2.6B"
+    },
+    {
+      "id": "ibm-granite/granite-4.0-h-micro",
+      "provider": "ibm-granite",
+      "model": "granite-4.0-h-micro",
+      "base_url": "https://openrouter.ai/api/v1",
+      "api_key": "${OPENROUTER_API_KEY}",
+      "hugging_face_id": "ibm-granite/granite-4.0-h-micro"
+    },
+    {
+      "id": "openai/gpt-5-image-mini",
+      "provider": "openai",
+      "model": "gpt-5-image-mini",
+      "base_url": "https://openrouter.ai/api/v1",
+      "api_key": "${OPENROUTER_API_KEY}",
+      "hugging_face_id": ""
+    },
+    {
+      "id": "anthropic/claude-haiku-4.5",
+      "provider": "anthropic",
+      "model": "claude-haiku-4.5",
+      "base_url": "https://openrouter.ai/api/v1",
+      "api_key": "${OPENROUTER_API_KEY}",
+      "hugging_face_id": ""
+    },
+    {
+      "id": "qwen/qwen3-vl-8b-thinking",
+      "provider": "qwen",
+      "model": "qwen3-vl-8b-thinking",
+      "base_url": "https://openrouter.ai/api/v1",
+      "api_key": "${OPENROUTER_API_KEY}",
+      "hugging_face_id": "Qwen/Qwen3-VL-8B-Thinking"
+    },
+    {
+      "id": "qwen/qwen3-vl-8b-instruct",
+      "provider": "qwen",
+      "model": "qwen3-vl-8b-instruct",
+      "base_url": "https://openrouter.ai/api/v1",
+      "api_key": "${OPENROUTER_API_KEY}",
+      "hugging_face_id": "Qwen/Qwen3-VL-8B-Instruct"
+    },
+    {
+      "id": "openai/gpt-5-image",
+      "provider": "openai",
+      "model": "gpt-5-image",
+      "base_url": "https://openrouter.ai/api/v1",
+      "api_key": "${OPENROUTER_API_KEY}",
+      "hugging_face_id": ""
+    },
+    {
+      "id": "openai/o3-deep-research",
+      "provider": "openai",
+      "model": "o3-deep-research",
+      "base_url": "https://openrouter.ai/api/v1",
+      "api_key": "${OPENROUTER_API_KEY}",
+      "hugging_face_id": ""
+    },
+    {
+      "id": "openai/o4-mini-deep-research",
+      "provider": "openai",
+      "model": "o4-mini-deep-research",
+      "base_url": "https://openrouter.ai/api/v1",
+      "api_key": "${OPENROUTER_API_KEY}",
+      "hugging_face_id": ""
+    },
+    {
+      "id": "nvidia/llama-3.3-nemotron-super-49b-v1.5",
+      "provider": "nvidia",
+      "model": "llama-3.3-nemotron-super-49b-v1.5",
+      "base_url": "https://openrouter.ai/api/v1",
+      "api_key": "${OPENROUTER_API_KEY}",
+      "hugging_face_id": "nvidia/Llama-3_3-Nemotron-Super-49B-v1_5"
+    },
+    {
+      "id": "baidu/ernie-4.5-21b-a3b-thinking",
+      "provider": "baidu",
+      "model": "ernie-4.5-21b-a3b-thinking",
+      "base_url": "https://openrouter.ai/api/v1",
+      "api_key": "${OPENROUTER_API_KEY}",
+      "hugging_face_id": "baidu/ERNIE-4.5-21B-A3B-Thinking"
+    },
+    {
+      "id": "google/gemini-2.5-flash-image",
+      "provider": "google",
+      "model": "gemini-2.5-flash-image",
+      "base_url": "https://openrouter.ai/api/v1",
+      "api_key": "${OPENROUTER_API_KEY}",
+      "hugging_face_id": ""
+    },
+    {
+      "id": "qwen/qwen3-vl-30b-a3b-thinking",
+      "provider": "qwen",
+      "model": "qwen3-vl-30b-a3b-thinking",
+      "base_url": "https://openrouter.ai/api/v1",
+      "api_key": "${OPENROUTER_API_KEY}",
+      "hugging_face_id": "Qwen/Qwen3-VL-30B-A3B-Thinking"
+    },
+    {
+      "id": "qwen/qwen3-vl-30b-a3b-instruct",
+      "provider": "qwen",
+      "model": "qwen3-vl-30b-a3b-instruct",
+      "base_url": "https://openrouter.ai/api/v1",
+      "api_key": "${OPENROUTER_API_KEY}",
+      "hugging_face_id": "Qwen/Qwen3-VL-30B-A3B-Instruct"
+    },
+    {
+      "id": "openai/gpt-5-pro",
+      "provider": "openai",
+      "model": "gpt-5-pro",
+      "base_url": "https://openrouter.ai/api/v1",
+      "api_key": "${OPENROUTER_API_KEY}",
+      "hugging_face_id": ""
+    },
+    {
+      "id": "z-ai/glm-4.6",
+      "provider": "z-ai",
+      "model": "glm-4.6",
+      "base_url": "https://openrouter.ai/api/v1",
+      "api_key": "${OPENROUTER_API_KEY}",
+      "hugging_face_id": ""
+    },
+    {
+      "id": "z-ai/glm-4.6:exacto",
+      "provider": "z-ai",
+      "model": "glm-4.6:exacto",
+      "base_url": "https://openrouter.ai/api/v1",
+      "api_key": "${OPENROUTER_API_KEY}",
+      "hugging_face_id": ""
+    },
+    {
+      "id": "anthropic/claude-sonnet-4.5",
+      "provider": "anthropic",
+      "model": "claude-sonnet-4.5",
+      "base_url": "https://openrouter.ai/api/v1",
+      "api_key": "${OPENROUTER_API_KEY}",
+      "hugging_face_id": ""
+    },
+    {
+      "id": "deepseek/deepseek-v3.2-exp",
+      "provider": "deepseek",
+      "model": "deepseek-v3.2-exp",
+      "base_url": "https://openrouter.ai/api/v1",
+      "api_key": "${OPENROUTER_API_KEY}",
+      "hugging_face_id": "deepseek-ai/DeepSeek-V3.2-Exp"
+    },
+    {
+      "id": "thedrummer/cydonia-24b-v4.1",
+      "provider": "thedrummer",
+      "model": "cydonia-24b-v4.1",
+      "base_url": "https://openrouter.ai/api/v1",
+      "api_key": "${OPENROUTER_API_KEY}",
+      "hugging_face_id": "thedrummer/cydonia-24b-v4.1"
+    },
+    {
+      "id": "relace/relace-apply-3",
+      "provider": "relace",
+      "model": "relace-apply-3",
+      "base_url": "https://openrouter.ai/api/v1",
+      "api_key": "${OPENROUTER_API_KEY}",
+      "hugging_face_id": ""
+    },
+    {
+      "id": "google/gemini-2.5-flash-lite-preview-09-2025",
+      "provider": "google",
+      "model": "gemini-2.5-flash-lite-preview-09-2025",
+      "base_url": "https://openrouter.ai/api/v1",
+      "api_key": "${OPENROUTER_API_KEY}",
+      "hugging_face_id": ""
+    },
+    {
+      "id": "qwen/qwen3-vl-235b-a22b-thinking",
+      "provider": "qwen",
+      "model": "qwen3-vl-235b-a22b-thinking",
+      "base_url": "https://openrouter.ai/api/v1",
+      "api_key": "${OPENROUTER_API_KEY}",
+      "hugging_face_id": "Qwen/Qwen3-VL-235B-A22B-Thinking"
+    },
+    {
+      "id": "qwen/qwen3-vl-235b-a22b-instruct",
+      "provider": "qwen",
+      "model": "qwen3-vl-235b-a22b-instruct",
+      "base_url": "https://openrouter.ai/api/v1",
+      "api_key": "${OPENROUTER_API_KEY}",
+      "hugging_face_id": "Qwen/Qwen3-VL-235B-A22B-Instruct"
+    },
+    {
+      "id": "qwen/qwen3-max",
+      "provider": "qwen",
+      "model": "qwen3-max",
+      "base_url": "https://openrouter.ai/api/v1",
+      "api_key": "${OPENROUTER_API_KEY}",
+      "hugging_face_id": ""
+    },
+    {
+      "id": "qwen/qwen3-coder-plus",
+      "provider": "qwen",
+      "model": "qwen3-coder-plus",
+      "base_url": "https://openrouter.ai/api/v1",
+      "api_key": "${OPENROUTER_API_KEY}",
+      "hugging_face_id": ""
+    },
+    {
+      "id": "openai/gpt-5-codex",
+      "provider": "openai",
+      "model": "gpt-5-codex",
+      "base_url": "https://openrouter.ai/api/v1",
+      "api_key": "${OPENROUTER_API_KEY}",
+      "hugging_face_id": ""
+    },
+    {
+      "id": "deepseek/deepseek-v3.1-terminus:exacto",
+      "provider": "deepseek",
+      "model": "deepseek-v3.1-terminus:exacto",
+      "base_url": "https://openrouter.ai/api/v1",
+      "api_key": "${OPENROUTER_API_KEY}",
+      "hugging_face_id": "deepseek-ai/DeepSeek-V3.1-Terminus"
+    },
+    {
+      "id": "deepseek/deepseek-v3.1-terminus",
+      "provider": "deepseek",
+      "model": "deepseek-v3.1-terminus",
+      "base_url": "https://openrouter.ai/api/v1",
+      "api_key": "${OPENROUTER_API_KEY}",
+      "hugging_face_id": "deepseek-ai/DeepSeek-V3.1-Terminus"
+    },
+    {
+      "id": "x-ai/grok-4-fast",
+      "provider": "x-ai",
+      "model": "grok-4-fast",
+      "base_url": "https://openrouter.ai/api/v1",
+      "api_key": "${OPENROUTER_API_KEY}",
+      "hugging_face_id": ""
+    },
+    {
+      "id": "alibaba/tongyi-deepresearch-30b-a3b",
+      "provider": "alibaba",
+      "model": "tongyi-deepresearch-30b-a3b",
+      "base_url": "https://openrouter.ai/api/v1",
+      "api_key": "${OPENROUTER_API_KEY}",
+      "hugging_face_id": "Alibaba-NLP/Tongyi-DeepResearch-30B-A3B"
+    },
+    {
+      "id": "qwen/qwen3-coder-flash",
+      "provider": "qwen",
+      "model": "qwen3-coder-flash",
+      "base_url": "https://openrouter.ai/api/v1",
+      "api_key": "${OPENROUTER_API_KEY}",
+      "hugging_face_id": ""
+    },
+    {
+      "id": "qwen/qwen3-next-80b-a3b-thinking",
+      "provider": "qwen",
+      "model": "qwen3-next-80b-a3b-thinking",
+      "base_url": "https://openrouter.ai/api/v1",
+      "api_key": "${OPENROUTER_API_KEY}",
+      "hugging_face_id": "Qwen/Qwen3-Next-80B-A3B-Thinking"
+    },
+    {
+      "id": "qwen/qwen3-next-80b-a3b-instruct:free",
+      "provider": "qwen",
+      "model": "qwen3-next-80b-a3b-instruct:free",
+      "base_url": "https://openrouter.ai/api/v1",
+      "api_key": "${OPENROUTER_API_KEY}",
+      "hugging_face_id": "Qwen/Qwen3-Next-80B-A3B-Instruct"
+    },
+    {
+      "id": "qwen/qwen3-next-80b-a3b-instruct",
+      "provider": "qwen",
+      "model": "qwen3-next-80b-a3b-instruct",
+      "base_url": "https://openrouter.ai/api/v1",
+      "api_key": "${OPENROUTER_API_KEY}",
+      "hugging_face_id": "Qwen/Qwen3-Next-80B-A3B-Instruct"
+    },
+    {
+      "id": "meituan/longcat-flash-chat",
+      "provider": "meituan",
+      "model": "longcat-flash-chat",
+      "base_url": "https://openrouter.ai/api/v1",
+      "api_key": "${OPENROUTER_API_KEY}",
+      "hugging_face_id": "meituan-longcat/LongCat-Flash-Chat"
+    },
+    {
+      "id": "qwen/qwen-plus-2025-07-28:thinking",
+      "provider": "qwen",
+      "model": "qwen-plus-2025-07-28:thinking",
+      "base_url": "https://openrouter.ai/api/v1",
+      "api_key": "${OPENROUTER_API_KEY}",
+      "hugging_face_id": ""
+    },
+    {
+      "id": "qwen/qwen-plus-2025-07-28",
+      "provider": "qwen",
+      "model": "qwen-plus-2025-07-28",
+      "base_url": "https://openrouter.ai/api/v1",
+      "api_key": "${OPENROUTER_API_KEY}",
+      "hugging_face_id": ""
+    },
+    {
+      "id": "nvidia/nemotron-nano-9b-v2:free",
+      "provider": "nvidia",
+      "model": "nemotron-nano-9b-v2:free",
+      "base_url": "https://openrouter.ai/api/v1",
+      "api_key": "${OPENROUTER_API_KEY}",
+      "hugging_face_id": "nvidia/NVIDIA-Nemotron-Nano-9B-v2"
+    },
+    {
+      "id": "nvidia/nemotron-nano-9b-v2",
+      "provider": "nvidia",
+      "model": "nemotron-nano-9b-v2",
+      "base_url": "https://openrouter.ai/api/v1",
+      "api_key": "${OPENROUTER_API_KEY}",
+      "hugging_face_id": "nvidia/NVIDIA-Nemotron-Nano-9B-v2"
+    },
+    {
+      "id": "moonshotai/kimi-k2-0905",
+      "provider": "moonshotai",
+      "model": "kimi-k2-0905",
+      "base_url": "https://openrouter.ai/api/v1",
+      "api_key": "${OPENROUTER_API_KEY}",
+      "hugging_face_id": "moonshotai/Kimi-K2-Instruct-0905"
+    },
+    {
+      "id": "moonshotai/kimi-k2-0905:exacto",
+      "provider": "moonshotai",
+      "model": "kimi-k2-0905:exacto",
+      "base_url": "https://openrouter.ai/api/v1",
+      "api_key": "${OPENROUTER_API_KEY}",
+      "hugging_face_id": "moonshotai/Kimi-K2-Instruct-0905"
+    },
+    {
+      "id": "qwen/qwen3-30b-a3b-thinking-2507",
+      "provider": "qwen",
+      "model": "qwen3-30b-a3b-thinking-2507",
+      "base_url": "https://openrouter.ai/api/v1",
+      "api_key": "${OPENROUTER_API_KEY}",
+      "hugging_face_id": "Qwen/Qwen3-30B-A3B-Thinking-2507"
+    },
+    {
+      "id": "x-ai/grok-code-fast-1",
+      "provider": "x-ai",
+      "model": "grok-code-fast-1",
+      "base_url": "https://openrouter.ai/api/v1",
+      "api_key": "${OPENROUTER_API_KEY}",
+      "hugging_face_id": ""
+    },
+    {
+      "id": "nousresearch/hermes-4-70b",
+      "provider": "nousresearch",
+      "model": "hermes-4-70b",
+      "base_url": "https://openrouter.ai/api/v1",
+      "api_key": "${OPENROUTER_API_KEY}",
+      "hugging_face_id": "NousResearch/Hermes-4-70B"
+    },
+    {
+      "id": "nousresearch/hermes-4-405b",
+      "provider": "nousresearch",
+      "model": "hermes-4-405b",
+      "base_url": "https://openrouter.ai/api/v1",
+      "api_key": "${OPENROUTER_API_KEY}",
+      "hugging_face_id": "NousResearch/Hermes-4-405B"
+    },
+    {
+      "id": "deepseek/deepseek-chat-v3.1",
+      "provider": "deepseek",
+      "model": "deepseek-chat-v3.1",
+      "base_url": "https://openrouter.ai/api/v1",
+      "api_key": "${OPENROUTER_API_KEY}",
+      "hugging_face_id": "deepseek-ai/DeepSeek-V3.1"
+    },
+    {
+      "id": "openai/gpt-4o-audio-preview",
+      "provider": "openai",
+      "model": "gpt-4o-audio-preview",
+      "base_url": "https://openrouter.ai/api/v1",
+      "api_key": "${OPENROUTER_API_KEY}",
+      "hugging_face_id": ""
+    },
+    {
+      "id": "mistralai/mistral-medium-3.1",
+      "provider": "mistralai",
+      "model": "mistral-medium-3.1",
+      "base_url": "https://openrouter.ai/api/v1",
+      "api_key": "${OPENROUTER_API_KEY}",
+      "hugging_face_id": ""
+    },
+    {
+      "id": "baidu/ernie-4.5-21b-a3b",
+      "provider": "baidu",
+      "model": "ernie-4.5-21b-a3b",
+      "base_url": "https://openrouter.ai/api/v1",
+      "api_key": "${OPENROUTER_API_KEY}",
+      "hugging_face_id": "baidu/ERNIE-4.5-21B-A3B-PT"
+    },
+    {
+      "id": "baidu/ernie-4.5-vl-28b-a3b",
+      "provider": "baidu",
+      "model": "ernie-4.5-vl-28b-a3b",
+      "base_url": "https://openrouter.ai/api/v1",
+      "api_key": "${OPENROUTER_API_KEY}",
+      "hugging_face_id": "baidu/ERNIE-4.5-VL-28B-A3B-PT"
+    },
+    {
+      "id": "z-ai/glm-4.5v",
+      "provider": "z-ai",
+      "model": "glm-4.5v",
+      "base_url": "https://openrouter.ai/api/v1",
+      "api_key": "${OPENROUTER_API_KEY}",
+      "hugging_face_id": "zai-org/GLM-4.5V"
+    },
+    {
+      "id": "ai21/jamba-large-1.7",
+      "provider": "ai21",
+      "model": "jamba-large-1.7",
+      "base_url": "https://openrouter.ai/api/v1",
+      "api_key": "${OPENROUTER_API_KEY}",
+      "hugging_face_id": "ai21labs/AI21-Jamba-Large-1.7"
+    },
+    {
+      "id": "openai/gpt-5-chat",
+      "provider": "openai",
+      "model": "gpt-5-chat",
+      "base_url": "https://openrouter.ai/api/v1",
+      "api_key": "${OPENROUTER_API_KEY}",
+      "hugging_face_id": ""
+    },
+    {
+      "id": "openai/gpt-5",
+      "provider": "openai",
+      "model": "gpt-5",
+      "base_url": "https://openrouter.ai/api/v1",
+      "api_key": "${OPENROUTER_API_KEY}",
+      "hugging_face_id": ""
+    },
+    {
+      "id": "openai/gpt-5-mini",
+      "provider": "openai",
+      "model": "gpt-5-mini",
+      "base_url": "https://openrouter.ai/api/v1",
+      "api_key": "${OPENROUTER_API_KEY}",
+      "hugging_face_id": ""
+    },
+    {
+      "id": "openai/gpt-5-nano",
+      "provider": "openai",
+      "model": "gpt-5-nano",
+      "base_url": "https://openrouter.ai/api/v1",
+      "api_key": "${OPENROUTER_API_KEY}",
+      "hugging_face_id": ""
+    },
+    {
+      "id": "openai/gpt-oss-120b:free",
+      "provider": "openai",
+      "model": "gpt-oss-120b:free",
+      "base_url": "https://openrouter.ai/api/v1",
+      "api_key": "${OPENROUTER_API_KEY}",
+      "hugging_face_id": "openai/gpt-oss-120b"
+    },
+    {
+      "id": "openai/gpt-oss-120b",
+      "provider": "openai",
+      "model": "gpt-oss-120b",
+      "base_url": "https://openrouter.ai/api/v1",
+      "api_key": "${OPENROUTER_API_KEY}",
+      "hugging_face_id": "openai/gpt-oss-120b"
+    },
+    {
+      "id": "openai/gpt-oss-120b:exacto",
+      "provider": "openai",
+      "model": "gpt-oss-120b:exacto",
+      "base_url": "https://openrouter.ai/api/v1",
+      "api_key": "${OPENROUTER_API_KEY}",
+      "hugging_face_id": "openai/gpt-oss-120b"
+    },
+    {
+      "id": "openai/gpt-oss-20b:free",
+      "provider": "openai",
+      "model": "gpt-oss-20b:free",
+      "base_url": "https://openrouter.ai/api/v1",
+      "api_key": "${OPENROUTER_API_KEY}",
+      "hugging_face_id": "openai/gpt-oss-20b"
+    },
+    {
+      "id": "openai/gpt-oss-20b",
+      "provider": "openai",
+      "model": "gpt-oss-20b",
+      "base_url": "https://openrouter.ai/api/v1",
+      "api_key": "${OPENROUTER_API_KEY}",
+      "hugging_face_id": "openai/gpt-oss-20b"
+    },
+    {
+      "id": "anthropic/claude-opus-4.1",
+      "provider": "anthropic",
+      "model": "claude-opus-4.1",
+      "base_url": "https://openrouter.ai/api/v1",
+      "api_key": "${OPENROUTER_API_KEY}",
+      "hugging_face_id": ""
+    },
+    {
+      "id": "mistralai/codestral-2508",
+      "provider": "mistralai",
+      "model": "codestral-2508",
+      "base_url": "https://openrouter.ai/api/v1",
+      "api_key": "${OPENROUTER_API_KEY}",
+      "hugging_face_id": ""
+    },
+    {
+      "id": "qwen/qwen3-coder-30b-a3b-instruct",
+      "provider": "qwen",
+      "model": "qwen3-coder-30b-a3b-instruct",
+      "base_url": "https://openrouter.ai/api/v1",
+      "api_key": "${OPENROUTER_API_KEY}",
+      "hugging_face_id": "Qwen/Qwen3-Coder-30B-A3B-Instruct"
+    },
+    {
+      "id": "qwen/qwen3-30b-a3b-instruct-2507",
+      "provider": "qwen",
+      "model": "qwen3-30b-a3b-instruct-2507",
+      "base_url": "https://openrouter.ai/api/v1",
+      "api_key": "${OPENROUTER_API_KEY}",
+      "hugging_face_id": "Qwen/Qwen3-30B-A3B-Instruct-2507"
+    },
+    {
+      "id": "z-ai/glm-4.5",
+      "provider": "z-ai",
+      "model": "glm-4.5",
+      "base_url": "https://openrouter.ai/api/v1",
+      "api_key": "${OPENROUTER_API_KEY}",
+      "hugging_face_id": "zai-org/GLM-4.5"
+    },
+    {
+      "id": "z-ai/glm-4.5-air:free",
+      "provider": "z-ai",
+      "model": "glm-4.5-air:free",
+      "base_url": "https://openrouter.ai/api/v1",
+      "api_key": "${OPENROUTER_API_KEY}",
+      "hugging_face_id": "zai-org/GLM-4.5-Air"
+    },
+    {
+      "id": "z-ai/glm-4.5-air",
+      "provider": "z-ai",
+      "model": "glm-4.5-air",
+      "base_url": "https://openrouter.ai/api/v1",
+      "api_key": "${OPENROUTER_API_KEY}",
+      "hugging_face_id": "zai-org/GLM-4.5-Air"
+    },
+    {
+      "id": "qwen/qwen3-235b-a22b-thinking-2507",
+      "provider": "qwen",
+      "model": "qwen3-235b-a22b-thinking-2507",
+      "base_url": "https://openrouter.ai/api/v1",
+      "api_key": "${OPENROUTER_API_KEY}",
+      "hugging_face_id": "Qwen/Qwen3-235B-A22B-Thinking-2507"
+    },
+    {
+      "id": "z-ai/glm-4-32b",
+      "provider": "z-ai",
+      "model": "glm-4-32b",
+      "base_url": "https://openrouter.ai/api/v1",
+      "api_key": "${OPENROUTER_API_KEY}",
+      "hugging_face_id": ""
+    },
+    {
+      "id": "qwen/qwen3-coder:free",
+      "provider": "qwen",
+      "model": "qwen3-coder:free",
+      "base_url": "https://openrouter.ai/api/v1",
+      "api_key": "${OPENROUTER_API_KEY}",
+      "hugging_face_id": "Qwen/Qwen3-Coder-480B-A35B-Instruct"
+    },
+    {
+      "id": "qwen/qwen3-coder",
+      "provider": "qwen",
+      "model": "qwen3-coder",
+      "base_url": "https://openrouter.ai/api/v1",
+      "api_key": "${OPENROUTER_API_KEY}",
+      "hugging_face_id": "Qwen/Qwen3-Coder-480B-A35B-Instruct"
+    },
+    {
+      "id": "qwen/qwen3-coder:exacto",
+      "provider": "qwen",
+      "model": "qwen3-coder:exacto",
+      "base_url": "https://openrouter.ai/api/v1",
+      "api_key": "${OPENROUTER_API_KEY}",
+      "hugging_face_id": "Qwen/Qwen3-Coder-480B-A35B-Instruct"
+    },
+    {
+      "id": "bytedance/ui-tars-1.5-7b",
+      "provider": "bytedance",
+      "model": "ui-tars-1.5-7b",
+      "base_url": "https://openrouter.ai/api/v1",
+      "api_key": "${OPENROUTER_API_KEY}",
+      "hugging_face_id": "ByteDance-Seed/UI-TARS-1.5-7B"
+    },
+    {
+      "id": "google/gemini-2.5-flash-lite",
+      "provider": "google",
+      "model": "gemini-2.5-flash-lite",
+      "base_url": "https://openrouter.ai/api/v1",
+      "api_key": "${OPENROUTER_API_KEY}",
+      "hugging_face_id": ""
+    },
+    {
+      "id": "qwen/qwen3-235b-a22b-2507",
+      "provider": "qwen",
+      "model": "qwen3-235b-a22b-2507",
+      "base_url": "https://openrouter.ai/api/v1",
+      "api_key": "${OPENROUTER_API_KEY}",
+      "hugging_face_id": "Qwen/Qwen3-235B-A22B-Instruct-2507"
+    },
+    {
+      "id": "switchpoint/router",
+      "provider": "switchpoint",
+      "model": "router",
+      "base_url": "https://openrouter.ai/api/v1",
+      "api_key": "${OPENROUTER_API_KEY}",
+      "hugging_face_id": ""
+    },
+    {
+      "id": "moonshotai/kimi-k2",
+      "provider": "moonshotai",
+      "model": "kimi-k2",
+      "base_url": "https://openrouter.ai/api/v1",
+      "api_key": "${OPENROUTER_API_KEY}",
+      "hugging_face_id": "moonshotai/Kimi-K2-Instruct"
+    },
+    {
+      "id": "mistralai/devstral-medium",
+      "provider": "mistralai",
+      "model": "devstral-medium",
+      "base_url": "https://openrouter.ai/api/v1",
+      "api_key": "${OPENROUTER_API_KEY}",
+      "hugging_face_id": ""
+    },
+    {
+      "id": "mistralai/devstral-small",
+      "provider": "mistralai",
+      "model": "devstral-small",
+      "base_url": "https://openrouter.ai/api/v1",
+      "api_key": "${OPENROUTER_API_KEY}",
+      "hugging_face_id": "mistralai/Devstral-Small-2507"
+    },
+    {
+      "id": "cognitivecomputations/dolphin-mistral-24b-venice-edition:free",
+      "provider": "cognitivecomputations",
+      "model": "dolphin-mistral-24b-venice-edition:free",
+      "base_url": "https://openrouter.ai/api/v1",
+      "api_key": "${OPENROUTER_API_KEY}",
+      "hugging_face_id": "cognitivecomputations/Dolphin-Mistral-24B-Venice-Edition"
+    },
+    {
+      "id": "x-ai/grok-4",
+      "provider": "x-ai",
+      "model": "grok-4",
+      "base_url": "https://openrouter.ai/api/v1",
+      "api_key": "${OPENROUTER_API_KEY}",
+      "hugging_face_id": ""
+    },
+    {
+      "id": "google/gemma-3n-e2b-it:free",
+      "provider": "google",
+      "model": "gemma-3n-e2b-it:free",
+      "base_url": "https://openrouter.ai/api/v1",
+      "api_key": "${OPENROUTER_API_KEY}",
+      "hugging_face_id": "google/gemma-3n-E2B-it"
+    },
+    {
+      "id": "tencent/hunyuan-a13b-instruct",
+      "provider": "tencent",
+      "model": "hunyuan-a13b-instruct",
+      "base_url": "https://openrouter.ai/api/v1",
+      "api_key": "${OPENROUTER_API_KEY}",
+      "hugging_face_id": "tencent/Hunyuan-A13B-Instruct"
+    },
+    {
+      "id": "tngtech/deepseek-r1t2-chimera",
+      "provider": "tngtech",
+      "model": "deepseek-r1t2-chimera",
+      "base_url": "https://openrouter.ai/api/v1",
+      "api_key": "${OPENROUTER_API_KEY}",
+      "hugging_face_id": "tngtech/DeepSeek-TNG-R1T2-Chimera"
+    },
+    {
+      "id": "morph/morph-v3-large",
+      "provider": "morph",
+      "model": "morph-v3-large",
+      "base_url": "https://openrouter.ai/api/v1",
+      "api_key": "${OPENROUTER_API_KEY}",
+      "hugging_face_id": ""
+    },
+    {
+      "id": "morph/morph-v3-fast",
+      "provider": "morph",
+      "model": "morph-v3-fast",
+      "base_url": "https://openrouter.ai/api/v1",
+      "api_key": "${OPENROUTER_API_KEY}",
+      "hugging_face_id": ""
+    },
+    {
+      "id": "baidu/ernie-4.5-vl-424b-a47b",
+      "provider": "baidu",
+      "model": "ernie-4.5-vl-424b-a47b",
+      "base_url": "https://openrouter.ai/api/v1",
+      "api_key": "${OPENROUTER_API_KEY}",
+      "hugging_face_id": "baidu/ERNIE-4.5-VL-424B-A47B-PT"
+    },
+    {
+      "id": "baidu/ernie-4.5-300b-a47b",
+      "provider": "baidu",
+      "model": "ernie-4.5-300b-a47b",
+      "base_url": "https://openrouter.ai/api/v1",
+      "api_key": "${OPENROUTER_API_KEY}",
+      "hugging_face_id": "baidu/ERNIE-4.5-300B-A47B-PT"
+    },
+    {
+      "id": "inception/mercury",
+      "provider": "inception",
+      "model": "mercury",
+      "base_url": "https://openrouter.ai/api/v1",
+      "api_key": "${OPENROUTER_API_KEY}",
+      "hugging_face_id": ""
+    },
+    {
+      "id": "mistralai/mistral-small-3.2-24b-instruct",
+      "provider": "mistralai",
+      "model": "mistral-small-3.2-24b-instruct",
+      "base_url": "https://openrouter.ai/api/v1",
+      "api_key": "${OPENROUTER_API_KEY}",
+      "hugging_face_id": "mistralai/Mistral-Small-3.2-24B-Instruct-2506"
+    },
+    {
+      "id": "minimax/minimax-m1",
+      "provider": "minimax",
+      "model": "minimax-m1",
+      "base_url": "https://openrouter.ai/api/v1",
+      "api_key": "${OPENROUTER_API_KEY}",
+      "hugging_face_id": ""
+    },
+    {
+      "id": "google/gemini-2.5-flash",
+      "provider": "google",
+      "model": "gemini-2.5-flash",
+      "base_url": "https://openrouter.ai/api/v1",
+      "api_key": "${OPENROUTER_API_KEY}",
+      "hugging_face_id": ""
+    },
+    {
+      "id": "google/gemini-2.5-pro",
+      "provider": "google",
+      "model": "gemini-2.5-pro",
+      "base_url": "https://openrouter.ai/api/v1",
+      "api_key": "${OPENROUTER_API_KEY}",
+      "hugging_face_id": ""
+    },
+    {
+      "id": "openai/o3-pro",
+      "provider": "openai",
+      "model": "o3-pro",
+      "base_url": "https://openrouter.ai/api/v1",
+      "api_key": "${OPENROUTER_API_KEY}",
+      "hugging_face_id": ""
+    },
+    {
+      "id": "x-ai/grok-3-mini",
+      "provider": "x-ai",
+      "model": "grok-3-mini",
+      "base_url": "https://openrouter.ai/api/v1",
+      "api_key": "${OPENROUTER_API_KEY}",
+      "hugging_face_id": ""
+    },
+    {
+      "id": "x-ai/grok-3",
+      "provider": "x-ai",
+      "model": "grok-3",
+      "base_url": "https://openrouter.ai/api/v1",
+      "api_key": "${OPENROUTER_API_KEY}",
+      "hugging_face_id": ""
+    },
+    {
+      "id": "google/gemini-2.5-pro-preview",
+      "provider": "google",
+      "model": "gemini-2.5-pro-preview",
+      "base_url": "https://openrouter.ai/api/v1",
+      "api_key": "${OPENROUTER_API_KEY}",
+      "hugging_face_id": ""
+    },
+    {
+      "id": "deepseek/deepseek-r1-0528",
+      "provider": "deepseek",
+      "model": "deepseek-r1-0528",
+      "base_url": "https://openrouter.ai/api/v1",
+      "api_key": "${OPENROUTER_API_KEY}",
+      "hugging_face_id": "deepseek-ai/DeepSeek-R1-0528"
+    },
+    {
+      "id": "anthropic/claude-opus-4",
+      "provider": "anthropic",
+      "model": "claude-opus-4",
+      "base_url": "https://openrouter.ai/api/v1",
+      "api_key": "${OPENROUTER_API_KEY}",
+      "hugging_face_id": ""
+    },
+    {
+      "id": "anthropic/claude-sonnet-4",
+      "provider": "anthropic",
+      "model": "claude-sonnet-4",
+      "base_url": "https://openrouter.ai/api/v1",
+      "api_key": "${OPENROUTER_API_KEY}",
+      "hugging_face_id": ""
+    },
+    {
+      "id": "google/gemma-3n-e4b-it:free",
+      "provider": "google",
+      "model": "gemma-3n-e4b-it:free",
+      "base_url": "https://openrouter.ai/api/v1",
+      "api_key": "${OPENROUTER_API_KEY}",
+      "hugging_face_id": "google/gemma-3n-E4B-it"
+    },
+    {
+      "id": "google/gemma-3n-e4b-it",
+      "provider": "google",
+      "model": "gemma-3n-e4b-it",
+      "base_url": "https://openrouter.ai/api/v1",
+      "api_key": "${OPENROUTER_API_KEY}",
+      "hugging_face_id": "google/gemma-3n-E4B-it"
+    },
+    {
+      "id": "mistralai/mistral-medium-3",
+      "provider": "mistralai",
+      "model": "mistral-medium-3",
+      "base_url": "https://openrouter.ai/api/v1",
+      "api_key": "${OPENROUTER_API_KEY}",
+      "hugging_face_id": ""
+    },
+    {
+      "id": "google/gemini-2.5-pro-preview-05-06",
+      "provider": "google",
+      "model": "gemini-2.5-pro-preview-05-06",
+      "base_url": "https://openrouter.ai/api/v1",
+      "api_key": "${OPENROUTER_API_KEY}",
+      "hugging_face_id": ""
+    },
+    {
+      "id": "arcee-ai/spotlight",
+      "provider": "arcee-ai",
+      "model": "spotlight",
+      "base_url": "https://openrouter.ai/api/v1",
+      "api_key": "${OPENROUTER_API_KEY}",
+      "hugging_face_id": ""
+    },
+    {
+      "id": "arcee-ai/maestro-reasoning",
+      "provider": "arcee-ai",
+      "model": "maestro-reasoning",
+      "base_url": "https://openrouter.ai/api/v1",
+      "api_key": "${OPENROUTER_API_KEY}",
+      "hugging_face_id": ""
+    },
+    {
+      "id": "arcee-ai/virtuoso-large",
+      "provider": "arcee-ai",
+      "model": "virtuoso-large",
+      "base_url": "https://openrouter.ai/api/v1",
+      "api_key": "${OPENROUTER_API_KEY}",
+      "hugging_face_id": ""
+    },
+    {
+      "id": "arcee-ai/coder-large",
+      "provider": "arcee-ai",
+      "model": "coder-large",
+      "base_url": "https://openrouter.ai/api/v1",
+      "api_key": "${OPENROUTER_API_KEY}",
+      "hugging_face_id": ""
+    },
+    {
+      "id": "inception/mercury-coder",
+      "provider": "inception",
+      "model": "mercury-coder",
+      "base_url": "https://openrouter.ai/api/v1",
+      "api_key": "${OPENROUTER_API_KEY}",
+      "hugging_face_id": ""
+    },
+    {
+      "id": "qwen/qwen3-4b:free",
+      "provider": "qwen",
+      "model": "qwen3-4b:free",
+      "base_url": "https://openrouter.ai/api/v1",
+      "api_key": "${OPENROUTER_API_KEY}",
+      "hugging_face_id": "Qwen/Qwen3-4B"
+    },
+    {
+      "id": "meta-llama/llama-guard-4-12b",
+      "provider": "meta-llama",
+      "model": "llama-guard-4-12b",
+      "base_url": "https://openrouter.ai/api/v1",
+      "api_key": "${OPENROUTER_API_KEY}",
+      "hugging_face_id": "meta-llama/Llama-Guard-4-12B"
+    },
+    {
+      "id": "qwen/qwen3-30b-a3b",
+      "provider": "qwen",
+      "model": "qwen3-30b-a3b",
+      "base_url": "https://openrouter.ai/api/v1",
+      "api_key": "${OPENROUTER_API_KEY}",
+      "hugging_face_id": "Qwen/Qwen3-30B-A3B"
+    },
+    {
+      "id": "qwen/qwen3-8b",
+      "provider": "qwen",
+      "model": "qwen3-8b",
+      "base_url": "https://openrouter.ai/api/v1",
+      "api_key": "${OPENROUTER_API_KEY}",
+      "hugging_face_id": "Qwen/Qwen3-8B"
+    },
+    {
+      "id": "qwen/qwen3-14b",
+      "provider": "qwen",
+      "model": "qwen3-14b",
+      "base_url": "https://openrouter.ai/api/v1",
+      "api_key": "${OPENROUTER_API_KEY}",
+      "hugging_face_id": "Qwen/Qwen3-14B"
+    },
+    {
+      "id": "qwen/qwen3-32b",
+      "provider": "qwen",
+      "model": "qwen3-32b",
+      "base_url": "https://openrouter.ai/api/v1",
+      "api_key": "${OPENROUTER_API_KEY}",
+      "hugging_face_id": "Qwen/Qwen3-32B"
+    },
+    {
+      "id": "qwen/qwen3-235b-a22b",
+      "provider": "qwen",
+      "model": "qwen3-235b-a22b",
+      "base_url": "https://openrouter.ai/api/v1",
+      "api_key": "${OPENROUTER_API_KEY}",
+      "hugging_face_id": "Qwen/Qwen3-235B-A22B"
+    },
+    {
+      "id": "openai/o4-mini-high",
+      "provider": "openai",
+      "model": "o4-mini-high",
+      "base_url": "https://openrouter.ai/api/v1",
+      "api_key": "${OPENROUTER_API_KEY}",
+      "hugging_face_id": ""
+    },
+    {
+      "id": "openai/o3",
+      "provider": "openai",
+      "model": "o3",
+      "base_url": "https://openrouter.ai/api/v1",
+      "api_key": "${OPENROUTER_API_KEY}",
+      "hugging_face_id": ""
+    },
+    {
+      "id": "openai/o4-mini",
+      "provider": "openai",
+      "model": "o4-mini",
+      "base_url": "https://openrouter.ai/api/v1",
+      "api_key": "${OPENROUTER_API_KEY}",
+      "hugging_face_id": ""
+    },
+    {
+      "id": "qwen/qwen2.5-coder-7b-instruct",
+      "provider": "qwen",
+      "model": "qwen2.5-coder-7b-instruct",
+      "base_url": "https://openrouter.ai/api/v1",
+      "api_key": "${OPENROUTER_API_KEY}",
+      "hugging_face_id": "Qwen/Qwen2.5-Coder-7B-Instruct"
+    },
+    {
+      "id": "openai/gpt-4.1",
+      "provider": "openai",
+      "model": "gpt-4.1",
+      "base_url": "https://openrouter.ai/api/v1",
+      "api_key": "${OPENROUTER_API_KEY}",
+      "hugging_face_id": ""
+    },
+    {
+      "id": "openai/gpt-4.1-mini",
+      "provider": "openai",
+      "model": "gpt-4.1-mini",
+      "base_url": "https://openrouter.ai/api/v1",
+      "api_key": "${OPENROUTER_API_KEY}",
+      "hugging_face_id": ""
+    },
+    {
+      "id": "openai/gpt-4.1-nano",
+      "provider": "openai",
+      "model": "gpt-4.1-nano",
+      "base_url": "https://openrouter.ai/api/v1",
+      "api_key": "${OPENROUTER_API_KEY}",
+      "hugging_face_id": ""
+    },
+    {
+      "id": "eleutherai/llemma_7b",
+      "provider": "eleutherai",
+      "model": "llemma_7b",
+      "base_url": "https://openrouter.ai/api/v1",
+      "api_key": "${OPENROUTER_API_KEY}",
+      "hugging_face_id": "EleutherAI/llemma_7b"
+    },
+    {
+      "id": "alfredpros/codellama-7b-instruct-solidity",
+      "provider": "alfredpros",
+      "model": "codellama-7b-instruct-solidity",
+      "base_url": "https://openrouter.ai/api/v1",
+      "api_key": "${OPENROUTER_API_KEY}",
+      "hugging_face_id": "AlfredPros/CodeLlama-7b-Instruct-Solidity"
+    },
+    {
+      "id": "x-ai/grok-3-mini-beta",
+      "provider": "x-ai",
+      "model": "grok-3-mini-beta",
+      "base_url": "https://openrouter.ai/api/v1",
+      "api_key": "${OPENROUTER_API_KEY}",
+      "hugging_face_id": ""
+    },
+    {
+      "id": "x-ai/grok-3-beta",
+      "provider": "x-ai",
+      "model": "grok-3-beta",
+      "base_url": "https://openrouter.ai/api/v1",
+      "api_key": "${OPENROUTER_API_KEY}",
+      "hugging_face_id": ""
+    },
+    {
+      "id": "meta-llama/llama-4-maverick",
+      "provider": "meta-llama",
+      "model": "llama-4-maverick",
+      "base_url": "https://openrouter.ai/api/v1",
+      "api_key": "${OPENROUTER_API_KEY}",
+      "hugging_face_id": "meta-llama/Llama-4-Maverick-17B-128E-Instruct"
+    },
+    {
+      "id": "meta-llama/llama-4-scout",
+      "provider": "meta-llama",
+      "model": "llama-4-scout",
+      "base_url": "https://openrouter.ai/api/v1",
+      "api_key": "${OPENROUTER_API_KEY}",
+      "hugging_face_id": "meta-llama/Llama-4-Scout-17B-16E-Instruct"
+    },
+    {
+      "id": "qwen/qwen2.5-vl-32b-instruct",
+      "provider": "qwen",
+      "model": "qwen2.5-vl-32b-instruct",
+      "base_url": "https://openrouter.ai/api/v1",
+      "api_key": "${OPENROUTER_API_KEY}",
+      "hugging_face_id": "Qwen/Qwen2.5-VL-32B-Instruct"
+    },
+    {
+      "id": "deepseek/deepseek-chat-v3-0324",
+      "provider": "deepseek",
+      "model": "deepseek-chat-v3-0324",
+      "base_url": "https://openrouter.ai/api/v1",
+      "api_key": "${OPENROUTER_API_KEY}",
+      "hugging_face_id": "deepseek-ai/DeepSeek-V3-0324"
+    },
+    {
+      "id": "openai/o1-pro",
+      "provider": "openai",
+      "model": "o1-pro",
+      "base_url": "https://openrouter.ai/api/v1",
+      "api_key": "${OPENROUTER_API_KEY}",
+      "hugging_face_id": ""
+    },
+    {
+      "id": "mistralai/mistral-small-3.1-24b-instruct:free",
+      "provider": "mistralai",
+      "model": "mistral-small-3.1-24b-instruct:free",
+      "base_url": "https://openrouter.ai/api/v1",
+      "api_key": "${OPENROUTER_API_KEY}",
+      "hugging_face_id": "mistralai/Mistral-Small-3.1-24B-Instruct-2503"
+    },
+    {
+      "id": "mistralai/mistral-small-3.1-24b-instruct",
+      "provider": "mistralai",
+      "model": "mistral-small-3.1-24b-instruct",
+      "base_url": "https://openrouter.ai/api/v1",
+      "api_key": "${OPENROUTER_API_KEY}",
+      "hugging_face_id": "mistralai/Mistral-Small-3.1-24B-Instruct-2503"
+    },
+    {
+      "id": "allenai/olmo-2-0325-32b-instruct",
+      "provider": "allenai",
+      "model": "olmo-2-0325-32b-instruct",
+      "base_url": "https://openrouter.ai/api/v1",
+      "api_key": "${OPENROUTER_API_KEY}",
+      "hugging_face_id": "allenai/OLMo-2-0325-32B-Instruct"
+    },
+    {
+      "id": "google/gemma-3-4b-it:free",
+      "provider": "google",
+      "model": "gemma-3-4b-it:free",
+      "base_url": "https://openrouter.ai/api/v1",
+      "api_key": "${OPENROUTER_API_KEY}",
+      "hugging_face_id": "google/gemma-3-4b-it"
+    },
+    {
+      "id": "google/gemma-3-4b-it",
+      "provider": "google",
+      "model": "gemma-3-4b-it",
+      "base_url": "https://openrouter.ai/api/v1",
+      "api_key": "${OPENROUTER_API_KEY}",
+      "hugging_face_id": "google/gemma-3-4b-it"
+    },
+    {
+      "id": "google/gemma-3-12b-it:free",
+      "provider": "google",
+      "model": "gemma-3-12b-it:free",
+      "base_url": "https://openrouter.ai/api/v1",
+      "api_key": "${OPENROUTER_API_KEY}",
+      "hugging_face_id": "google/gemma-3-12b-it"
+    },
+    {
+      "id": "google/gemma-3-12b-it",
+      "provider": "google",
+      "model": "gemma-3-12b-it",
+      "base_url": "https://openrouter.ai/api/v1",
+      "api_key": "${OPENROUTER_API_KEY}",
+      "hugging_face_id": "google/gemma-3-12b-it"
+    },
+    {
+      "id": "cohere/command-a",
+      "provider": "cohere",
+      "model": "command-a",
+      "base_url": "https://openrouter.ai/api/v1",
+      "api_key": "${OPENROUTER_API_KEY}",
+      "hugging_face_id": "CohereForAI/c4ai-command-a-03-2025"
+    },
+    {
+      "id": "openai/gpt-4o-mini-search-preview",
+      "provider": "openai",
+      "model": "gpt-4o-mini-search-preview",
+      "base_url": "https://openrouter.ai/api/v1",
+      "api_key": "${OPENROUTER_API_KEY}",
+      "hugging_face_id": ""
+    },
+    {
+      "id": "openai/gpt-4o-search-preview",
+      "provider": "openai",
+      "model": "gpt-4o-search-preview",
+      "base_url": "https://openrouter.ai/api/v1",
+      "api_key": "${OPENROUTER_API_KEY}",
+      "hugging_face_id": ""
+    },
+    {
+      "id": "google/gemma-3-27b-it:free",
+      "provider": "google",
+      "model": "gemma-3-27b-it:free",
+      "base_url": "https://openrouter.ai/api/v1",
+      "api_key": "${OPENROUTER_API_KEY}",
+      "hugging_face_id": "google/gemma-3-27b-it"
+    },
+    {
+      "id": "google/gemma-3-27b-it",
+      "provider": "google",
+      "model": "gemma-3-27b-it",
+      "base_url": "https://openrouter.ai/api/v1",
+      "api_key": "${OPENROUTER_API_KEY}",
+      "hugging_face_id": "google/gemma-3-27b-it"
+    },
+    {
+      "id": "thedrummer/skyfall-36b-v2",
+      "provider": "thedrummer",
+      "model": "skyfall-36b-v2",
+      "base_url": "https://openrouter.ai/api/v1",
+      "api_key": "${OPENROUTER_API_KEY}",
+      "hugging_face_id": "TheDrummer/Skyfall-36B-v2"
+    },
+    {
+      "id": "perplexity/sonar-reasoning-pro",
+      "provider": "perplexity",
+      "model": "sonar-reasoning-pro",
+      "base_url": "https://openrouter.ai/api/v1",
+      "api_key": "${OPENROUTER_API_KEY}",
+      "hugging_face_id": ""
+    },
+    {
+      "id": "perplexity/sonar-pro",
+      "provider": "perplexity",
+      "model": "sonar-pro",
+      "base_url": "https://openrouter.ai/api/v1",
+      "api_key": "${OPENROUTER_API_KEY}",
+      "hugging_face_id": ""
+    },
+    {
+      "id": "perplexity/sonar-deep-research",
+      "provider": "perplexity",
+      "model": "sonar-deep-research",
+      "base_url": "https://openrouter.ai/api/v1",
+      "api_key": "${OPENROUTER_API_KEY}",
+      "hugging_face_id": ""
+    },
+    {
+      "id": "qwen/qwq-32b",
+      "provider": "qwen",
+      "model": "qwq-32b",
+      "base_url": "https://openrouter.ai/api/v1",
+      "api_key": "${OPENROUTER_API_KEY}",
+      "hugging_face_id": "Qwen/QwQ-32B"
+    },
+    {
+      "id": "google/gemini-2.0-flash-lite-001",
+      "provider": "google",
+      "model": "gemini-2.0-flash-lite-001",
+      "base_url": "https://openrouter.ai/api/v1",
+      "api_key": "${OPENROUTER_API_KEY}",
+      "hugging_face_id": ""
+    },
+    {
+      "id": "anthropic/claude-3.7-sonnet",
+      "provider": "anthropic",
+      "model": "claude-3.7-sonnet",
+      "base_url": "https://openrouter.ai/api/v1",
+      "api_key": "${OPENROUTER_API_KEY}",
+      "hugging_face_id": ""
+    },
+    {
+      "id": "anthropic/claude-3.7-sonnet:thinking",
+      "provider": "anthropic",
+      "model": "claude-3.7-sonnet:thinking",
+      "base_url": "https://openrouter.ai/api/v1",
+      "api_key": "${OPENROUTER_API_KEY}",
+      "hugging_face_id": ""
+    },
+    {
+      "id": "mistralai/mistral-saba",
+      "provider": "mistralai",
+      "model": "mistral-saba",
+      "base_url": "https://openrouter.ai/api/v1",
+      "api_key": "${OPENROUTER_API_KEY}",
+      "hugging_face_id": ""
+    },
+    {
+      "id": "meta-llama/llama-guard-3-8b",
+      "provider": "meta-llama",
+      "model": "llama-guard-3-8b",
+      "base_url": "https://openrouter.ai/api/v1",
+      "api_key": "${OPENROUTER_API_KEY}",
+      "hugging_face_id": "meta-llama/Llama-Guard-3-8B"
+    },
+    {
+      "id": "openai/o3-mini-high",
+      "provider": "openai",
+      "model": "o3-mini-high",
+      "base_url": "https://openrouter.ai/api/v1",
+      "api_key": "${OPENROUTER_API_KEY}",
+      "hugging_face_id": ""
+    },
+    {
+      "id": "google/gemini-2.0-flash-001",
+      "provider": "google",
+      "model": "gemini-2.0-flash-001",
+      "base_url": "https://openrouter.ai/api/v1",
+      "api_key": "${OPENROUTER_API_KEY}",
+      "hugging_face_id": ""
+    },
+    {
+      "id": "qwen/qwen-vl-plus",
+      "provider": "qwen",
+      "model": "qwen-vl-plus",
+      "base_url": "https://openrouter.ai/api/v1",
+      "api_key": "${OPENROUTER_API_KEY}",
+      "hugging_face_id": ""
+    },
+    {
+      "id": "aion-labs/aion-1.0",
+      "provider": "aion-labs",
+      "model": "aion-1.0",
+      "base_url": "https://openrouter.ai/api/v1",
+      "api_key": "${OPENROUTER_API_KEY}",
+      "hugging_face_id": ""
+    },
+    {
+      "id": "aion-labs/aion-1.0-mini",
+      "provider": "aion-labs",
+      "model": "aion-1.0-mini",
+      "base_url": "https://openrouter.ai/api/v1",
+      "api_key": "${OPENROUTER_API_KEY}",
+      "hugging_face_id": "FuseAI/FuseO1-DeepSeekR1-QwQ-SkyT1-32B-Preview"
+    },
+    {
+      "id": "aion-labs/aion-rp-llama-3.1-8b",
+      "provider": "aion-labs",
+      "model": "aion-rp-llama-3.1-8b",
+      "base_url": "https://openrouter.ai/api/v1",
+      "api_key": "${OPENROUTER_API_KEY}",
+      "hugging_face_id": ""
+    },
+    {
+      "id": "qwen/qwen-vl-max",
+      "provider": "qwen",
+      "model": "qwen-vl-max",
+      "base_url": "https://openrouter.ai/api/v1",
+      "api_key": "${OPENROUTER_API_KEY}",
+      "hugging_face_id": ""
+    },
+    {
+      "id": "qwen/qwen-turbo",
+      "provider": "qwen",
+      "model": "qwen-turbo",
+      "base_url": "https://openrouter.ai/api/v1",
+      "api_key": "${OPENROUTER_API_KEY}",
+      "hugging_face_id": ""
+    },
+    {
+      "id": "qwen/qwen2.5-vl-72b-instruct",
+      "provider": "qwen",
+      "model": "qwen2.5-vl-72b-instruct",
+      "base_url": "https://openrouter.ai/api/v1",
+      "api_key": "${OPENROUTER_API_KEY}",
+      "hugging_face_id": "Qwen/Qwen2.5-VL-72B-Instruct"
+    },
+    {
+      "id": "qwen/qwen-plus",
+      "provider": "qwen",
+      "model": "qwen-plus",
+      "base_url": "https://openrouter.ai/api/v1",
+      "api_key": "${OPENROUTER_API_KEY}",
+      "hugging_face_id": ""
+    },
+    {
+      "id": "qwen/qwen-max",
+      "provider": "qwen",
+      "model": "qwen-max",
+      "base_url": "https://openrouter.ai/api/v1",
+      "api_key": "${OPENROUTER_API_KEY}",
+      "hugging_face_id": ""
+    },
+    {
+      "id": "openai/o3-mini",
+      "provider": "openai",
+      "model": "o3-mini",
+      "base_url": "https://openrouter.ai/api/v1",
+      "api_key": "${OPENROUTER_API_KEY}",
+      "hugging_face_id": ""
+    },
+    {
+      "id": "mistralai/mistral-small-24b-instruct-2501",
+      "provider": "mistralai",
+      "model": "mistral-small-24b-instruct-2501",
+      "base_url": "https://openrouter.ai/api/v1",
+      "api_key": "${OPENROUTER_API_KEY}",
+      "hugging_face_id": "mistralai/Mistral-Small-24B-Instruct-2501"
+    },
+    {
+      "id": "deepseek/deepseek-r1-distill-qwen-32b",
+      "provider": "deepseek",
+      "model": "deepseek-r1-distill-qwen-32b",
+      "base_url": "https://openrouter.ai/api/v1",
+      "api_key": "${OPENROUTER_API_KEY}",
+      "hugging_face_id": "deepseek-ai/DeepSeek-R1-Distill-Qwen-32B"
+    },
+    {
+      "id": "perplexity/sonar",
+      "provider": "perplexity",
+      "model": "sonar",
+      "base_url": "https://openrouter.ai/api/v1",
+      "api_key": "${OPENROUTER_API_KEY}",
+      "hugging_face_id": ""
+    },
+    {
+      "id": "deepseek/deepseek-r1-distill-llama-70b",
+      "provider": "deepseek",
+      "model": "deepseek-r1-distill-llama-70b",
+      "base_url": "https://openrouter.ai/api/v1",
+      "api_key": "${OPENROUTER_API_KEY}",
+      "hugging_face_id": "deepseek-ai/DeepSeek-R1-Distill-Llama-70B"
+    },
+    {
+      "id": "deepseek/deepseek-r1",
+      "provider": "deepseek",
+      "model": "deepseek-r1",
+      "base_url": "https://openrouter.ai/api/v1",
+      "api_key": "${OPENROUTER_API_KEY}",
+      "hugging_face_id": "deepseek-ai/DeepSeek-R1"
+    },
+    {
+      "id": "minimax/minimax-01",
+      "provider": "minimax",
+      "model": "minimax-01",
+      "base_url": "https://openrouter.ai/api/v1",
+      "api_key": "${OPENROUTER_API_KEY}",
+      "hugging_face_id": "MiniMaxAI/MiniMax-Text-01"
+    },
+    {
+      "id": "microsoft/phi-4",
+      "provider": "microsoft",
+      "model": "phi-4",
+      "base_url": "https://openrouter.ai/api/v1",
+      "api_key": "${OPENROUTER_API_KEY}",
+      "hugging_face_id": "microsoft/phi-4"
+    },
+    {
+      "id": "sao10k/l3.1-70b-hanami-x1",
+      "provider": "sao10k",
+      "model": "l3.1-70b-hanami-x1",
+      "base_url": "https://openrouter.ai/api/v1",
+      "api_key": "${OPENROUTER_API_KEY}",
+      "hugging_face_id": "Sao10K/L3.1-70B-Hanami-x1"
+    },
+    {
+      "id": "deepseek/deepseek-chat",
+      "provider": "deepseek",
+      "model": "deepseek-chat",
+      "base_url": "https://openrouter.ai/api/v1",
+      "api_key": "${OPENROUTER_API_KEY}",
+      "hugging_face_id": "deepseek-ai/DeepSeek-V3"
+    },
+    {
+      "id": "sao10k/l3.3-euryale-70b",
+      "provider": "sao10k",
+      "model": "l3.3-euryale-70b",
+      "base_url": "https://openrouter.ai/api/v1",
+      "api_key": "${OPENROUTER_API_KEY}",
+      "hugging_face_id": "Sao10K/L3.3-70B-Euryale-v2.3"
+    },
+    {
+      "id": "openai/o1",
+      "provider": "openai",
+      "model": "o1",
+      "base_url": "https://openrouter.ai/api/v1",
+      "api_key": "${OPENROUTER_API_KEY}",
+      "hugging_face_id": ""
+    },
+    {
+      "id": "cohere/command-r7b-12-2024",
+      "provider": "cohere",
+      "model": "command-r7b-12-2024",
+      "base_url": "https://openrouter.ai/api/v1",
+      "api_key": "${OPENROUTER_API_KEY}",
+      "hugging_face_id": ""
+    },
+    {
+      "id": "meta-llama/llama-3.3-70b-instruct:free",
+      "provider": "meta-llama",
+      "model": "llama-3.3-70b-instruct:free",
+      "base_url": "https://openrouter.ai/api/v1",
+      "api_key": "${OPENROUTER_API_KEY}",
+      "hugging_face_id": "meta-llama/Llama-3.3-70B-Instruct"
+    },
+    {
+      "id": "meta-llama/llama-3.3-70b-instruct",
+      "provider": "meta-llama",
+      "model": "llama-3.3-70b-instruct",
+      "base_url": "https://openrouter.ai/api/v1",
+      "api_key": "${OPENROUTER_API_KEY}",
+      "hugging_face_id": "meta-llama/Llama-3.3-70B-Instruct"
+    },
+    {
+      "id": "amazon/nova-lite-v1",
+      "provider": "amazon",
+      "model": "nova-lite-v1",
+      "base_url": "https://openrouter.ai/api/v1",
+      "api_key": "${OPENROUTER_API_KEY}",
+      "hugging_face_id": ""
+    },
+    {
+      "id": "amazon/nova-micro-v1",
+      "provider": "amazon",
+      "model": "nova-micro-v1",
+      "base_url": "https://openrouter.ai/api/v1",
+      "api_key": "${OPENROUTER_API_KEY}",
+      "hugging_face_id": ""
+    },
+    {
+      "id": "amazon/nova-pro-v1",
+      "provider": "amazon",
+      "model": "nova-pro-v1",
+      "base_url": "https://openrouter.ai/api/v1",
+      "api_key": "${OPENROUTER_API_KEY}",
+      "hugging_face_id": ""
+    },
+    {
+      "id": "openai/gpt-4o-2024-11-20",
+      "provider": "openai",
+      "model": "gpt-4o-2024-11-20",
+      "base_url": "https://openrouter.ai/api/v1",
+      "api_key": "${OPENROUTER_API_KEY}",
+      "hugging_face_id": ""
+    },
+    {
+      "id": "mistralai/mistral-large-2411",
+      "provider": "mistralai",
+      "model": "mistral-large-2411",
+      "base_url": "https://openrouter.ai/api/v1",
+      "api_key": "${OPENROUTER_API_KEY}",
+      "hugging_face_id": ""
+    },
+    {
+      "id": "mistralai/mistral-large-2407",
+      "provider": "mistralai",
+      "model": "mistral-large-2407",
+      "base_url": "https://openrouter.ai/api/v1",
+      "api_key": "${OPENROUTER_API_KEY}",
+      "hugging_face_id": ""
+    },
+    {
+      "id": "mistralai/pixtral-large-2411",
+      "provider": "mistralai",
+      "model": "pixtral-large-2411",
+      "base_url": "https://openrouter.ai/api/v1",
+      "api_key": "${OPENROUTER_API_KEY}",
+      "hugging_face_id": ""
+    },
+    {
+      "id": "qwen/qwen-2.5-coder-32b-instruct",
+      "provider": "qwen",
+      "model": "qwen-2.5-coder-32b-instruct",
+      "base_url": "https://openrouter.ai/api/v1",
+      "api_key": "${OPENROUTER_API_KEY}",
+      "hugging_face_id": "Qwen/Qwen2.5-Coder-32B-Instruct"
+    },
+    {
+      "id": "raifle/sorcererlm-8x22b",
+      "provider": "raifle",
+      "model": "sorcererlm-8x22b",
+      "base_url": "https://openrouter.ai/api/v1",
+      "api_key": "${OPENROUTER_API_KEY}",
+      "hugging_face_id": "rAIfle/SorcererLM-8x22b-bf16"
+    },
+    {
+      "id": "thedrummer/unslopnemo-12b",
+      "provider": "thedrummer",
+      "model": "unslopnemo-12b",
+      "base_url": "https://openrouter.ai/api/v1",
+      "api_key": "${OPENROUTER_API_KEY}",
+      "hugging_face_id": "TheDrummer/UnslopNemo-12B-v4.1"
+    },
+    {
+      "id": "anthropic/claude-3.5-haiku",
+      "provider": "anthropic",
+      "model": "claude-3.5-haiku",
+      "base_url": "https://openrouter.ai/api/v1",
+      "api_key": "${OPENROUTER_API_KEY}",
+      "hugging_face_id": ""
+    },
+    {
+      "id": "anthracite-org/magnum-v4-72b",
+      "provider": "anthracite-org",
+      "model": "magnum-v4-72b",
+      "base_url": "https://openrouter.ai/api/v1",
+      "api_key": "${OPENROUTER_API_KEY}",
+      "hugging_face_id": "anthracite-org/magnum-v4-72b"
+    },
+    {
+      "id": "anthropic/claude-3.5-sonnet",
+      "provider": "anthropic",
+      "model": "claude-3.5-sonnet",
+      "base_url": "https://openrouter.ai/api/v1",
+      "api_key": "${OPENROUTER_API_KEY}",
+      "hugging_face_id": ""
+    },
+    {
+      "id": "qwen/qwen-2.5-7b-instruct",
+      "provider": "qwen",
+      "model": "qwen-2.5-7b-instruct",
+      "base_url": "https://openrouter.ai/api/v1",
+      "api_key": "${OPENROUTER_API_KEY}",
+      "hugging_face_id": "Qwen/Qwen2.5-7B-Instruct"
+    },
+    {
+      "id": "nvidia/llama-3.1-nemotron-70b-instruct",
+      "provider": "nvidia",
+      "model": "llama-3.1-nemotron-70b-instruct",
+      "base_url": "https://openrouter.ai/api/v1",
+      "api_key": "${OPENROUTER_API_KEY}",
+      "hugging_face_id": "nvidia/Llama-3.1-Nemotron-70B-Instruct-HF"
+    },
+    {
+      "id": "inflection/inflection-3-pi",
+      "provider": "inflection",
+      "model": "inflection-3-pi",
+      "base_url": "https://openrouter.ai/api/v1",
+      "api_key": "${OPENROUTER_API_KEY}",
+      "hugging_face_id": ""
+    },
+    {
+      "id": "inflection/inflection-3-productivity",
+      "provider": "inflection",
+      "model": "inflection-3-productivity",
+      "base_url": "https://openrouter.ai/api/v1",
+      "api_key": "${OPENROUTER_API_KEY}",
+      "hugging_face_id": ""
+    },
+    {
+      "id": "thedrummer/rocinante-12b",
+      "provider": "thedrummer",
+      "model": "rocinante-12b",
+      "base_url": "https://openrouter.ai/api/v1",
+      "api_key": "${OPENROUTER_API_KEY}",
+      "hugging_face_id": "TheDrummer/Rocinante-12B-v1.1"
+    },
+    {
+      "id": "meta-llama/llama-3.2-3b-instruct:free",
+      "provider": "meta-llama",
+      "model": "llama-3.2-3b-instruct:free",
+      "base_url": "https://openrouter.ai/api/v1",
+      "api_key": "${OPENROUTER_API_KEY}",
+      "hugging_face_id": "meta-llama/Llama-3.2-3B-Instruct"
+    },
+    {
+      "id": "meta-llama/llama-3.2-3b-instruct",
+      "provider": "meta-llama",
+      "model": "llama-3.2-3b-instruct",
+      "base_url": "https://openrouter.ai/api/v1",
+      "api_key": "${OPENROUTER_API_KEY}",
+      "hugging_face_id": "meta-llama/Llama-3.2-3B-Instruct"
+    },
+    {
+      "id": "meta-llama/llama-3.2-1b-instruct",
+      "provider": "meta-llama",
+      "model": "llama-3.2-1b-instruct",
+      "base_url": "https://openrouter.ai/api/v1",
+      "api_key": "${OPENROUTER_API_KEY}",
+      "hugging_face_id": "meta-llama/Llama-3.2-1B-Instruct"
+    },
+    {
+      "id": "meta-llama/llama-3.2-11b-vision-instruct",
+      "provider": "meta-llama",
+      "model": "llama-3.2-11b-vision-instruct",
+      "base_url": "https://openrouter.ai/api/v1",
+      "api_key": "${OPENROUTER_API_KEY}",
+      "hugging_face_id": "meta-llama/Llama-3.2-11B-Vision-Instruct"
+    },
+    {
+      "id": "qwen/qwen-2.5-72b-instruct",
+      "provider": "qwen",
+      "model": "qwen-2.5-72b-instruct",
+      "base_url": "https://openrouter.ai/api/v1",
+      "api_key": "${OPENROUTER_API_KEY}",
+      "hugging_face_id": "Qwen/Qwen2.5-72B-Instruct"
+    },
+    {
+      "id": "neversleep/llama-3.1-lumimaid-8b",
+      "provider": "neversleep",
+      "model": "llama-3.1-lumimaid-8b",
+      "base_url": "https://openrouter.ai/api/v1",
+      "api_key": "${OPENROUTER_API_KEY}",
+      "hugging_face_id": "NeverSleep/Lumimaid-v0.2-8B"
+    },
+    {
+      "id": "cohere/command-r-08-2024",
+      "provider": "cohere",
+      "model": "command-r-08-2024",
+      "base_url": "https://openrouter.ai/api/v1",
+      "api_key": "${OPENROUTER_API_KEY}",
+      "hugging_face_id": ""
+    },
+    {
+      "id": "cohere/command-r-plus-08-2024",
+      "provider": "cohere",
+      "model": "command-r-plus-08-2024",
+      "base_url": "https://openrouter.ai/api/v1",
+      "api_key": "${OPENROUTER_API_KEY}",
+      "hugging_face_id": ""
+    },
+    {
+      "id": "sao10k/l3.1-euryale-70b",
+      "provider": "sao10k",
+      "model": "l3.1-euryale-70b",
+      "base_url": "https://openrouter.ai/api/v1",
+      "api_key": "${OPENROUTER_API_KEY}",
+      "hugging_face_id": "Sao10K/L3.1-70B-Euryale-v2.2"
+    },
+    {
+      "id": "qwen/qwen-2.5-vl-7b-instruct",
+      "provider": "qwen",
+      "model": "qwen-2.5-vl-7b-instruct",
+      "base_url": "https://openrouter.ai/api/v1",
+      "api_key": "${OPENROUTER_API_KEY}",
+      "hugging_face_id": "Qwen/Qwen2.5-VL-7B-Instruct"
+    },
+    {
+      "id": "nousresearch/hermes-3-llama-3.1-70b",
+      "provider": "nousresearch",
+      "model": "hermes-3-llama-3.1-70b",
+      "base_url": "https://openrouter.ai/api/v1",
+      "api_key": "${OPENROUTER_API_KEY}",
+      "hugging_face_id": "NousResearch/Hermes-3-Llama-3.1-70B"
+    },
+    {
+      "id": "nousresearch/hermes-3-llama-3.1-405b:free",
+      "provider": "nousresearch",
+      "model": "hermes-3-llama-3.1-405b:free",
+      "base_url": "https://openrouter.ai/api/v1",
+      "api_key": "${OPENROUTER_API_KEY}",
+      "hugging_face_id": "NousResearch/Hermes-3-Llama-3.1-405B"
+    },
+    {
+      "id": "nousresearch/hermes-3-llama-3.1-405b",
+      "provider": "nousresearch",
+      "model": "hermes-3-llama-3.1-405b",
+      "base_url": "https://openrouter.ai/api/v1",
+      "api_key": "${OPENROUTER_API_KEY}",
+      "hugging_face_id": "NousResearch/Hermes-3-Llama-3.1-405B"
+    },
+    {
+      "id": "sao10k/l3-lunaris-8b",
+      "provider": "sao10k",
+      "model": "l3-lunaris-8b",
+      "base_url": "https://openrouter.ai/api/v1",
+      "api_key": "${OPENROUTER_API_KEY}",
+      "hugging_face_id": "Sao10K/L3-8B-Lunaris-v1"
+    },
+    {
+      "id": "openai/gpt-4o-2024-08-06",
+      "provider": "openai",
+      "model": "gpt-4o-2024-08-06",
+      "base_url": "https://openrouter.ai/api/v1",
+      "api_key": "${OPENROUTER_API_KEY}",
+      "hugging_face_id": ""
+    },
+    {
+      "id": "meta-llama/llama-3.1-405b",
+      "provider": "meta-llama",
+      "model": "llama-3.1-405b",
+      "base_url": "https://openrouter.ai/api/v1",
+      "api_key": "${OPENROUTER_API_KEY}",
+      "hugging_face_id": "meta-llama/llama-3.1-405B"
+    },
+    {
+      "id": "meta-llama/llama-3.1-8b-instruct",
+      "provider": "meta-llama",
+      "model": "llama-3.1-8b-instruct",
+      "base_url": "https://openrouter.ai/api/v1",
+      "api_key": "${OPENROUTER_API_KEY}",
+      "hugging_face_id": "meta-llama/Meta-Llama-3.1-8B-Instruct"
+    },
+    {
+      "id": "meta-llama/llama-3.1-405b-instruct",
+      "provider": "meta-llama",
+      "model": "llama-3.1-405b-instruct",
+      "base_url": "https://openrouter.ai/api/v1",
+      "api_key": "${OPENROUTER_API_KEY}",
+      "hugging_face_id": "meta-llama/Meta-Llama-3.1-405B-Instruct"
+    },
+    {
+      "id": "meta-llama/llama-3.1-70b-instruct",
+      "provider": "meta-llama",
+      "model": "llama-3.1-70b-instruct",
+      "base_url": "https://openrouter.ai/api/v1",
+      "api_key": "${OPENROUTER_API_KEY}",
+      "hugging_face_id": "meta-llama/Meta-Llama-3.1-70B-Instruct"
+    },
+    {
+      "id": "mistralai/mistral-nemo",
+      "provider": "mistralai",
+      "model": "mistral-nemo",
+      "base_url": "https://openrouter.ai/api/v1",
+      "api_key": "${OPENROUTER_API_KEY}",
+      "hugging_face_id": "mistralai/Mistral-Nemo-Instruct-2407"
+    },
+    {
+      "id": "openai/gpt-4o-mini-2024-07-18",
+      "provider": "openai",
+      "model": "gpt-4o-mini-2024-07-18",
+      "base_url": "https://openrouter.ai/api/v1",
+      "api_key": "${OPENROUTER_API_KEY}",
+      "hugging_face_id": ""
+    },
+    {
+      "id": "openai/gpt-4o-mini",
+      "provider": "openai",
+      "model": "gpt-4o-mini",
+      "base_url": "https://openrouter.ai/api/v1",
+      "api_key": "${OPENROUTER_API_KEY}",
+      "hugging_face_id": ""
+    },
+    {
+      "id": "google/gemma-2-27b-it",
+      "provider": "google",
+      "model": "gemma-2-27b-it",
+      "base_url": "https://openrouter.ai/api/v1",
+      "api_key": "${OPENROUTER_API_KEY}",
+      "hugging_face_id": "google/gemma-2-27b-it"
+    },
+    {
+      "id": "google/gemma-2-9b-it",
+      "provider": "google",
+      "model": "gemma-2-9b-it",
+      "base_url": "https://openrouter.ai/api/v1",
+      "api_key": "${OPENROUTER_API_KEY}",
+      "hugging_face_id": "google/gemma-2-9b-it"
+    },
+    {
+      "id": "sao10k/l3-euryale-70b",
+      "provider": "sao10k",
+      "model": "l3-euryale-70b",
+      "base_url": "https://openrouter.ai/api/v1",
+      "api_key": "${OPENROUTER_API_KEY}",
+      "hugging_face_id": "Sao10K/L3-70B-Euryale-v2.1"
+    },
+    {
+      "id": "nousresearch/hermes-2-pro-llama-3-8b",
+      "provider": "nousresearch",
+      "model": "hermes-2-pro-llama-3-8b",
+      "base_url": "https://openrouter.ai/api/v1",
+      "api_key": "${OPENROUTER_API_KEY}",
+      "hugging_face_id": "NousResearch/Hermes-2-Pro-Llama-3-8B"
+    },
+    {
+      "id": "meta-llama/llama-guard-2-8b",
+      "provider": "meta-llama",
+      "model": "llama-guard-2-8b",
+      "base_url": "https://openrouter.ai/api/v1",
+      "api_key": "${OPENROUTER_API_KEY}",
+      "hugging_face_id": "meta-llama/Meta-Llama-Guard-2-8B"
+    },
+    {
+      "id": "openai/gpt-4o-2024-05-13",
+      "provider": "openai",
+      "model": "gpt-4o-2024-05-13",
+      "base_url": "https://openrouter.ai/api/v1",
+      "api_key": "${OPENROUTER_API_KEY}",
+      "hugging_face_id": ""
+    },
+    {
+      "id": "openai/gpt-4o",
+      "provider": "openai",
+      "model": "gpt-4o",
+      "base_url": "https://openrouter.ai/api/v1",
+      "api_key": "${OPENROUTER_API_KEY}",
+      "hugging_face_id": ""
+    },
+    {
+      "id": "openai/gpt-4o:extended",
+      "provider": "openai",
+      "model": "gpt-4o:extended",
+      "base_url": "https://openrouter.ai/api/v1",
+      "api_key": "${OPENROUTER_API_KEY}",
+      "hugging_face_id": ""
+    },
+    {
+      "id": "meta-llama/llama-3-70b-instruct",
+      "provider": "meta-llama",
+      "model": "llama-3-70b-instruct",
+      "base_url": "https://openrouter.ai/api/v1",
+      "api_key": "${OPENROUTER_API_KEY}",
+      "hugging_face_id": "meta-llama/Meta-Llama-3-70B-Instruct"
+    },
+    {
+      "id": "meta-llama/llama-3-8b-instruct",
+      "provider": "meta-llama",
+      "model": "llama-3-8b-instruct",
+      "base_url": "https://openrouter.ai/api/v1",
+      "api_key": "${OPENROUTER_API_KEY}",
+      "hugging_face_id": "meta-llama/Meta-Llama-3-8B-Instruct"
+    },
+    {
+      "id": "mistralai/mixtral-8x22b-instruct",
+      "provider": "mistralai",
+      "model": "mixtral-8x22b-instruct",
+      "base_url": "https://openrouter.ai/api/v1",
+      "api_key": "${OPENROUTER_API_KEY}",
+      "hugging_face_id": "mistralai/Mixtral-8x22B-Instruct-v0.1"
+    },
+    {
+      "id": "microsoft/wizardlm-2-8x22b",
+      "provider": "microsoft",
+      "model": "wizardlm-2-8x22b",
+      "base_url": "https://openrouter.ai/api/v1",
+      "api_key": "${OPENROUTER_API_KEY}",
+      "hugging_face_id": "microsoft/WizardLM-2-8x22B"
+    },
+    {
+      "id": "openai/gpt-4-turbo",
+      "provider": "openai",
+      "model": "gpt-4-turbo",
+      "base_url": "https://openrouter.ai/api/v1",
+      "api_key": "${OPENROUTER_API_KEY}",
+      "hugging_face_id": ""
+    },
+    {
+      "id": "anthropic/claude-3-haiku",
+      "provider": "anthropic",
+      "model": "claude-3-haiku",
+      "base_url": "https://openrouter.ai/api/v1",
+      "api_key": "${OPENROUTER_API_KEY}",
+      "hugging_face_id": ""
+    },
+    {
+      "id": "mistralai/mistral-large",
+      "provider": "mistralai",
+      "model": "mistral-large",
+      "base_url": "https://openrouter.ai/api/v1",
+      "api_key": "${OPENROUTER_API_KEY}",
+      "hugging_face_id": ""
+    },
+    {
+      "id": "openai/gpt-3.5-turbo-0613",
+      "provider": "openai",
+      "model": "gpt-3.5-turbo-0613",
+      "base_url": "https://openrouter.ai/api/v1",
+      "api_key": "${OPENROUTER_API_KEY}",
+      "hugging_face_id": ""
+    },
+    {
+      "id": "openai/gpt-4-turbo-preview",
+      "provider": "openai",
+      "model": "gpt-4-turbo-preview",
+      "base_url": "https://openrouter.ai/api/v1",
+      "api_key": "${OPENROUTER_API_KEY}",
+      "hugging_face_id": ""
+    },
+    {
+      "id": "mistralai/mixtral-8x7b-instruct",
+      "provider": "mistralai",
+      "model": "mixtral-8x7b-instruct",
+      "base_url": "https://openrouter.ai/api/v1",
+      "api_key": "${OPENROUTER_API_KEY}",
+      "hugging_face_id": "mistralai/Mixtral-8x7B-Instruct-v0.1"
+    },
+    {
+      "id": "neversleep/noromaid-20b",
+      "provider": "neversleep",
+      "model": "noromaid-20b",
+      "base_url": "https://openrouter.ai/api/v1",
+      "api_key": "${OPENROUTER_API_KEY}",
+      "hugging_face_id": "NeverSleep/Noromaid-20b-v0.1.1"
+    },
+    {
+      "id": "alpindale/goliath-120b",
+      "provider": "alpindale",
+      "model": "goliath-120b",
+      "base_url": "https://openrouter.ai/api/v1",
+      "api_key": "${OPENROUTER_API_KEY}",
+      "hugging_face_id": "alpindale/goliath-120b"
+    },
+    {
+      "id": "openrouter/auto",
+      "provider": "openrouter",
+      "model": "auto",
+      "base_url": "https://openrouter.ai/api/v1",
+      "api_key": "${OPENROUTER_API_KEY}",
+      "hugging_face_id": ""
+    },
+    {
+      "id": "openai/gpt-4-1106-preview",
+      "provider": "openai",
+      "model": "gpt-4-1106-preview",
+      "base_url": "https://openrouter.ai/api/v1",
+      "api_key": "${OPENROUTER_API_KEY}",
+      "hugging_face_id": ""
+    },
+    {
+      "id": "openai/gpt-3.5-turbo-instruct",
+      "provider": "openai",
+      "model": "gpt-3.5-turbo-instruct",
+      "base_url": "https://openrouter.ai/api/v1",
+      "api_key": "${OPENROUTER_API_KEY}",
+      "hugging_face_id": ""
+    },
+    {
+      "id": "mistralai/mistral-7b-instruct-v0.1",
+      "provider": "mistralai",
+      "model": "mistral-7b-instruct-v0.1",
+      "base_url": "https://openrouter.ai/api/v1",
+      "api_key": "${OPENROUTER_API_KEY}",
+      "hugging_face_id": "mistralai/Mistral-7B-Instruct-v0.1"
+    },
+    {
+      "id": "openai/gpt-3.5-turbo-16k",
+      "provider": "openai",
+      "model": "gpt-3.5-turbo-16k",
+      "base_url": "https://openrouter.ai/api/v1",
+      "api_key": "${OPENROUTER_API_KEY}",
+      "hugging_face_id": ""
+    },
+    {
+      "id": "mancer/weaver",
+      "provider": "mancer",
+      "model": "weaver",
+      "base_url": "https://openrouter.ai/api/v1",
+      "api_key": "${OPENROUTER_API_KEY}",
+      "hugging_face_id": ""
+    },
+    {
+      "id": "undi95/remm-slerp-l2-13b",
+      "provider": "undi95",
+      "model": "remm-slerp-l2-13b",
+      "base_url": "https://openrouter.ai/api/v1",
+      "api_key": "${OPENROUTER_API_KEY}",
+      "hugging_face_id": "Undi95/ReMM-SLERP-L2-13B"
+    },
+    {
+      "id": "gryphe/mythomax-l2-13b",
+      "provider": "gryphe",
+      "model": "mythomax-l2-13b",
+      "base_url": "https://openrouter.ai/api/v1",
+      "api_key": "${OPENROUTER_API_KEY}",
+      "hugging_face_id": "Gryphe/MythoMax-L2-13b"
+    },
+    {
+      "id": "openai/gpt-4-0314",
+      "provider": "openai",
+      "model": "gpt-4-0314",
+      "base_url": "https://openrouter.ai/api/v1",
+      "api_key": "${OPENROUTER_API_KEY}",
+      "hugging_face_id": ""
+    },
+    {
+      "id": "openai/gpt-4",
+      "provider": "openai",
+      "model": "gpt-4",
+      "base_url": "https://openrouter.ai/api/v1",
+      "api_key": "${OPENROUTER_API_KEY}",
+      "hugging_face_id": ""
+    },
+    {
+      "id": "openai/gpt-3.5-turbo",
+      "provider": "openai",
+      "model": "gpt-3.5-turbo",
+      "base_url": "https://openrouter.ai/api/v1",
+      "api_key": "${OPENROUTER_API_KEY}",
+      "hugging_face_id": ""
+    }
+  ]
+}

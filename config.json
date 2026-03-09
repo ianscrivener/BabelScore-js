@@ -1,0 +1,136 @@
+{
+    "llms": {
+        "ollama": {
+            "name": "Ollama",
+            "base_url": "http://localhost:11434/v1",
+            "api_key": "",
+            "key_reqd": false,
+            "hide": false,
+            "notes": "Local models via Ollama. No API key needed. Start with: ollama serve"
+        },
+        "lm_studio": {
+            "name": "LM Studio",
+            "base_url": "http://localhost:1234/v1",
+            "api_key": "",
+            "key_reqd": false,
+            "hide": false,
+            "notes": "Local models via LM Studio. No API key needed. Start server in LM Studio app."
+        },
+        "vllm": {
+            "name": "vLLM",
+            "base_url": "http://localhost:8000/v1",
+            "api_key": "",
+            "key_reqd": false,
+            "hide": false,
+            "notes": "Self-hosted vLLM server. Default port 8000. API key optional if configured."
+        },
+        "openrouter": {
+            "name": "OpenRouter",
+            "base_url": "https://openrouter.ai/api/v1",
+            "api_key": "${OPENROUTER_API_KEY}",
+            "key_reqd": true,
+            "hide": false,
+            "notes": "Proxy to multiple LLM providers. Get key at: https://openrouter.ai"
+        },
+        "openai": {
+            "name": "OpenAI",
+            "base_url": "https://api.openai.com/v1",
+            "api_key": "${OPENAI_API_KEY}",
+            "key_reqd": true,
+            "hide": false,
+            "notes": "OpenAI GPT models. Get key at: https://platform.openai.com/api-keys"
+        },
+        "anthropic": {
+            "name": "Anthropic",
+            "base_url": "https://api.anthropic.com/v1",
+            "api_key": "${ANTHROPIC_API_KEY}",
+            "key_reqd": true,
+            "hide": false,
+            "notes": "Claude models via OpenAI-compatible proxy. Get key at: https://console.anthropic.com"
+        },
+        "alibaba": {
+            "name": "Alibaba Cloud (Qwen / DashScope)",
+            "base_url": "https://dashscope.aliyuncs.com/compatible-mode/v1",
+            "api_key": "${DASHSCOPE_API_KEY}",
+            "key_reqd": true,
+            "hide": false,
+            "notes": "Qwen models via Alibaba DashScope. Get key at: https://dashscope.console.aliyun.com"
+        },
+        "portkey": {
+            "name": "Portkey",
+            "base_url": "https://api.portkey.ai/v1",
+            "api_key": "${PORTKEY_API_KEY}",
+            "key_reqd": true,
+            "hide": false,
+            "notes": "AI gateway with observability and routing. Get key at: https://app.portkey.ai"
+        },
+        "eden_ai": {
+            "name": "Eden AI",
+            "base_url": "https://api.edenai.run/v2",
+            "api_key": "${EDEN_AI_API_KEY}",
+            "key_reqd": true,
+            "hide": false,
+            "notes": "Multi-provider AI gateway. Get key at: https://app.edenai.run"
+        },
+        "byteplus": {
+            "name": "BytePlus (Doubao / Ark)",
+            "base_url": "https://ark.cn-beijing.volces.com/api/v3",
+            "api_key": "${ARK_API_KEY}",
+            "key_reqd": true,
+            "hide": false,
+            "notes": "Doubao / Skylark models via ByteDance Volcano Ark. Get key at: https://console.volcengine.com/ark"
+        }
+    },
+    "translation_data": {
+        "tatoeba": {
+            "name": "Tatoeba Translation Challenge",
+            "short_name": "Tatoeba",
+            "url": "https://www.statmt.org/wmt20/pdf/2020.wmt-1.139.pdf",
+            "description": "Realistic sentence-pair data for ~400 language pairs, including EN<>ES, EN<>FR, EN<>DE, EN<>ZH, EN<>AR. Designed for low-resource and multilingual MT evaluation.",
+            "language_pairs": ["EN-ES", "EN-FR", "EN-DE", "EN-ZH", "EN-AR"],
+            "resource_level": "low-to-mid",
+            "format": "sentence pairs",
+            "license": "CC BY 2.0"
+        },
+        "xnli": {
+            "name": "XNLI (Cross-lingual NLI)",
+            "short_name": "XNLI",
+            "url": "https://cims.nyu.edu/~sbowman/xnli/",
+            "description": "Claims and entailment/contradiction labels in 15 languages including EN, FR, ES, DE, RU, AR, ZH. Useful as a constrained multilingual test bed for cross-lingual and translation-like evaluation.",
+            "language_pairs": ["EN-FR", "EN-ES", "EN-DE", "EN-RU", "EN-AR", "EN-ZH"],
+            "resource_level": "high",
+            "format": "sentence pairs with NLI labels",
+            "license": "CC BY-NC 4.0"
+        },
+        "wmt": {
+            "name": "WMT Public MT Evaluations",
+            "short_name": "WMT",
+            "url": "https://www.statmt.org/wmt/",
+            "description": "Annual shared translation tasks with high-quality human-translated test sets for major pairs: EN<>DE, EN<>FI, EN<>FR, EN<>CS, EN<>ZH, EN<>RU. Suitable for high-resource BabelScore directions.",
+            "language_pairs": ["EN-DE", "EN-FI", "EN-FR", "EN-CS", "EN-ZH", "EN-RU"],
+            "resource_level": "high",
+            "format": "sentence pairs",
+            "license": "varies by year"
+        },
+        "ccaligned": {
+            "name": "CCAligned / WikiMatrix / CCMatrix",
+            "short_name": "CCAligned",
+            "url": "https://www.statmt.org/",
+            "description": "Large aligned multilingual corpora spanning dozens of language pairs. Often used to create MT test sets or domain-specific slices for evaluation.",
+            "language_pairs": ["many"],
+            "resource_level": "high",
+            "format": "sentence pairs (mined)",
+            "license": "CC0 / open"
+        },
+        "openmt": {
+            "name": "OpenMT / Custom.MT Dataset Catalog",
+            "short_name": "OpenMT",
+            "url": "https://custom.mt/top-100-open-datasets-to-train-ai-translation-models/",
+            "description": "Curated catalog of 100+ open datasets for training and evaluating translation models, including many of the above plus additional language pairs suitable for BabelScore test data.",
+            "language_pairs": ["many"],
+            "resource_level": "varies",
+            "format": "catalog — links to individual datasets",
+            "license": "varies by dataset"
+        }
+    }
+}
