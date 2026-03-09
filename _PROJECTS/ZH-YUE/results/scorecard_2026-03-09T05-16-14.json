@@ -1,0 +1,648 @@
+{
+  "project": "ZH-YUE",
+  "paradigm": 5,
+  "srcLang": "Cantonese",
+  "tgtLang": "Mandarin",
+  "directions_count": 2,
+  "total_sentences": 40,
+  "started_at": "2026-03-09T05:16:14.178Z",
+  "status": "complete",
+  "directions": [
+    {
+      "label": "Mandarin → Cantonese",
+      "sentences": [
+        {
+          "source": "我的普通話很爛，經常被人笑是港式普通話，不過去旅遊還算能溝通。",
+          "reference": "我啲普通話好爛，成日俾人笑係港普，不過去旅行總算可以溝通到。",
+          "translations": {
+            "openrouter-openai-gpt-4o": {
+              "text": "我嘅普通話好差，成日畀人笑係港式普通話，不過去旅行仲算可以溝通。",
+              "scores": {
+                "openrouter-gemini-3.1-pro": {
+                  "score": 98,
+                  "reasoning": "The translation accurately conveys the source meaning using natural and authentic Cantonese vocabulary and grammar, and translates '還算' as '仲算' which is arguably closer to the source than the reference's '總算'."
+                }
+              }
+            }
+          }
+        },
+        {
+          "source": "既然那些衣服已經不合身，不妨看看有沒有慈善機構會接收？既環保又能幫助別人。",
+          "reference": "既然嗰啲衫已經唔啱着，不妨睇下有冇慈善機構會接收？環保之餘又可以幫到其他人。",
+          "translations": {
+            "openrouter-openai-gpt-4o": {
+              "text": "既然嗰啲衫已經唔啱著，不如睇下有冇慈善機構會接收？又環保又可以幫到人。",
+              "scores": {
+                "openrouter-gemini-3.1-pro": {
+                  "score": 100,
+                  "reasoning": "The translation perfectly captures the source meaning using highly natural and authentic Cantonese colloquialisms like '唔啱著' and '不如'."
+                }
+              }
+            }
+          }
+        },
+        {
+          "source": "我今天剛滿十八週，雖然不是第一胎，但是感受到寶寶在我肚子裏舞動還是覺得好奇妙。",
+          "reference": "我今日剛滿十八週，雖然唔係第一胎，但係感受到BB喺我肚入面郁動都係覺得好奇妙。",
+          "translations": {
+            "openrouter-openai-gpt-4o": {
+              "text": "我今日啱啱滿十八週，雖然唔係第一胎，但係感受到BB喺我肚入面舞動仲係覺得好奇妙。",
+              "scores": {
+                "openrouter-gemini-3.1-pro": {
+                  "score": 98,
+                  "reasoning": "The translation accurately conveys the source meaning and uses highly natural Cantonese vocabulary like '啱啱' and '仲係', making it both fluent and authentic."
+                }
+              }
+            }
+          }
+        },
+        {
+          "source": "難道你二十年後仍然要靠岳父養嗎？拜託你腳踏實地去找工作吧。",
+          "reference": "唔通你二十年後仲要靠外父養咩？拜託你腳踏實地去揾工啦。",
+          "translations": {
+            "openrouter-openai-gpt-4o": {
+              "text": "難道你二十年後仲要靠岳父養咩？拜託你腳踏實地去搵工啦。",
+              "scores": {
+                "openrouter-gemini-3.1-pro": {
+                  "score": 65,
+                  "reasoning": "The translation retains Mandarin vocabulary such as \"難道\" and \"岳父\" instead of using the natural Cantonese equivalents \"唔通\" and \"外父\"."
+                }
+              }
+            }
+          }
+        },
+        {
+          "source": "我們打算下個週末去鳳凰山看日出，你有興趣一齊去嗎？",
+          "reference": "我哋打算下個週末去鳳凰山睇日出，你有冇興趣一齊去？",
+          "translations": {
+            "openrouter-openai-gpt-4o": {
+              "text": "我哋打算下個週末去鳳凰山睇日出，你有興趣一齊去嗎？",
+              "scores": {
+                "openrouter-gemini-3.1-pro": {
+                  "score": 90,
+                  "reasoning": "The translation is completely accurate, but the use of the question particle '嗎' makes it sound slightly less natural in spoken Cantonese compared to the A-not-A structure '有冇' used in the reference."
+                }
+              }
+            }
+          }
+        },
+        {
+          "source": "你別看阿伯衣着光鮮，他以吝惜出名，一塊錢小費都不會給的。",
+          "reference": "你唔好睇阿伯衣着光鮮，他出晒名孤寒，一蚊小費都唔會俾㗎。",
+          "translations": {
+            "openrouter-openai-gpt-4o": {
+              "text": "你唔好睇阿伯著得咁光鮮，他係出名慳家，一蚊貼士都唔會畀嘅。",
+              "scores": {
+                "openrouter-gemini-3.1-pro": {
+                  "score": 90,
+                  "reasoning": "The translation is highly fluent and uses natural Cantonese vocabulary like \"貼士\" and \"畀\", though \"慳家\" (frugal) slightly softens the negative connotation of \"吝惜\" (stingy) compared to the more accurate \"孤寒\"."
+                }
+              }
+            }
+          }
+        },
+        {
+          "source": "他最大的心願就是希望兒女們快點成家立室。",
+          "reference": "佢最大嘅心願就係希望啲仔女快啲成家立室。",
+          "translations": {
+            "openrouter-openai-gpt-4o": {
+              "text": "佢最大嘅心願就係希望仔女哋快啲成家立室。",
+              "scores": {
+                "openrouter-gemini-3.1-pro": {
+                  "score": 95,
+                  "reasoning": "The translation accurately conveys the source meaning and is highly fluent, although '啲仔女' is slightly more idiomatic than '仔女哋' in Cantonese."
+                }
+              }
+            }
+          }
+        },
+        {
+          "source": "先忍一下，牙齒會有點麻麻的，等麻醉藥生效之後就會好很多。",
+          "reference": "忍一忍先，啲牙會有啲痺痺地，等麻醉藥生效之後就會好好多。",
+          "translations": {
+            "openrouter-openai-gpt-4o": {
+              "text": "先忍一陣，牙齒會有啲麻麻地，等麻醉藥生效之後就會好好多。",
+              "scores": {
+                "openrouter-gemini-3.1-pro": {
+                  "score": 70,
+                  "reasoning": "The translation incorrectly uses '麻麻地', which means 'so-so' or 'mediocre' in Cantonese rather than 'numb' (痺), creating a confusing semantic error despite the rest of the sentence being accurate and fluent."
+                }
+              }
+            }
+          }
+        },
+        {
+          "source": "你不要高估自己酒量呀，受不了就先坐下挨着，不然先召車回家吧。",
+          "reference": "你唔好高估自己酒量呀，頂唔順就坐低挨下先，如果唔係就叫車返歸先啦。",
+          "translations": {
+            "openrouter-openai-gpt-4o": {
+              "text": "你唔好高估自己酒量呀，頂唔順就先坐低休息下，不如先叫車返屋企啦。",
+              "scores": {
+                "openrouter-gemini-3.1-pro": {
+                  "score": 85,
+                  "reasoning": "The translation is highly fluent in Cantonese, but slightly alters the meaning by translating '不然' (otherwise) as '不如' (why not) and generalizing '挨着' (leaning) to '休息下' (resting)."
+                }
+              }
+            }
+          }
+        },
+        {
+          "source": "小孩子玩捉迷藏，最喜歡躲在窗簾後面。",
+          "reference": "細路仔玩捉伊人，最鍾意匿埋喺窗簾後面。",
+          "translations": {
+            "openrouter-openai-gpt-4o": {
+              "text": "細路仔玩捉迷藏，最鍾意躲喺窗簾後面。",
+              "scores": {
+                "openrouter-gemini-3.1-pro": {
+                  "score": 75,
+                  "reasoning": "The translation accurately conveys the source meaning but lacks authentic Cantonese fluency due to the use of Mandarin-influenced vocabulary like '躲' instead of '匿埋' and '捉迷藏' instead of '捉伊人' or '伏匿匿'."
+                }
+              }
+            }
+          }
+        },
+        {
+          "source": "昨天那場表演完結時，幾千人衝去巴士站等車，幸好我走得快可以排在最前面。",
+          "reference": "尋日嗰場表演完結嗰時，幾千人衝去巴士站等車，好彩我走得快可以排最頭。",
+          "translations": {
+            "openrouter-openai-gpt-4o": {
+              "text": "尋日嗰場表演完結嘅時候，幾千人衝去巴士站等車，幸好我行得快可以排喺最前面。",
+              "scores": {
+                "openrouter-gemini-3.1-pro": {
+                  "score": 85,
+                  "reasoning": "The translation is accurate and mostly fluent, but retains some Mandarin-like vocabulary such as \"幸好\" instead of the more natural Cantonese \"好彩\"."
+                }
+              }
+            }
+          }
+        },
+        {
+          "source": "這款遊戲有很多關卡，我玩了整個禮拜還沒全部通關。",
+          "reference": "呢款遊戲有很多關卡，我玩咗成個禮拜都未過晒全部關。",
+          "translations": {
+            "openrouter-openai-gpt-4o": {
+              "text": "呢款遊戲有好多關卡，我玩咗成個禮拜仲未全部通關。",
+              "scores": {
+                "openrouter-gemini-3.1-pro": {
+                  "score": 95,
+                  "reasoning": "The translation is highly accurate and fluent, using natural Cantonese vocabulary like '好多' and '成個禮拜' to perfectly convey the original meaning."
+                }
+              }
+            }
+          }
+        },
+        {
+          "source": "小時候我媽常常嚇我，說不聽話到處亂跑的話會被巫婆抓走。 ",
+          "reference": "細個嗰時我阿媽成日嚇我，話唔聽話周圍亂走嘅話會俾巫婆捉走。 ",
+          "translations": {
+            "openrouter-openai-gpt-4o": {
+              "text": "細個嗰陣我媽成日嚇我，話唔聽話到處亂跑嘅話會畀巫婆捉走。",
+              "scores": {
+                "openrouter-gemini-3.1-pro": {
+                  "score": 90,
+                  "reasoning": "The translation is highly accurate and mostly fluent, but uses the Mandarin-influenced phrase \"到處亂跑\" instead of the more natural Cantonese \"周圍亂走\"."
+                }
+              }
+            }
+          }
+        },
+        {
+          "source": "這房子最大的賣點就是這個落地玻璃加無敵大海景，感覺像身處露天風呂一樣。",
+          "reference": "呢間屋最大嘅賣點就係呢個落地玻璃加無敵大海景，感覺好似置身露天風呂一樣。",
+          "translations": {
+            "openrouter-openai-gpt-4o": {
+              "text": "呢間屋最大嘅賣點就係呢個落地玻璃加無敵大海景，感覺好似身處露天風呂一樣。",
+              "scores": {
+                "openrouter-gemini-3.1-pro": {
+                  "score": 100,
+                  "reasoning": "The translation is perfectly accurate and highly fluent in Cantonese, capturing the exact meaning of the source text with natural vocabulary, and the use of '身處' is just as appropriate as the reference's '置身'."
+                }
+              }
+            }
+          }
+        },
+        {
+          "source": "這酒店有點偏僻，等了十五分鐘都沒有計程車願意過來。",
+          "reference": "呢間酒店有啲偏僻，等咗十五分鐘都冇的士肯過嚟。",
+          "translations": {
+            "openrouter-openai-gpt-4o": {
+              "text": "呢間酒店有啲偏僻，等咗十五分鐘都冇的士願意過嚟。",
+              "scores": {
+                "openrouter-gemini-3.1-pro": {
+                  "score": 98,
+                  "reasoning": "The translation is highly accurate and fluent, perfectly conveying the source meaning in natural Cantonese, though the reference's use of '肯' is slightly more colloquial than '願意'."
+                }
+              }
+            }
+          }
+        },
+        {
+          "source": "雨這麼大下山還開這麼快，你以為自己是賽車手呀？",
+          "reference": "咁大雨落山仲揸咁快，你以為自己係賽車手呀？",
+          "translations": {
+            "openrouter-openai-gpt-4o": {
+              "text": "雨咁大落山仲開咁快，你以為自己係賽車手呀？",
+              "scores": {
+                "openrouter-gemini-3.1-pro": {
+                  "score": 85,
+                  "reasoning": "The translation accurately conveys the meaning but uses slightly Mandarinized phrasing ('雨咁大' and '開咁快') instead of the more idiomatic Cantonese expressions ('咁大雨' and '揸咁快')."
+                }
+              }
+            }
+          }
+        },
+        {
+          "source": "前一陣子換工作有一個月的空檔，去了一趟南美看馬丘比丘跟天空之鏡。",
+          "reference": "前排轉工有一個月空檔，去咗轉南美睇馬丘比丘同天空之鏡。",
+          "translations": {
+            "openrouter-openai-gpt-4o": {
+              "text": "前排換工有一個月嘅空檔，去咗南美睇馬丘比丘同埋天空之鏡。",
+              "scores": {
+                "openrouter-gemini-3.1-pro": {
+                  "score": 95,
+                  "reasoning": "The translation is highly accurate and fluent in Cantonese, effectively conveying the original meaning, though using '轉工' instead of '換工' and including a measure word for the trip ('去咗轉') would make it perfectly idiomatic."
+                }
+              }
+            }
+          }
+        },
+        {
+          "source": "他丈夫去世後家庭收入大減。為了讓兒子繼續學小提琴，他只好做兩份工作賺多點錢。",
+          "reference": "佢老公死咗之後屋企收入大減。為咗俾仔仔繼續學小提琴，佢唯有做兩份工賺多啲錢。",
+          "translations": {
+            "openrouter-openai-gpt-4o": {
+              "text": "佢老公去世後，家庭收入大減。為咗畀個仔繼續學小提琴，佢只好做兩份工賺多啲錢。",
+              "scores": {
+                "openrouter-gemini-3.1-pro": {
+                  "score": 95,
+                  "reasoning": "The translation is highly accurate and fluent, using natural Cantonese vocabulary and grammar, though slightly more formal than the reference in its choice of words like '去世' and '家庭'."
+                }
+              }
+            }
+          }
+        },
+        {
+          "source": "園丁很用心打理學校的天台花園，學生們在課間休息時都很喜歡上來坐坐。",
+          "reference": "園丁好用心打理學校嘅天台花園，啲學生喺轉堂休息時都好鍾意上嚟坐下。",
+          "translations": {
+            "openrouter-openai-gpt-4o": {
+              "text": "園丁好用心打理學校嘅天台花園，學生喺課間休息時都好鍾意上嚟坐下。",
+              "scores": {
+                "openrouter-gemini-3.1-pro": {
+                  "score": 90,
+                  "reasoning": "The translation is highly accurate and natural, though using '轉堂' or '小息' instead of the slightly formal Mandarin-influenced '課間休息' would make it perfectly colloquial."
+                }
+              }
+            }
+          }
+        },
+        {
+          "source": "打工打到只剩下半條命，把自己身體弄成這樣，賺了的錢也不夠你去看醫生。",
+          "reference": "打工打到得返半條人命，將自己身體搞成噉，賺咗嘅錢都唔夠你去睇醫生。",
+          "translations": {
+            "openrouter-openai-gpt-4o": {
+              "text": "打工打到淨係剩半條命，搞到自己身體咁樣，賺嘅錢都唔夠你去睇醫生。",
+              "scores": {
+                "openrouter-gemini-3.1-pro": {
+                  "score": 98,
+                  "reasoning": "The translation accurately conveys the source meaning while using highly natural and colloquial Cantonese vocabulary such as '淨係剩' and '搞到...咁樣'."
+                }
+              }
+            }
+          }
+        }
+      ],
+      "stats": [
+        {
+          "modelId": "openrouter-openai-gpt-4o",
+          "perJudge": {
+            "openrouter-gemini-3.1-pro": {
+              "mean": 89.85,
+              "count": 20
+            }
+          },
+          "overallMean": 89.85,
+          "variance": 0
+        }
+      ]
+    },
+    {
+      "label": "Cantonese → Mandarin",
+      "sentences": [
+        {
+          "source": "我D普通話好屎，成日俾人笑係「港普」，不過去旅行都叫溝通到。",
+          "reference": "我的普通話很爛，經常被人笑是港式普通話，不過去旅遊還算能溝通。",
+          "translations": {
+            "openrouter-openai-gpt-4o": {
+              "text": "我的普通话很差，经常被人笑是“港普”，不过去旅行也能沟通。",
+              "scores": {
+                "openrouter-gemini-3.1-pro": {
+                  "score": 95,
+                  "reasoning": "The translation accurately and fluently conveys the original meaning, appropriately adapting Cantonese colloquialisms into natural Mandarin while retaining the widely understood abbreviation '港普'."
+                }
+              }
+            }
+          }
+        },
+        {
+          "source": "啲衫既然已經唔啱着，不如睇下有冇NGO會接收？環保得嚟又幫到人。",
+          "reference": "既然那些衣服已經不合身，不妨看看有沒有慈善機構會接收？既環保又能幫助別人。",
+          "translations": {
+            "openrouter-openai-gpt-4o": {
+              "text": "这些衣服既然已经不合适，不如看看有没有NGO会接收？环保又能帮助别人。",
+              "scores": {
+                "openrouter-gemini-3.1-pro": {
+                  "score": 98,
+                  "reasoning": "The translation accurately conveys the meaning of the original Cantonese sentence into fluent Mandarin, correctly translating colloquial expressions while appropriately retaining 'NGO'."
+                }
+              }
+            }
+          }
+        },
+        {
+          "source": "我今日啱啱十八週，雖然唔係第一胎，但係感受到BB喺我肚入面郁都仲係覺得好奇妙。",
+          "reference": "我今天剛滿十八週，雖然不是第一胎，但是感受到寶寶在我肚子裏舞動還是覺得好奇妙。",
+          "translations": {
+            "openrouter-openai-gpt-4o": {
+              "text": "我今天刚刚十八周，虽然不是第一胎，但是感受到宝宝在我肚子里动还是觉得很奇妙。",
+              "scores": {
+                "openrouter-gemini-3.1-pro": {
+                  "score": 100,
+                  "reasoning": "The translation accurately and fluently conveys the exact meaning of the Cantonese source sentence into natural Mandarin."
+                }
+              }
+            }
+          }
+        },
+        {
+          "source": "你唔通廿年後都靠外父養咩？好心你就腳踏實地出去揾工啦。",
+          "reference": "難道你二十年後仍然要靠岳父養嗎？拜託你腳踏實地去找工作吧。",
+          "translations": {
+            "openrouter-openai-gpt-4o": {
+              "text": "难道你二十年后还靠岳父养吗？拜托你还是脚踏实地出去找工作吧。",
+              "scores": {
+                "openrouter-gemini-3.1-pro": {
+                  "score": 100,
+                  "reasoning": "The translation perfectly captures the meaning, tone, and colloquial nuances of the original Cantonese sentence in highly fluent Mandarin."
+                }
+              }
+            }
+          }
+        },
+        {
+          "source": "我哋諗住下個weekend去鳳凰山睇日出，你有無興趣一齊？",
+          "reference": "我們打算下個週末去鳳凰山看日出，你有興趣一齊去嗎？",
+          "translations": {
+            "openrouter-openai-gpt-4o": {
+              "text": "我们打算下个周末去凤凰山看日出，你有没有兴趣一起去？",
+              "scores": {
+                "openrouter-gemini-3.1-pro": {
+                  "score": 100,
+                  "reasoning": "The translation perfectly captures the meaning of the Cantonese source and expresses it in highly fluent, standard Mandarin, even improving upon the reference by using the standard '一起' instead of the regional '一齊'."
+                }
+              }
+            }
+          }
+        },
+        {
+          "source": "你唔好睇阿伯身光頸靚呀，佢出左名孤寒，一蚊貼士都唔會俾㗎。",
+          "reference": "你別看阿伯衣着光鮮，他以吝惜出名，一塊錢小費都不會給的。",
+          "translations": {
+            "openrouter-openai-gpt-4o": {
+              "text": "你不要看那位大爷衣着光鲜，他可是出了名的小气，一块钱的小费都不会给的。",
+              "scores": {
+                "openrouter-gemini-3.1-pro": {
+                  "score": 100,
+                  "reasoning": "The translation perfectly captures the meaning of the Cantonese idioms and uses highly natural and fluent Mandarin phrasing."
+                }
+              }
+            }
+          }
+        },
+        {
+          "source": "佢最大嘅心願就係希望啲仔女快啲成家立室。",
+          "reference": "他最大的心願就是希望兒女們快點成家立室。",
+          "translations": {
+            "openrouter-openai-gpt-4o": {
+              "text": "他最大的心愿就是希望孩子们早点成家立业。",
+              "scores": {
+                "openrouter-gemini-3.1-pro": {
+                  "score": 95,
+                  "reasoning": "The translation is highly fluent and accurately conveys the core meaning, naturally adapting the Cantonese idiom to a standard Mandarin equivalent despite a minor semantic shift from 'establishing a household' to 'establishing a career'."
+                }
+              }
+            }
+          }
+        },
+        {
+          "source": "忍一忍先，啲牙會有啲痺嘅，等啲麻醉生效之後就會好好多。",
+          "reference": "先忍一下，牙齒會有點麻麻的，等麻醉藥生效之後就會好很多。",
+          "translations": {
+            "openrouter-openai-gpt-4o": {
+              "text": "忍一忍，牙齿会有些麻木，等麻醉生效后就会好很多。",
+              "scores": {
+                "openrouter-gemini-3.1-pro": {
+                  "score": 95,
+                  "reasoning": "The translation accurately and fluently conveys the original meaning, with only a minor omission of the word '先' (first) which does not significantly affect the overall context."
+                }
+              }
+            }
+          }
+        },
+        {
+          "source": "你唔好高估自己酒量呀，頂唔順就坐低挨下先，再唔係call車返屋企先。",
+          "reference": "你不要高估自己酒量呀，受不了就先坐下挨着，不然先召車回家吧。",
+          "translations": {
+            "openrouter-openai-gpt-4o": {
+              "text": "你不要高估自己的酒量，撑不住就先坐下休息一下，不然就叫车回家吧。",
+              "scores": {
+                "openrouter-gemini-3.1-pro": {
+                  "score": 98,
+                  "reasoning": "The translation accurately conveys the meaning of the original Cantonese sentence and uses highly fluent and natural Mandarin expressions, even improving upon the reference translation."
+                }
+              }
+            }
+          }
+        },
+        {
+          "source": "啲靚仔玩捉迷藏呢，至鍾意匿喺窗簾後面嘅。",
+          "reference": "小孩子玩捉迷藏，最喜歡躲在窗簾後面。",
+          "translations": {
+            "openrouter-openai-gpt-4o": {
+              "text": "那些小孩子玩捉迷藏时，最喜欢躲在窗帘后面。",
+              "scores": {
+                "openrouter-gemini-3.1-pro": {
+                  "score": 100,
+                  "reasoning": "The translation perfectly captures the meaning of the Cantonese source, accurately translating colloquialisms like '啲靚仔' and '匿喺' into highly fluent and natural Mandarin."
+                }
+              }
+            }
+          }
+        },
+        {
+          "source": "尋日場show散場嗰陣，幾千人衝去巴士站等車，好彩我走得快排到隊頭。",
+          "reference": "昨天那場表演完結時，幾千人衝去巴士站等車，幸好我走得快可以排在最前面。",
+          "translations": {
+            "openrouter-openai-gpt-4o": {
+              "text": "昨天演出结束的时候，几千人冲去公交车站等车，幸好我走得快排到了队头。",
+              "scores": {
+                "openrouter-gemini-3.1-pro": {
+                  "score": 100,
+                  "reasoning": "The translation perfectly captures the original meaning while using highly natural and standard Mandarin vocabulary such as '演出' and '公交车站'."
+                }
+              }
+            }
+          }
+        },
+        {
+          "source": "隻Game有好多關㗎，我玩咗成個禮拜未爆機。",
+          "reference": "這款遊戲有很多關卡，我玩了整個禮拜還沒全部通關。",
+          "translations": {
+            "openrouter-openai-gpt-4o": {
+              "text": "这个游戏有很多关卡，我玩了一个星期还没通关。",
+              "scores": {
+                "openrouter-gemini-3.1-pro": {
+                  "score": 98,
+                  "reasoning": "The translation is highly accurate and perfectly fluent, successfully converting Cantonese slang like '爆機' into the natural Mandarin equivalent '通关', though it slightly drops the emphasis of '成' (entire/whole) before the week."
+                }
+              }
+            }
+          }
+        },
+        {
+          "source": "細個嗰陣阿媽成日嚇我，話唔聽話亂走嘅話會俾丫烏捉走。 ",
+          "reference": "小時候我媽常常嚇我，說不聽話到處亂跑的話會被巫婆抓走。 ",
+          "translations": {
+            "openrouter-openai-gpt-4o": {
+              "text": "小时候妈妈经常吓唬我，说不听话乱跑的话会被乌鸦抓走。",
+              "scores": {
+                "openrouter-gemini-3.1-pro": {
+                  "score": 75,
+                  "reasoning": "The translation is highly fluent and captures most of the meaning, but it incorrectly translates the Cantonese bogeyman '丫烏' as '乌鸦' (crow)."
+                }
+              }
+            }
+          }
+        },
+        {
+          "source": "間屋最大賣點就係依個落地玻璃加無敵大海景，好似去咗露天風呂咁樣。",
+          "reference": "這房子最大的賣點就是這個落地玻璃加無敵大海景，感覺像身處露天風呂一樣。",
+          "translations": {
+            "openrouter-openai-gpt-4o": {
+              "text": "这间房子的最大卖点就是这个落地玻璃加上无敌大海景，就像去到了露天温泉一样。",
+              "scores": {
+                "openrouter-gemini-3.1-pro": {
+                  "score": 100,
+                  "reasoning": "The translation perfectly captures the original meaning and excellently adapts the regional loanword '風呂' into the standard Mandarin '温泉' for maximum fluency."
+                }
+              }
+            }
+          }
+        },
+        {
+          "source": "間酒店有啲隔涉喎，等咗三個字都冇的士肯入嚟。",
+          "reference": "這酒店有點偏僻，等了十五分鐘都沒有計程車願意過來。",
+          "translations": {
+            "openrouter-openai-gpt-4o": {
+              "text": "这家酒店有点偏僻，等了三个小时都没有出租车愿意进来。",
+              "scores": {
+                "openrouter-gemini-3.1-pro": {
+                  "score": 60,
+                  "reasoning": "The translation is highly fluent but contains a major accuracy error by mistranslating the Cantonese time expression '三個字' (15 minutes) as '三个小时' (three hours)."
+                }
+              }
+            }
+          }
+        },
+        {
+          "source": "咁大雨落山仲要揸咁快，你當自己係賽車手呀？",
+          "reference": "雨這麼大下山還開這麼快，你以為自己是賽車手呀？",
+          "translations": {
+            "openrouter-openai-gpt-4o": {
+              "text": "这么大的雨下山还开这么快，你当自己是赛车手吗？",
+              "scores": {
+                "openrouter-gemini-3.1-pro": {
+                  "score": 100,
+                  "reasoning": "The translation perfectly captures the meaning and tone of the original Cantonese sentence while using highly fluent and idiomatic Mandarin phrasing."
+                }
+              }
+            }
+          }
+        },
+        {
+          "source": "前排轉工有一個月嘅gap，去咗一轉南美睇馬丘比丘同天空之鏡。",
+          "reference": "前一陣子換工作有一個月的空檔，去了一趟南美看馬丘比丘跟天空之鏡。",
+          "translations": {
+            "openrouter-openai-gpt-4o": {
+              "text": "前段时间换工作有一个月的空档，去了一趟南美看了马丘比丘和天空之镜。",
+              "scores": {
+                "openrouter-gemini-3.1-pro": {
+                  "score": 100,
+                  "reasoning": "The translation perfectly captures the meaning of the Cantonese source and expresses it in highly natural and fluent Mandarin."
+                }
+              }
+            }
+          }
+        },
+        {
+          "source": "佢老公走咗之後屋企收入大減。為咗俾個仔繼續學小提琴，佢唯有打兩份工揾多啲錢。",
+          "reference": "他丈夫去世後家庭收入大減。為了讓兒子繼續學小提琴，他只好做兩份工作賺多點錢。",
+          "translations": {
+            "openrouter-openai-gpt-4o": {
+              "text": "她丈夫去世后，家里的收入大幅减少。为了让儿子继续学习小提琴，她只好打两份工多赚些钱。",
+              "scores": {
+                "openrouter-gemini-3.1-pro": {
+                  "score": 100,
+                  "reasoning": "The translation is perfectly accurate, highly fluent, and even improves upon the reference by correctly using the female pronoun '她' instead of '他'."
+                }
+              }
+            }
+          }
+        },
+        {
+          "source": "花王好用心打理學校個天台花園，班學生小息都好鍾意上嚟坐。",
+          "reference": "園丁很用心打理學校的天台花園，學生們在課間休息時都很喜歡上來坐坐。",
+          "translations": {
+            "openrouter-openai-gpt-4o": {
+              "text": "花王很用心地打理学校的天台花园，学生们课间休息时都很喜欢上来坐。",
+              "scores": {
+                "openrouter-gemini-3.1-pro": {
+                  "score": 85,
+                  "reasoning": "The translation is mostly accurate and fluent, but it fails to translate the Cantonese-specific term \"花王\" (gardener) into the standard Mandarin equivalent \"园丁\"."
+                }
+              }
+            }
+          }
+        },
+        {
+          "source": "返工返到得返半條人命，搞到自己身體噉樣，賺埋都唔夠你睇醫生啦。",
+          "reference": "打工打到只剩下半條命，把自己身體弄成這樣，賺了的錢也不夠你去看醫生。",
+          "translations": {
+            "openrouter-openai-gpt-4o": {
+              "text": "上班累得半死，把身体搞成这样，赚的钱都不够你看医生的。",
+              "scores": {
+                "openrouter-gemini-3.1-pro": {
+                  "score": 100,
+                  "reasoning": "The translation perfectly captures the meaning and tone of the original Cantonese sentence using highly natural and idiomatic Mandarin expressions."
+                }
+              }
+            }
+          }
+        }
+      ],
+      "stats": [
+        {
+          "modelId": "openrouter-openai-gpt-4o",
+          "perJudge": {
+            "openrouter-gemini-3.1-pro": {
+              "mean": 94.95,
+              "count": 20
+            }
+          },
+          "overallMean": 94.95,
+          "variance": 0
+        }
+      ]
+    }
+  ]
+}

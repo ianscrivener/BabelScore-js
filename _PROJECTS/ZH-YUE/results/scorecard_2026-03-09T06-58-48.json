@@ -1,0 +1,88 @@
+{
+  "project": "ZH-YUE",
+  "paradigm": 5,
+  "srcLang": "Cantonese",
+  "tgtLang": "Mandarin",
+  "directions_count": 2,
+  "total_sentences": 40,
+  "started_at": "2026-03-09T06:58:48.468Z",
+  "status": "in_progress",
+  "directions": [
+    {
+      "label": "Mandarin → Cantonese",
+      "sentences": [
+        {
+          "source": "我的普通話很爛，經常被人笑是港式普通話，不過去旅遊還算能溝通。",
+          "reference": "我啲普通話好爛，成日俾人笑係港普，不過去旅行總算可以溝通到。",
+          "translations": {
+            "byteplus-seed-translation-250915": {
+              "text": null,
+              "scores": {}
+            }
+          }
+        },
+        {
+          "source": "既然那些衣服已經不合身，不妨看看有沒有慈善機構會接收？既環保又能幫助別人。",
+          "reference": "既然嗰啲衫已經唔啱着，不妨睇下有冇慈善機構會接收？環保之餘又可以幫到其他人。",
+          "translations": {
+            "byteplus-seed-translation-250915": {
+              "text": null,
+              "scores": {}
+            }
+          }
+        },
+        {
+          "source": "我今天剛滿十八週，雖然不是第一胎，但是感受到寶寶在我肚子裏舞動還是覺得好奇妙。",
+          "reference": "我今日剛滿十八週，雖然唔係第一胎，但係感受到BB喺我肚入面郁動都係覺得好奇妙。",
+          "translations": {
+            "byteplus-seed-translation-250915": {
+              "text": null,
+              "scores": {}
+            }
+          }
+        },
+        {
+          "source": "難道你二十年後仍然要靠岳父養嗎？拜託你腳踏實地去找工作吧。",
+          "reference": "唔通你二十年後仲要靠外父養咩？拜託你腳踏實地去揾工啦。",
+          "translations": {
+            "byteplus-seed-translation-250915": {
+              "text": null,
+              "scores": {}
+            }
+          }
+        },
+        {
+          "source": "我們打算下個週末去鳳凰山看日出，你有興趣一齊去嗎？",
+          "reference": "我哋打算下個週末去鳳凰山睇日出，你有冇興趣一齊去？",
+          "translations": {
+            "byteplus-seed-translation-250915": {
+              "text": null,
+              "scores": {}
+            }
+          }
+        },
+        {
+          "source": "你別看阿伯衣着光鮮，他以吝惜出名，一塊錢小費都不會給的。",
+          "reference": "你唔好睇阿伯衣着光鮮，他出晒名孤寒，一蚊小費都唔會俾㗎。",
+          "translations": {
+            "byteplus-seed-translation-250915": {
+              "text": null,
+              "scores": {}
+            }
+          }
+        },
+        {
+          "source": "他最大的心願就是希望兒女們快點成家立室。",
+          "reference": "佢最大嘅心願就係希望啲仔女快啲成家立室。",
+          "translations": {
+            "byteplus-seed-translation-250915": {
+              "text": null,
+              "scores": {}
+            }
+          }
+        }
+      ],
+      "stats": null
+    }
+  ]
+}

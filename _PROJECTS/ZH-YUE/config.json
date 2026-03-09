@@ -1,0 +1,61 @@
+{
+    "project": "_example",
+    "description": "BabelScore:Cantonese ↔ Mandarin test",
+    "paradigm": 5,
+    "source_language": "Cantonese",
+    "source_language_code": "yue",
+    "target_language": "Mandarin",
+    "target_language_code": "zh",
+    "data_file_format":"json",
+    "data_file_combined":false,
+    "data_files": [
+        "data/zh_yue_test.json",
+        "data/yue_zh_test.json"
+    ],
+    "max_sentences": 100,
+    "translator_threads": 4,
+    "judge_threads": 6,
+    "translator_models": [
+        {
+            "id": "byteplus-seed-2-0-lite-260228",
+            "provider": "byteplus",
+            "model": "seed-2-0-lite-260228",
+            "base_url": "https://ark.ap-southeast.bytepluses.com/api/v3",
+            "api_key": "${ARK_API_KEY}",
+            "max_tokens": 1024,
+            "temperature": 0.0
+        }
+    ],
+    "judge_models": [
+        {
+            "id": "openrouter-gemini-3.1-pro",
+            "provider": "openrouter",
+            "model": "google/gemini-3.1-pro-preview",
+            "base_url": "https://openrouter.ai/api/v1",
+            "api_key": "${OPENROUTER_API_KEY}"
+        },
+        {
+            "id": "openrouter-openai-gpt-4o",
+            "provider": "openrouter",
+            "model": "openai/gpt-4o",
+            "base_url": "https://openrouter.ai/api/v1",
+            "api_key": "${OPENROUTER_API_KEY}"
+        },
+        {
+            "id": "openrouter-claude-sonnet-4.6",
+            "provider": "openrouter",
+            "model": "anthropic/claude-sonnet-4.6",
+            "base_url": "https://openrouter.ai/api/v1",
+            "api_key": "${OPENROUTER_API_KEY}"
+        }
+
+    ],
+
+    "output": {
+        "format": "markdown",
+        "results_dir": "results",
+        "show_judge_reasoning": true,
+        "flag_high_variance": true,
+        "variance_threshold": 15
+    }
+}

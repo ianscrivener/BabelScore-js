@@ -97,6 +97,8 @@ function loadDataFile(filePath, format) {
         reference: r.TargetText,
         fromLang: langName(r.SourceL),
         toLang: langName(r.TargetL),
+        fromLangCode: r.SourceL,
+        toLangCode: r.TargetL,
       }));
     } else {
       // csv / txt — legacy two-column format
@@ -134,7 +136,9 @@ function buildDirections() {
       const sentences = cap(loadDataFile(fp, format), perDir);
       const first = sentences[0];
       const label = `${first.fromLang} → ${first.toLang}`;
-      return { label, fromLang: first.fromLang, toLang: first.toLang, sentences };
+      return { label, fromLang: first.fromLang, toLang: first.toLang,
+               fromLangCode: first.fromLangCode ?? null, toLangCode: first.toLangCode ?? null,
+               sentences };
     });
   }
 
@@ -153,6 +157,8 @@ function buildDirections() {
       label: `${d.fromLang} → ${d.toLang}`,
       fromLang: d.fromLang,
       toLang: d.toLang,
+      fromLangCode: d.sentences[0]?.fromLangCode ?? null,
+      toLangCode: d.sentences[0]?.toLangCode ?? null,
       sentences: cap(d.sentences, perDir),
     }));
   }
@@ -161,7 +167,9 @@ function buildDirections() {
   const numDirs = paradigm >= 4 ? 2 : 1;
   const perDir = maxTotal != null ? Math.floor(maxTotal / numDirs) : null;
   const sentences = cap(loadDataFile(cfg.data_file, format), perDir);
-  const directions = [{ label: `${srcLang} → ${tgtLang}`, fromLang: srcLang, toLang: tgtLang, sentences }];
+  const directions = [{ label: `${srcLang} → ${tgtLang}`, fromLang: srcLang, toLang: tgtLang,
+                         fromLangCode: cfg.source_language_code ?? null, toLangCode: cfg.target_language_code ?? null,
+                         sentences }];
   if (paradigm >= 4) {
     directions.push({
       label: `${tgtLang} → ${srcLang}`,
@@ -262,17 +270,20 @@ async function lmStudioUnload(baseUrl, modelId) {
   }
 }
 
-async function callLLM(model, messages, maxTokens = 512) {
+async function callLLM(model, messages, maxTokens = 512, responseFormat = null) {
   const apiKey = resolveApiKey(model.api_key);
   const headers = { 'Content-Type': 'application/json' };
   if (apiKey) headers['Authorization'] = `Bearer ${apiKey}`;
 
-  const body = JSON.stringify({
+  const payload = {
     model: model.model,
     messages,
     temperature: model.temperature ?? 0.1,
     max_tokens: model.max_tokens ?? maxTokens,
-  });
+  };
+  if (responseFormat) payload.response_format = responseFormat;
+
+  const body = JSON.stringify(payload);
 
   try {
     const res = await fetch(`${model.base_url}/chat/completions`, {
@@ -299,6 +310,7 @@ async function callLLM(model, messages, maxTokens = 512) {
 }
 
 async function translateText(model, text, fromLang, toLang) {
+  // Standard OpenAI-compatible chat/completions
   const vars = { from_lang: fromLang, to_lang: toLang, text };
   const messages = translateTpl
     ? [
@@ -336,7 +348,13 @@ async function judgeTranslation(judgeModel, fromLang, toLang, source, translatio
         },
       ];
 
-  const raw = await callLLM(judgeModel, messages, 512);
+  // response_format: prefer model-level override, else json_object (forces valid JSON output).
+  // Set response_format: null in judge model config to disable (e.g. for models that don't support it).
+  const responseFormat = 'response_format' in judgeModel
+    ? judgeModel.response_format
+    : { type: 'json_object' };
+
+  const raw = await callLLM(judgeModel, messages, 1024, responseFormat);
   if (!raw) return null;
 
   // Strip <think>...</think> blocks that some reasoning models emit
@@ -370,7 +388,37 @@ async function judgeTranslation(judgeModel, fromLang, toLang, source, translatio
     } catch { /* fall through */ }
   }
 
-  console.error(`    ✗ Judge parse error [${judgeModel.id}]: ${raw.slice(0, 300)}`);
+  // Attempt 4: repair truncated JSON — model ran out of tokens mid-string.
+  // Find the last complete {...} fragment that has a score field and force-close it.
+  const truncMatch = stripped.match(/\{[\s\S]*/);
+  if (truncMatch) {
+    // Close any open string then close the object
+    let fragment = truncMatch[0].replace(/,?\s*$/, '');
+    // If string is unterminated, close it
+    const quoteCount = (fragment.match(/(?<!\\)"/g) || []).length;
+    if (quoteCount % 2 !== 0) fragment += '"';
+    fragment += '}';
+    try {
+      const parsed = JSON.parse(fragment);
+      if (typeof parsed.score === 'number') {
+        // Mark reasoning as truncated so caller knows
+        if (typeof parsed.reasoning === 'string') parsed.reasoning += ' [truncated]';
+        return parsed;
+      }
+    } catch { /* fall through */ }
+  }
+
+  // Attempt 5: regex extraction of score as last resort
+  const scoreMatch = stripped.match(/"score"\s*:\s*(\d+(?:\.\d+)?)/);
+  if (scoreMatch) {
+    const reasoningMatch = stripped.match(/"reasoning"\s*:\s*"([\s\S]*?)(?:"|$)/);
+    return {
+      score: parseFloat(scoreMatch[1]),
+      reasoning: reasoningMatch ? reasoningMatch[1].trim() + ' [truncated]' : '[truncated]',
+    };
+  }
+
+  logJudgeError(judgeModel, messages, raw);
   return null;
 }
 
@@ -378,53 +426,88 @@ async function judgeTranslation(judgeModel, fromLang, toLang, source, translatio
 // Run one evaluation direction
 // ---------------------------------------------------------------------------
 
-async function runDirection(fromLang, toLang, sentences, onProgress = null) {
+// Runs `tasks` (array of async thunks) with at most `concurrency` in flight.
+// Returns results in the original order.
+async function pooled(tasks, concurrency) {
+  const results = new Array(tasks.length);
+  let next = 0;
+  async function worker() {
+    while (next < tasks.length) {
+      const i = next++;
+      results[i] = await tasks[i]();
+    }
+  }
+  const workers = Array.from({ length: Math.min(concurrency, tasks.length) }, worker);
+  await Promise.all(workers);
+  return results;
+}
+
+async function runDirection(fromLang, toLang, sentences, onProgress = null, dir = {}) {
   const hasReference = paradigm >= 3;
-  const results = [];
+  const translatorThreads = cfg.translator_threads ?? 1;
+  const judgeThreads = cfg.judge_threads ?? 1;
 
-  for (const [i, sentence] of sentences.entries()) {
+  // Pre-allocate results array so order is preserved regardless of completion order
+  const results = new Array(sentences.length).fill(null);
+
+  const tasks = sentences.map((sentence, i) => async () => {
     const progress = `[${i + 1}/${sentences.length}]`;
-    console.log(`${progress} "${sentence.source.slice(0, 55)}${sentence.source.length > 55 ? '…' : ''}"`);
-
     const sentenceResult = {
       source: sentence.source,
       reference: sentence.reference,
       translations: {},
     };
 
+    // Translate with each model (sequential per sentence — parallelism is across sentences)
     for (const model of translators) {
-      process.stdout.write(`  → translate [${model.id}] ... `);
       const translation = await translateText(model, sentence.source, fromLang, toLang);
 
       if (!translation) {
-        console.log('failed');
         sentenceResult.translations[model.id] = { text: null, scores: {} };
+        console.log(`${progress} "${sentence.source.slice(0, 55)}${sentence.source.length > 55 ? '…' : ''}"\n  → translate [${model.id}] failed`);
         continue;
       }
-      console.log(`"${translation.slice(0, 50)}${translation.length > 50 ? '…' : ''}"`);
 
+      // Judge translations in parallel (up to judgeThreads)
+      const ref = hasReference ? sentence.reference : null;
+      const judgeScores = {};
+      const judgeTasks = judges.map((jm) => async () => {
+        const result = await judgeTranslation(jm, fromLang, toLang, sentence.source, translation, ref);
+        judgeScores[jm.id] = result ?? null;
+        return result;
+      });
+      await pooled(judgeTasks, judgeThreads);
+
+      // Collate judge scores
       const scores = {};
       for (const jm of judges) {
-        process.stdout.write(`  → judge   [${jm.id}] ... `);
-        const ref = hasReference ? sentence.reference : null;
-        const result = await judgeTranslation(jm, fromLang, toLang, sentence.source, translation, ref);
-        if (result) {
-          scores[jm.id] = result;
-          console.log(`${result.score}/100`);
-        } else {
-          console.log('failed');
-        }
+        const result = judgeScores[jm.id];
+        if (result) scores[jm.id] = result;
       }
 
       sentenceResult.translations[model.id] = { text: translation, scores };
+
+      // Print sentence summary (translation + all judge scores) as a single block
+      const judgeLines = judges
+        .map((jm) => scores[jm.id] ? `  → judge   [${jm.id}] ${scores[jm.id].score}/100` : `  → judge   [${jm.id}] failed`)
+        .join('\n');
+      console.log(
+        `${progress} "${sentence.source.slice(0, 55)}${sentence.source.length > 55 ? '…' : ''}"\n` +
+        `  → translate [${model.id}] "${translation.slice(0, 60)}${translation.length > 60 ? '…' : ''}"\n` +
+        judgeLines
+      );
     }
 
-    results.push(sentenceResult);
-    onProgress?.(results);
-    console.log();
-  }
+    results[i] = sentenceResult;
+    // onProgress receives the ordered results so far (nulls for in-flight sentences filtered out)
+    onProgress?.(results.filter(Boolean));
+    return sentenceResult;
+  });
 
-  return results;
+  await pooled(tasks, translatorThreads);
+
+  // Final ordered results (drop any nulls from unexpected failures)
+  return results.filter(Boolean);
 }
 
 // ---------------------------------------------------------------------------
@@ -563,6 +646,26 @@ async function unloadAllLmStudio() {
 
 let runState = null;
 let jsonPath = null;
+let judgeErrorLogPath = null;
+
+function logJudgeError(judgeModel, messages, raw) {
+  const entry = {
+    ts: new Date().toISOString(),
+    judge: judgeModel.id,
+    model: judgeModel.model,
+    request: messages,
+    response: raw,
+  };
+  const line = JSON.stringify(entry) + '\n';
+  // Always print a brief notice to stderr
+  console.error(`    ✗ Judge parse error [${judgeModel.id}]: ${raw.slice(0, 200)}`);
+  // Append full request+response to the error log if path is set
+  if (judgeErrorLogPath) {
+    try {
+      writeFileSync(judgeErrorLogPath, line, { flag: 'a' });
+    } catch { /* non-fatal */ }
+  }
+}
 
 function saveProgress() {
   if (jsonPath && runState) {
@@ -591,6 +694,7 @@ const resultsDir = resolve(projectDir, outputCfg.results_dir ?? 'results');
 mkdirSync(resultsDir, { recursive: true });
 const timestamp = new Date().toISOString().replace(/[:.]/g, '-').slice(0, 19);
 jsonPath = resolve(resultsDir, `scorecard_${timestamp}.json`);
+judgeErrorLogPath = resolve(resultsDir, `judge_errors_${timestamp}.jsonl`);
 const mdPath = resolve(resultsDir, `scorecard_${timestamp}.md`);
 
 runState = {
@@ -618,7 +722,7 @@ try {
     const sentenceResults = await runDirection(dir.fromLang, dir.toLang, dir.sentences, (accumulated) => {
       dirEntry.sentences = accumulated;
       saveProgress();
-    });
+    }, dir);
 
     const stats = aggregateStats(sentenceResults);
     dirEntry.stats = stats;

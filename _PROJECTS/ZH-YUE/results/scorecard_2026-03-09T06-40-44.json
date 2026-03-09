@@ -1,0 +1,110 @@
+{
+  "project": "ZH-YUE",
+  "paradigm": 5,
+  "srcLang": "Cantonese",
+  "tgtLang": "Mandarin",
+  "directions_count": 2,
+  "total_sentences": 2,
+  "started_at": "2026-03-09T06:40:44.242Z",
+  "status": "complete",
+  "directions": [
+    {
+      "label": "Mandarin → Cantonese",
+      "sentences": [
+        {
+          "source": "我的普通話很爛，經常被人笑是港式普通話，不過去旅遊還算能溝通。",
+          "reference": "我啲普通話好爛，成日俾人笑係港普，不過去旅行總算可以溝通到。",
+          "translations": {
+            "byteplus-seed-2-0-lite-260228": {
+              "text": "我嘅普通話好差，成日俾人笑係港式普通話，不過去旅遊仲算能夠溝通㗎。",
+              "scores": {
+                "openrouter-gemini-3.1-pro": {
+                  "score": 95,
+                  "reasoning": "The translation is highly accurate and uses natural Cantonese vocabulary and grammar, though '能夠溝通' is slightly more formal than the typical colloquial phrasing '可以溝通到'."
+                },
+                "openrouter-openai-gpt-4o": {
+                  "score": 90,
+                  "reasoning": "The translation is accurate and fluent, with minor differences in word choice that do not affect the overall meaning."
+                },
+                "openrouter-claude-sonnet-4.6": {
+                  "score": 82,
+                  "reasoning": "The translation is fluent and natural Cantonese with appropriate colloquial markers (嘅, 俾, 仲, 㗎), accurately conveying the source meaning, though '旅遊' is kept rather than the more natural Cantonese '旅行', and '好差' is slightly less vivid than '好爛' from the source."
+                }
+              }
+            }
+          }
+        }
+      ],
+      "stats": [
+        {
+          "modelId": "byteplus-seed-2-0-lite-260228",
+          "perJudge": {
+            "openrouter-gemini-3.1-pro": {
+              "mean": 95,
+              "count": 1
+            },
+            "openrouter-openai-gpt-4o": {
+              "mean": 90,
+              "count": 1
+            },
+            "openrouter-claude-sonnet-4.6": {
+              "mean": 82,
+              "count": 1
+            }
+          },
+          "overallMean": 89,
+          "variance": 13
+        }
+      ]
+    },
+    {
+      "label": "Cantonese → Mandarin",
+      "sentences": [
+        {
+          "source": "我D普通話好屎，成日俾人笑係「港普」，不過去旅行都叫溝通到。",
+          "reference": "我的普通話很爛，經常被人笑是港式普通話，不過去旅遊還算能溝通。",
+          "translations": {
+            "byteplus-seed-2-0-lite-260228": {
+              "text": "我的普通話很差，總是被別人笑說是「港普」，不過去旅行也還能溝通。",
+              "scores": {
+                "openrouter-gemini-3.1-pro": {
+                  "score": 98,
+                  "reasoning": "The translation accurately and fluently conveys the original Cantonese meaning into natural Mandarin, appropriately retaining the widely understood abbreviation '港普'."
+                },
+                "openrouter-openai-gpt-4o": {
+                  "score": 95,
+                  "reasoning": "The translation is accurate and fluent, with only minor differences in word choice that do not affect the overall meaning."
+                },
+                "openrouter-claude-sonnet-4.6": {
+                  "score": 88,
+                  "reasoning": "The translation accurately conveys the meaning of the source text with natural Mandarin phrasing, correctly translating key elements like '好屎' as '很差' and preserving '港普', though '很爛' in the reference might be slightly more colloquially faithful to the original tone."
+                }
+              }
+            }
+          }
+        }
+      ],
+      "stats": [
+        {
+          "modelId": "byteplus-seed-2-0-lite-260228",
+          "perJudge": {
+            "openrouter-gemini-3.1-pro": {
+              "mean": 98,
+              "count": 1
+            },
+            "openrouter-openai-gpt-4o": {
+              "mean": 95,
+              "count": 1
+            },
+            "openrouter-claude-sonnet-4.6": {
+              "mean": 88,
+              "count": 1
+            }
+          },
+          "overallMean": 93.67,
+          "variance": 10
+        }
+      ]
+    }
+  ]
+}

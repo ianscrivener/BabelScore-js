@@ -176,7 +176,10 @@ Two-column CSV with a header row. First column = source, second = reference. Dir
       "provider": "openrouter",
       "model": "anthropic/claude-sonnet-4-5",
       "base_url": "https://openrouter.ai/api/v1",
-      "api_key": "${OPENROUTER_API_KEY}"  // resolved from .env
+      "api_key": "${OPENROUTER_API_KEY}"
+      // response_format defaults to {"type":"json_object"} — forces valid JSON output.
+      // Override with {"type":"json_schema",...} for strict schema enforcement,
+      // or set to null to disable (e.g. for models that don't support it).
     }
   ],
 

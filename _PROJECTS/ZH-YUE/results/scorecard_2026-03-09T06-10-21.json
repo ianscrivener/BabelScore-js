@@ -1,0 +1,17 @@
+{
+  "project": "ZH-YUE",
+  "paradigm": 5,
+  "srcLang": "Cantonese",
+  "tgtLang": "Mandarin",
+  "directions_count": 2,
+  "total_sentences": 40,
+  "started_at": "2026-03-09T06:10:21.073Z",
+  "status": "interrupted",
+  "directions": [
+    {
+      "label": "Mandarin → Cantonese",
+      "sentences": [],
+      "stats": null
+    }
+  ]
+}

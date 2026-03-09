@@ -1,0 +1,84 @@
+{
+  "project": "ZH-YUE",
+  "paradigm": 5,
+  "srcLang": "Cantonese",
+  "tgtLang": "Mandarin",
+  "directions_count": 2,
+  "total_sentences": 2,
+  "started_at": "2026-03-09T06:38:29.782Z",
+  "status": "complete",
+  "directions": [
+    {
+      "label": "Mandarin → Cantonese",
+      "sentences": [
+        {
+          "source": "我的普通話很爛，經常被人笑是港式普通話，不過去旅遊還算能溝通。",
+          "reference": "我啲普通話好爛，成日俾人笑係港普，不過去旅行總算可以溝通到。",
+          "translations": {
+            "byteplus-seed-2-0-lite-260228": {
+              "text": null,
+              "scores": {}
+            }
+          }
+        }
+      ],
+      "stats": [
+        {
+          "modelId": "byteplus-seed-2-0-lite-260228",
+          "perJudge": {
+            "openrouter-gemini-3.1-pro": {
+              "mean": null,
+              "count": 0
+            },
+            "openrouter-openai-gpt-4o": {
+              "mean": null,
+              "count": 0
+            },
+            "openrouter-claude-sonnet-4.6": {
+              "mean": null,
+              "count": 0
+            }
+          },
+          "overallMean": null,
+          "variance": 0
+        }
+      ]
+    },
+    {
+      "label": "Cantonese → Mandarin",
+      "sentences": [
+        {
+          "source": "我D普通話好屎，成日俾人笑係「港普」，不過去旅行都叫溝通到。",
+          "reference": "我的普通話很爛，經常被人笑是港式普通話，不過去旅遊還算能溝通。",
+          "translations": {
+            "byteplus-seed-2-0-lite-260228": {
+              "text": null,
+              "scores": {}
+            }
+          }
+        }
+      ],
+      "stats": [
+        {
+          "modelId": "byteplus-seed-2-0-lite-260228",
+          "perJudge": {
+            "openrouter-gemini-3.1-pro": {
+              "mean": null,
+              "count": 0
+            },
+            "openrouter-openai-gpt-4o": {
+              "mean": null,
+              "count": 0
+            },
+            "openrouter-claude-sonnet-4.6": {
+              "mean": null,
+              "count": 0
+            }
+          },
+          "overallMean": null,
+          "variance": 0
+        }
+      ]
+    }
+  ]
+}
