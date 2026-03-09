@@ -60,24 +60,111 @@ const {
 const varianceThreshold = outputCfg.variance_threshold ?? 1.5;
 
 // ---------------------------------------------------------------------------
-// Load CSV
+// Language code → name map (from config)
 // ---------------------------------------------------------------------------
 
-const csvPath = resolve(projectDir, cfg.data_file);
-let rows;
-try {
-  rows = parseCsv(readFileSync(csvPath, 'utf8'), {
+const langNames = {};
+if (cfg.source_language_code) langNames[cfg.source_language_code] = srcLang;
+if (cfg.target_language_code) langNames[cfg.target_language_code] = tgtLang;
+function langName(code) { return langNames[code] || code; }
+
+// ---------------------------------------------------------------------------
+// Data loaders
+// ---------------------------------------------------------------------------
+
+function loadNDJSON(filePath) {
+  return readFileSync(filePath, 'utf8')
+    .split('\n')
+    .filter((l) => l.trim())
+    .map((l) => JSON.parse(l));
+}
+
+function loadCSV(filePath) {
+  return parseCsv(readFileSync(filePath, 'utf8'), {
     columns: true,
     skip_empty_lines: true,
     trim: true,
   });
-} catch (err) {
-  console.error(`Cannot read CSV: ${csvPath}\n${err.message}`);
-  process.exit(1);
 }
 
-// Take the first two columns regardless of their names
-const [srcCol, tgtCol] = Object.keys(rows[0]);
+function loadDataFile(filePath, format) {
+  const abs = resolve(projectDir, filePath);
+  try {
+    if (format === 'json') {
+      const rows = loadNDJSON(abs);
+      return rows.map((r) => ({
+        source: r.SourceText,
+        reference: r.TargetText,
+        fromLang: langName(r.SourceL),
+        toLang: langName(r.TargetL),
+      }));
+    } else {
+      // csv / txt — legacy two-column format
+      const rows = loadCSV(abs);
+      const [srcCol, tgtCol] = Object.keys(rows[0]);
+      return rows.map((r) => ({
+        source: r[srcCol],
+        reference: r[tgtCol],
+        fromLang: srcLang,
+        toLang: tgtLang,
+      }));
+    }
+  } catch (err) {
+    console.error(`Cannot read data file ${abs}: ${err.message}`);
+    process.exit(1);
+  }
+}
+
+// ---------------------------------------------------------------------------
+// Build directions from config
+// ---------------------------------------------------------------------------
+
+function buildDirections() {
+  const format = cfg.data_file_format || 'csv';
+
+  if (cfg.data_files && cfg.data_file_combined === false) {
+    // Each file is one direction — SourceL/TargetL in the data define from/to
+    return cfg.data_files.map((fp) => {
+      const sentences = loadDataFile(fp, format);
+      const first = sentences[0];
+      const label = `${first.fromLang} → ${first.toLang}`;
+      return { label, fromLang: first.fromLang, toLang: first.toLang, sentences };
+    });
+  }
+
+  if (cfg.data_files && cfg.data_file_combined === true) {
+    // Single combined file — split by SourceL/TargetL
+    const all = loadDataFile(cfg.data_files[0], format);
+    const byDir = {};
+    for (const s of all) {
+      const key = `${s.fromLang}|${s.toLang}`;
+      if (!byDir[key]) byDir[key] = { fromLang: s.fromLang, toLang: s.toLang, sentences: [] };
+      byDir[key].sentences.push(s);
+    }
+    return Object.values(byDir).map((d) => ({
+      label: `${d.fromLang} → ${d.toLang}`,
+      fromLang: d.fromLang,
+      toLang: d.toLang,
+      sentences: d.sentences,
+    }));
+  }
+
+  // Legacy: single data_file (CSV)
+  const sentences = loadDataFile(cfg.data_file, format);
+  const directions = [{ label: `${srcLang} → ${tgtLang}`, fromLang: srcLang, toLang: tgtLang, sentences }];
+  if (paradigm >= 4) {
+    directions.push({
+      label: `${tgtLang} → ${srcLang}`,
+      fromLang: tgtLang,
+      toLang: srcLang,
+      sentences: sentences.map((s) => ({ source: s.reference, reference: s.source, fromLang: tgtLang, toLang: srcLang })),
+    });
+  }
+  return directions;
+}
+
+const directionsToRun = buildDirections();
+const totalSentences = directionsToRun.reduce((n, d) => n + d.sentences.length, 0);
 
 // ---------------------------------------------------------------------------
 // Load prompt templates
@@ -111,7 +198,7 @@ const judgeTpl = loadTemplate('judge');
 
 console.log(`\n╔═══════════════════════════════════════╗`);
 console.log(`  BabelScore — ${cfg.description || projectName}`);
-console.log(`  Paradigm ${paradigm} | ${rows.length} sentences`);
+console.log(`  Paradigm ${paradigm} | ${totalSentences} sentences across ${directionsToRun.length} direction(s)`);
 console.log(`  ${srcLang} ↔ ${tgtLang}`);
 console.log(`╚═══════════════════════════════════════╝\n`);
 console.log(`Translators : ${translators.map((m) => m.id).join(', ')}`);
@@ -349,7 +436,7 @@ function buildScorecard(directions) {
   md += `| **Project** | ${projectName} |\n`;
   md += `| **Description** | ${cfg.description || '—'} |\n`;
   md += `| **Paradigm** | ${paradigm} |\n`;
-  md += `| **Sentences** | ${rows.length} |\n`;
+  md += `| **Sentences** | ${totalSentences} |\n`;
   md += `| **Translators** | ${translators.map((m) => m.model).join(', ')} |\n`;
   md += `| **Judges** | ${judges.map((j) => j.model).join(', ')} |\n`;
   md += `| **Run** | ${now} |\n\n${sep}`;
@@ -465,19 +552,6 @@ if (lmStudioAutoLoad.length > 0) {
   console.log();
 }
 
-const directionsToRun = [
-  { label: `${srcLang} → ${tgtLang}`, fromLang: srcLang, toLang: tgtLang, sentenceKey: [srcCol, tgtCol] },
-];
-
-if (paradigm >= 4) {
-  directionsToRun.push({
-    label: `${tgtLang} → ${srcLang}`,
-    fromLang: tgtLang,
-    toLang: srcLang,
-    sentenceKey: [tgtCol, srcCol],
-  });
-}
-
 // Set up incremental JSON output before run starts
 const resultsDir = resolve(projectDir, outputCfg.results_dir ?? 'results');
 mkdirSync(resultsDir, { recursive: true });
@@ -490,6 +564,8 @@ runState = {
   paradigm,
   srcLang,
   tgtLang,
+  directions_count: directionsToRun.length,
+  total_sentences: totalSentences,
   started_at: new Date().toISOString(),
   status: 'in_progress',
   directions: [],
@@ -500,17 +576,12 @@ const directionResults = [];
 
 try {
   for (const dir of directionsToRun) {
-    console.log(`━━━ ${dir.label} ${'━'.repeat(Math.max(0, 38 - dir.label.length))}\n`);
-
-    const sentences = rows.map((r) => ({
-      source: r[dir.sentenceKey[0]],
-      reference: r[dir.sentenceKey[1]],
-    }));
+    console.log(`━━━ ${dir.label} (${dir.sentences.length} sentences) ${'━'.repeat(Math.max(0, 28 - dir.label.length))}\n`);
 
     const dirEntry = { label: dir.label, sentences: [], stats: null };
     runState.directions.push(dirEntry);
 
-    const sentenceResults = await runDirection(dir.fromLang, dir.toLang, sentences, (accumulated) => {
+    const sentenceResults = await runDirection(dir.fromLang, dir.toLang, dir.sentences, (accumulated) => {
       dirEntry.sentences = accumulated;
       saveProgress();
     });
@@ -537,7 +608,7 @@ try {
     console.log(`\n${label}`);
     for (const stat of stats) {
       const flag = stat.variance > varianceThreshold ? '  ⚠ HIGH VARIANCE' : '';
-      console.log(`  ${stat.modelId}: ${stat.overallMean ?? '—'}/10  (variance: ${stat.variance})${flag}`);
+      console.log(`  ${stat.modelId}: ${stat.overallMean ?? '—'}/100  (variance: ${stat.variance})${flag}`);
     }
   }
 

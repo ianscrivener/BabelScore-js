@@ -1,10 +1,18 @@
 {
     "project": "_example",
-    "description": "Example project: English ↔ French translation quality benchmark",
+    "description": "Example project: English ↔ French Cantonese quality benchmark",
     "paradigm": 5,
     "source_language": "English",
-    "target_language": "French",
-    "data_file": "data/test_set.csv",
+    "source_language_code": "en",
+    "target_language": "Cantonese",
+    "target_language_code": "yue",
+    "data_file_format":"json",
+    "data_file_combined":false,
+    "data_files": [
+        "data/eng_yue_test.json",
+        "data/yue_eng_test.json"
+    ],
+    
 
     "translator_models": [
         {
