@@ -11,6 +11,7 @@
 import { readFileSync, writeFileSync, mkdirSync } from 'fs';
 import { resolve, dirname } from 'path';
 import { fileURLToPath } from 'url';
+import { spawnSync } from 'child_process';
 import { config as loadDotenv } from 'dotenv';
 import { parse as parseCsv } from 'csv-parse/sync';
 
@@ -80,11 +81,23 @@ function loadNDJSON(filePath) {
 }
 
 function loadCSV(filePath) {
-  return parseCsv(readFileSync(filePath, 'utf8'), {
-    columns: true,
+  // Parse as raw arrays so we can handle unquoted commas in data fields.
+  // The file format is two logical columns (col0, col1); any extra tokens
+  // produced by commas inside the second field are re-joined with commas.
+  const rows = parseCsv(readFileSync(filePath, 'utf8'), {
+    columns: false,
     skip_empty_lines: true,
     trim: true,
+    relax_column_count: true,
+    relax_quotes: true,
   });
+  if (rows.length < 2) return [];
+  const [headerRow, ...dataRows] = rows;
+  const [col0 = 'col0', col1 = 'col1'] = headerRow;
+  return dataRows.map((row) => ({
+    [col0]: row[0] ?? '',
+    [col1]: row.slice(1).join(','),
+  }));
 }
 
 function loadDataFile(filePath, format) {
@@ -92,7 +105,8 @@ function loadDataFile(filePath, format) {
   try {
     if (format === 'json') {
       const rows = loadNDJSON(abs);
-      return rows.map((r) => ({
+      return rows.map((r, i) => ({
+        line: i + 1,
         source: r.SourceText,
         reference: r.TargetText,
         fromLang: langName(r.SourceL),
@@ -101,14 +115,17 @@ function loadDataFile(filePath, format) {
         toLangCode: r.TargetL,
       }));
     } else {
-      // csv / txt — legacy two-column format
+      // csv / txt — two-column format; direction always comes from config
       const rows = loadCSV(abs);
       const [srcCol, tgtCol] = Object.keys(rows[0]);
-      return rows.map((r) => ({
+      return rows.map((r, i) => ({
+        line: i + 1,
         source: r[srcCol],
         reference: r[tgtCol],
         fromLang: srcLang,
         toLang: tgtLang,
+        fromLangCode: cfg.source_language_code ?? null,
+        toLangCode: cfg.target_language_code ?? null,
       }));
     }
   } catch (err) {
@@ -129,41 +146,96 @@ function buildDirections() {
   function cap(arr, n) { return n != null ? arr.slice(0, n) : arr; }
 
   if (cfg.data_files && cfg.data_file_combined === false) {
-    // Each file is one direction — SourceL/TargetL in the data define from/to
     // Per-direction cap = floor(max_sentences / numFiles)
     const perDir = maxTotal != null ? Math.floor(maxTotal / cfg.data_files.length) : null;
-    return cfg.data_files.map((fp) => {
-      const sentences = cap(loadDataFile(fp, format), perDir);
-      const first = sentences[0];
-      const label = `${first.fromLang} → ${first.toLang}`;
-      return { label, fromLang: first.fromLang, toLang: first.toLang,
-               fromLangCode: first.fromLangCode ?? null, toLangCode: first.toLangCode ?? null,
-               sentences };
-    });
+    if (format === 'json') {
+      // NDJSON: each file is one direction — SourceL/TargetL in the data define from/to
+      return cfg.data_files.map((fp) => {
+        const sentences = cap(loadDataFile(fp, format), perDir);
+        const first = sentences[0];
+        const label = `${first.fromLang} → ${first.toLang}`;
+        return { label, fromLang: first.fromLang, toLang: first.toLang,
+                 fromLangCode: first.fromLangCode ?? null, toLangCode: first.toLangCode ?? null,
+                 sentences };
+      });
+    } else {
+      // CSV: no per-row direction info — file-order convention:
+      //   even-indexed files = forward (srcLang → tgtLang)
+      //   odd-indexed files  = reverse (tgtLang → srcLang)
+      return cfg.data_files.map((fp, idx) => {
+        const isForward = idx % 2 === 0;
+        const fromLang     = isForward ? srcLang : tgtLang;
+        const toLang       = isForward ? tgtLang : srcLang;
+        const fromLangCode = isForward ? (cfg.source_language_code ?? null) : (cfg.target_language_code ?? null);
+        const toLangCode   = isForward ? (cfg.target_language_code ?? null) : (cfg.source_language_code ?? null);
+        const rawSentences = cap(loadDataFile(fp, format), perDir);
+        // For reverse files the CSV columns are still col0=srcLang, col1=tgtLang, so swap them
+        const sentences = isForward
+          ? rawSentences
+          : rawSentences.map((s) => ({ line: s.line, source: s.reference, reference: s.source, fromLang, toLang, fromLangCode, toLangCode }));
+        return { label: `${fromLang} → ${toLang}`, fromLang, toLang, fromLangCode, toLangCode, sentences };
+      });
+    }
   }
 
   if (cfg.data_files && cfg.data_file_combined === true) {
-    // Single combined file — split by SourceL/TargetL, then cap per direction
-    const all = loadDataFile(cfg.data_files[0], format);
-    const byDir = {};
-    for (const s of all) {
-      const key = `${s.fromLang}|${s.toLang}`;
-      if (!byDir[key]) byDir[key] = { fromLang: s.fromLang, toLang: s.toLang, sentences: [] };
-      byDir[key].sentences.push(s);
+    if (format === 'json') {
+      // NDJSON: single combined file — split by SourceL/TargetL, then cap per direction
+      const all = loadDataFile(cfg.data_files[0], format);
+      const byDir = {};
+      for (const s of all) {
+        const key = `${s.fromLang}|${s.toLang}`;
+        if (!byDir[key]) byDir[key] = { fromLang: s.fromLang, toLang: s.toLang, sentences: [] };
+        byDir[key].sentences.push(s);
+      }
+      const dirs = Object.values(byDir);
+      const perDir = maxTotal != null ? Math.floor(maxTotal / dirs.length) : null;
+      return dirs.map((d) => ({
+        label: `${d.fromLang} → ${d.toLang}`,
+        fromLang: d.fromLang,
+        toLang: d.toLang,
+        fromLangCode: d.sentences[0]?.fromLangCode ?? null,
+        toLangCode: d.sentences[0]?.toLangCode ?? null,
+        sentences: cap(d.sentences, perDir),
+      }));
+    } else {
+      // CSV: single two-column file — direction from config.
+      // For bidirectional paradigms (>=4) also build the reverse direction
+      // by swapping source ↔ reference on the same sentence set.
+      const numDirs = paradigm >= 4 ? 2 : 1;
+      const perDir = maxTotal != null ? Math.floor(maxTotal / numDirs) : null;
+      const sentences = cap(loadDataFile(cfg.data_files[0], format), perDir);
+      const directions = [{
+        label: `${srcLang} → ${tgtLang}`,
+        fromLang: srcLang,
+        toLang: tgtLang,
+        fromLangCode: cfg.source_language_code ?? null,
+        toLangCode: cfg.target_language_code ?? null,
+        sentences,
+      }];
+      if (paradigm >= 4) {
+        directions.push({
+          label: `${tgtLang} → ${srcLang}`,
+          fromLang: tgtLang,
+          toLang: srcLang,
+          fromLangCode: cfg.target_language_code ?? null,
+          toLangCode: cfg.source_language_code ?? null,
+          sentences: sentences.map((s) => ({
+            line: s.line,
+            source: s.reference,
+            reference: s.source,
+            fromLang: tgtLang,
+            toLang: srcLang,
+            fromLangCode: cfg.target_language_code ?? null,
+            toLangCode: cfg.source_language_code ?? null,
+          })),
+        });
+      }
+      return directions;
     }
-    const dirs = Object.values(byDir);
-    const perDir = maxTotal != null ? Math.floor(maxTotal / dirs.length) : null;
-    return dirs.map((d) => ({
-      label: `${d.fromLang} → ${d.toLang}`,
-      fromLang: d.fromLang,
-      toLang: d.toLang,
-      fromLangCode: d.sentences[0]?.fromLangCode ?? null,
-      toLangCode: d.sentences[0]?.toLangCode ?? null,
-      sentences: cap(d.sentences, perDir),
-    }));
   }
 
-  // Legacy: single data_file (CSV)
+  // Legacy: single data_file (CSV) (CSV)
   const numDirs = paradigm >= 4 ? 2 : 1;
   const perDir = maxTotal != null ? Math.floor(maxTotal / numDirs) : null;
   const sentences = cap(loadDataFile(cfg.data_file, format), perDir);
@@ -175,7 +247,7 @@ function buildDirections() {
       label: `${tgtLang} → ${srcLang}`,
       fromLang: tgtLang,
       toLang: srcLang,
-      sentences: sentences.map((s) => ({ source: s.reference, reference: s.source, fromLang: tgtLang, toLang: srcLang })),
+      sentences: sentences.map((s) => ({ line: s.line, source: s.reference, reference: s.source, fromLang: tgtLang, toLang: srcLang })),
     });
   }
   return directions;
@@ -214,13 +286,26 @@ function loadTemplate(name) {
 const translateTpl = loadTemplate('translate');
 const judgeTpl = loadTemplate('judge');
 
+// Score reviewer prompt (optional — no _template suffix)
+const reviewerPromptPath = resolve(__dirname, 'DATA', 'PROMPTS', 'default', 'score_reviewer_prompt.txt');
+let reviewerTpl = null;
+try {
+  reviewerTpl = parseTemplate(readFileSync(reviewerPromptPath, 'utf8'));
+} catch {
+  // no reviewer prompt file — reviewer will be skipped
+}
+
+const reviewerModel = cfg.result_reviewer_model?.[0] ?? null;
+
 console.log(`\n╔═══════════════════════════════════════╗`);
 console.log(`  BabelScore — ${cfg.description || projectName}`);
 console.log(`  Paradigm ${paradigm} | ${totalSentences} sentences across ${directionsToRun.length} direction(s)`);
 console.log(`  ${srcLang} ↔ ${tgtLang}`);
 console.log(`╚═══════════════════════════════════════╝\n`);
 console.log(`Translators : ${translators.map((m) => m.id).join(', ')}`);
-console.log(`Judges      : ${judges.map((j) => j.id).join(', ')}\n`);
+console.log(`Judges      : ${judges.map((j) => j.id).join(', ')}`);
+if (reviewerModel) console.log(`Reviewer    : ${reviewerModel.id}`);
+console.log();
 
 // ---------------------------------------------------------------------------
 // Helpers
@@ -459,6 +544,7 @@ async function runDirection(fromLang, toLang, sentences, onProgress = null, dir 
   const tasks = sentences.map((sentence, i) => async () => {
     const progress = `[${i + 1}/${sentences.length}]`;
     const sentenceResult = {
+      line: sentence.line ?? i + 1,
       source: sentence.source,
       reference: sentence.reference,
       translations: {},
@@ -546,11 +632,125 @@ function aggregateStats(directionResults) {
   });
 }
 
+// Minimal scorecard for reviewer — scores per sentence, no judge reasoning
+function buildReviewerInput(directions) {
+  let out = `Project: ${projectName} | ${srcLang} ↔ ${tgtLang} | Paradigm ${paradigm}\n\n`;
+  for (const { label, stats, sentences, metrics } of directions) {
+    out += `## ${label}\n`;
+    // Corpus-level scores
+    for (const stat of stats) {
+      out += `${stat.modelId}: LLM-judge ${stat.overallMean ?? '—'}/100`;
+      if (metrics?.[stat.modelId]?.corpus) {
+        const c = metrics[stat.modelId].corpus;
+        out += ` | chrF++ ${c.chrf} | BLEU ${c.bleu} | TER ${c.ter}`;
+      }
+      out += '\n';
+    }
+    // Per-sentence scores (no source text, no reasoning)
+    out += '\n| # |' + translators.map((m) => ` ${m.id} judge | chrF++ | BLEU | TER`).join(' |') + ' |\n';
+    out += '|---|' + translators.map(() => '---|---|---|---').join('|') + '|\n';
+    for (const [i, sentence] of sentences.entries()) {
+      let row = `| ${i + 1} |`;
+      for (const model of translators) {
+        const t = sentence.translations[model.id];
+        const judgeScores = judges.map((jm) => t?.scores?.[jm.id]?.score ?? '—').join('/');
+        const m = t?.metrics;
+        row += ` ${judgeScores} | ${m?.chrf ?? '—'} | ${m?.bleu ?? '—'} | ${m?.ter ?? '—'} |`;
+      }
+      out += row + '\n';
+    }
+    out += '\n';
+  }
+  return out;
+}
+
+// ---------------------------------------------------------------------------
+// LLM score reviewer
+// ---------------------------------------------------------------------------
+
+async function runReviewer(directionResults) {
+  if (!reviewerModel || !reviewerTpl) return null;
+
+  const reviewerInput = buildReviewerInput(directionResults);
+  const vars = {
+    project: projectName,
+    src_lang: srcLang,
+    tgt_lang: tgtLang,
+    paradigm: String(paradigm),
+    scorecard: reviewerInput,
+  };
+  const messages = [
+    { role: 'system', content: render(reviewerTpl.system, vars) },
+    { role: 'user',   content: render(reviewerTpl.user,   vars) },
+  ];
+
+  process.stdout.write(`\nRunning score reviewer [${reviewerModel.id}] ... `);
+  const review = await callLLM(reviewerModel, messages, reviewerModel.max_tokens ?? 2048);
+  if (review) {
+    console.log('done');
+  } else {
+    console.log('failed');
+  }
+  return review;
+}
+
+// ---------------------------------------------------------------------------
+// Python sidecar — chrF++ / BLEU / TER
+// ---------------------------------------------------------------------------
+
+function runMetricsSidecar(directionResults) {
+  const pythonBin = resolve(__dirname, 'python_sidecar', '.venv', 'bin', 'python');
+  const script    = resolve(__dirname, 'python_sidecar', 'main.py');
+
+  const payload = {
+    directions: directionResults.map(({ label, sentences }) => ({
+      label,
+      models: Object.fromEntries(
+        translators.map((model) => [
+          model.id,
+          {
+            hypotheses: sentences.map((s) => s.translations[model.id]?.text ?? ''),
+            references: sentences.map((s) => s.reference ?? ''),
+          },
+        ])
+      ),
+    })),
+  };
+
+  process.stdout.write('\nRunning reference metrics (chrF++ / BLEU / TER) ... ');
+  const result = spawnSync(pythonBin, [script], {
+    input: JSON.stringify(payload),
+    encoding: 'utf8',
+    timeout: 60_000,
+  });
+
+  if (result.error || result.status !== 0) {
+    console.log('failed');
+    if (result.error) console.error(`  sidecar error: ${result.error.message}`);
+    if (result.stderr) console.error(`  sidecar stderr: ${result.stderr.slice(0, 400)}`);
+    return null;
+  }
+
+  try {
+    const parsed = JSON.parse(result.stdout);
+    if (parsed.error) {
+      console.log(`failed — ${parsed.error}`);
+      return null;
+    }
+    console.log('done');
+    return parsed;
+  } catch {
+    console.log('failed (JSON parse error)');
+    console.error(`  raw output: ${result.stdout.slice(0, 400)}`);
+    return null;
+  }
+}
+
 // ---------------------------------------------------------------------------
 // Build markdown scorecard
 // ---------------------------------------------------------------------------
 
-function buildScorecard(directions) {
+function buildScorecard(directions, review = null) {
   const now = new Date().toISOString().slice(0, 19).replace('T', ' ');
   const sep = '---\n\n';
 
@@ -577,10 +777,11 @@ function buildScorecard(directions) {
   }
   md += `\n${sep}`;
 
-  for (const { label, stats, sentences } of directions) {
+  // Pass 1: direction summaries (judge tables + reference metrics)
+  for (const { label, stats, metrics } of directions) {
     md += `## ${label}\n\n`;
 
-    // Summary table
+    // LLM judge scores table
     const judgeHeaders = judges.map((j) => `**${j.id}**`).join(' | ');
     md += `| Model | ${judgeHeaders} | Mean | Variance |\n`;
     md += `|-------|${judges.map(() => '---').join('|')}|------|----------|\n`;
@@ -591,10 +792,32 @@ function buildScorecard(directions) {
       md += `| \`${stat.modelId}\` | ${judgeCols} | **${stat.overallMean ?? '—'}** | ${varianceDisplay} |\n`;
     }
 
-    md += '\n';
+    // Reference metrics table (chrF++ / BLEU / TER)
+    if (metrics) {
+      md += `\n### Reference Metrics\n\n`;
+      md += `| Model | chrF++ ↑ | BLEU ↑ | TER ↓ |\n`;
+      md += `|-------|----------|--------|-------|\n`;
+      for (const model of translators) {
+        const m = metrics[model.id];
+        if (m?.corpus) {
+          md += `| \`${model.id}\` | ${m.corpus.chrf} | ${m.corpus.bleu} | ${m.corpus.ter} |\n`;
+        }
+      }
+    }
 
-    if (outputCfg.show_judge_reasoning) {
-      md += `### Sentence Detail\n\n`;
+    md += '\n';
+  }
+
+  // Review: after all reference metrics, before sentence details
+  if (review && reviewerModel) {
+    md += `${sep}## Review\n\n*Reviewer: ${reviewerModel.id}*\n\n${review}\n\n`;
+  }
+
+  // Pass 2: sentence details (all directions)
+  if (outputCfg.show_judge_reasoning) {
+    md += sep;
+    for (const { label, sentences } of directions) {
+      md += `## ${label} — Sentence Detail\n\n`;
       for (const [i, sentence] of sentences.entries()) {
         md += `**[${i + 1}]** *${sentence.source}*\n`;
         if (sentence.reference) md += `> Reference: *${sentence.reference}*\n`;
@@ -607,6 +830,9 @@ function buildScorecard(directions) {
             continue;
           }
           md += `- **\`${model.id}\`**: ${t.text}\n`;
+          if (t.metrics) {
+            md += `  - *chrF++: ${t.metrics.chrf ?? '—'} | BLEU: ${t.metrics.bleu ?? '—'} | TER: ${t.metrics.ter ?? '—'}*\n`;
+          }
           for (const jm of judges) {
             const s = t.scores[jm.id];
             if (!s) {
@@ -618,9 +844,8 @@ function buildScorecard(directions) {
         }
         md += '\n';
       }
+      md += sep;
     }
-
-    md += sep;
   }
 
   return md;
@@ -738,7 +963,51 @@ try {
   runState.status = 'complete';
   saveProgress();
 
-  writeFileSync(mdPath, buildScorecard(directionResults));
+  // -------------------------------------------------------------------------
+  // Python sidecar: chrF++ / BLEU / TER
+  // -------------------------------------------------------------------------
+
+  const sidecarResult = runMetricsSidecar(directionResults);
+
+  if (sidecarResult) {
+    for (const sidecarDir of sidecarResult.directions) {
+      const dir = directionResults.find((d) => d.label === sidecarDir.label);
+      if (!dir) continue;
+      dir.metrics = sidecarDir.models;
+      // Merge per-sentence metrics into sentence objects
+      for (const [modelId, modelMetrics] of Object.entries(sidecarDir.models)) {
+        if (!modelMetrics.sentences) continue;
+        for (const [i, sentMetrics] of modelMetrics.sentences.entries()) {
+          const sent = dir.sentences[i];
+          if (!sent) continue;
+          if (!sent.translations[modelId]) continue;
+          sent.translations[modelId].metrics = sentMetrics;
+        }
+      }
+    }
+    // Persist metrics into runState
+    for (const dir of directionResults) {
+      const stateDir = runState.directions.find((d) => d.label === dir.label);
+      if (stateDir) {
+        stateDir.metrics = dir.metrics ?? null;
+        stateDir.sentences = dir.sentences;
+      }
+    }
+    saveProgress();
+  }
+
+  // -------------------------------------------------------------------------
+  // LLM score reviewer (runs before buildScorecard so it can be embedded inline)
+  // -------------------------------------------------------------------------
+
+  const review = await runReviewer(directionResults);
+  if (review) {
+    runState.review = { model: reviewerModel.id, text: review };
+    saveProgress();
+  }
+
+  const scorecardMd = buildScorecard(directionResults, review);
+  writeFileSync(mdPath, scorecardMd);
 
   // -------------------------------------------------------------------------
   // Console summary
@@ -748,11 +1017,15 @@ try {
   console.log(`  Results`);
   console.log(`${'═'.repeat(44)}`);
 
-  for (const { label, stats } of directionResults) {
+  for (const { label, stats, metrics } of directionResults) {
     console.log(`\n${label}`);
     for (const stat of stats) {
       const flag = stat.variance > varianceThreshold ? '  ⚠ HIGH VARIANCE' : '';
-      console.log(`  ${stat.modelId}: ${stat.overallMean ?? '—'}/100  (variance: ${stat.variance})${flag}`);
+      console.log(`  ${stat.modelId}: ${stat.overallMean ?? '—'}/100 LLM-judge  (variance: ${stat.variance})${flag}`);
+      if (metrics?.[stat.modelId]?.corpus) {
+        const c = metrics[stat.modelId].corpus;
+        console.log(`    chrF++: ${c.chrf}   BLEU: ${c.bleu}   TER: ${c.ter}`);
+      }
     }
   }
 

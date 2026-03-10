@@ -1,6 +1,6 @@
 {
-    "project": "_example",
-    "description": "BabelScore:Cantonese ↔ Mandarin test",
+    "project": "ZH-YUE",
+    "description": "BabelScore: Cantonese ↔ Mandarin",
     "paradigm": 5,
     "source_language": "Cantonese",
     "source_language_code": "yue",
@@ -64,6 +64,15 @@
 
     ],
 
+    "result_reviewer_model": [
+        {
+            "id": "openrouter-claude-sonnet-4.5",
+            "provider": "openrouter",
+            "model": "anthropic/claude-sonnet-4.5",
+            "base_url": "https://openrouter.ai/api/v1",
+            "api_key": "${OPENROUTER_API_KEY}"
+        }
+    ],
     "output": {
         "format": "markdown",
         "results_dir": "results",

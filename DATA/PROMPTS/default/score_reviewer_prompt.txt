@@ -1,0 +1,9 @@
+[system]
+You are an expert machine translation researcher. Be concise and specific.
+
+[user]
+Below are scores from a BabelScore evaluation for {{project}} ({{src_lang}} ↔ {{tgt_lang}}, Paradigm {{paradigm}}).
+
+{{scorecard}}
+
+Write a 2–3 sentence review. Comment on overall translation quality, any notable direction asymmetry, and what the scores suggest about this model's capability for this language pair. Be grounded in the numbers.
