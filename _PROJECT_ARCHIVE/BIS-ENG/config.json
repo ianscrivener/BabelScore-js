@@ -1,0 +1,138 @@
+{
+    "project": "_example",
+    "description": "BabelScore: Bislama ↔ English",
+    "paradigm": 5,
+    "source_language": "Bislama",
+    "source_language_code": "bis",
+    "target_language": "English",
+    "target_language_code": "eng",
+    "data_file_format": "csv",
+    "data_file_combined": true,
+    "data_files": [
+        "data/TED-bis-eng.csv"
+    ],
+    "max_sentences": 20,
+    "translator_threads": 3,
+    "judge_threads": 3,
+    "result_reviewer_model": [
+        {
+            "id": "openrouter-claude-sonnet-4.5",
+            "provider": "openrouter",
+            "model": "anthropic/claude-sonnet-4.5",
+            "base_url": "https://openrouter.ai/api/v1",
+            "api_key": "${OPENROUTER_API_KEY}"
+        }
+    ],
+    "translator_models_gemma": [
+        {
+            "id": "google/gemma-4-31b-it",
+            "provider": "openrouter",
+            "model": "google/gemma-4-31b-it",
+            "base_url": "https://openrouter.ai/api/v1",
+            "api_key": "${OPENROUTER_API_KEY}",
+            "max_tokens": 1024,
+            "temperature": 1.0,
+            "top_p": 0.95,
+            "top_k": 20
+        }
+    ],
+    "translator_models": [
+        {
+            "id": "openrouter-openai/gpt-5.4-pro",
+            "provider": "openrouter",
+            "model": "openai/gpt-5.4-pro",
+            "base_url": "https://openrouter.ai/api/v1",
+            "api_key": "${OPENROUTER_API_KEY}",
+            "max_tokens": 1024,
+            "temperature": 1.0,
+            "top_p": 0.95,
+            "top_k": 20,
+            "repetition_penalty": 1.0,
+            "presence_penalty": 1.5
+        }
+    ],
+    "translator_models_not": [
+        {
+            "id": "qwen/qwen3.6-plus:free",
+            "provider": "openrouter",
+            "model": "qwen/qwen3.6-plus:free",
+            "base_url": "https://openrouter.ai/api/v1",
+            "api_key": "${OPENROUTER_API_KEY}",
+            "max_tokens": 1024,
+            "temperature": 0.0
+        },
+        {
+            "id": "byteplus-seed-2-0-mini-260215",
+            "provider": "byteplus",
+            "model": "seed-2-0-mini-260215",
+            "base_url": "https://ark.ap-southeast.bytepluses.com/api/v3",
+            "api_key": "${ARK_API_KEY}",
+            "max_tokens": 1024,
+            "temperature": 0.0
+        },
+        {
+            "id": "openrouter-openai-gpt-4o",
+            "provider": "openrouter",
+            "model": "openai/gpt-4o",
+            "base_url": "https://openrouter.ai/api/v1",
+            "api_key": "${OPENROUTER_API_KEY}"
+        },
+        {
+            "id": "byteplus-seed-2-0-mini-260215",
+            "provider": "byteplus",
+            "model": "seed-2-0-mini-260215",
+            "base_url": "https://ark.ap-southeast.bytepluses.com/api/v3",
+            "api_key": "${ARK_API_KEY}",
+            "max_tokens": 1024,
+            "temperature": 0.0
+        },
+        {
+            "id": "lmstudio-qwen3.5-35b-a3b",
+            "provider": "lm_studio",
+            "model": "qwen/qwen3.5-35b-a3b",
+            "base_url": "http://localhost:1234/v1",
+            "api_key": "",
+            "auto_load": false,
+            "auto_unload": false,
+            "max_tokens": 1024,
+            "temperature": 0.0
+        },
+        {
+            "id": "openrouter-gemini-3.1-pro",
+            "provider": "openrouter",
+            "model": "google/gemini-3.1-pro-preview",
+            "base_url": "https://openrouter.ai/api/v1",
+            "api_key": "${OPENROUTER_API_KEY}"
+        }
+    ],
+    "judge_models": [
+        {
+            "id": "openrouter-openai-gpt-4o",
+            "provider": "openrouter",
+            "model": "openai/gpt-4o",
+            "base_url": "https://openrouter.ai/api/v1",
+            "api_key": "${OPENROUTER_API_KEY}"
+        },
+        {
+            "id": "openrouter-claude-sonnet-4.6",
+            "provider": "openrouter",
+            "model": "anthropic/claude-sonnet-4.6",
+            "base_url": "https://openrouter.ai/api/v1",
+            "api_key": "${OPENROUTER_API_KEY}"
+        },
+        {
+            "id": "openrouter-gemini-3.1-pro",
+            "provider": "openrouter",
+            "model": "google/gemini-3.1-pro-preview",
+            "base_url": "https://openrouter.ai/api/v1",
+            "api_key": "${OPENROUTER_API_KEY}"
+        }
+    ],
+    "output": {
+        "format": "markdown",
+        "results_dir": "results",
+        "show_judge_reasoning": true,
+        "flag_high_variance": true,
+        "variance_threshold": 15
+    }
+}

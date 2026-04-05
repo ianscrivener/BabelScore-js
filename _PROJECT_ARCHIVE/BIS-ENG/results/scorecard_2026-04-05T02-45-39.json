@@ -1,0 +1,770 @@
+{
+  "project": "BIS-ENG",
+  "paradigm": 5,
+  "srcLang": "Bislama",
+  "tgtLang": "English",
+  "directions_count": 2,
+  "total_sentences": 20,
+  "started_at": "2026-04-05T02:45:39.658Z",
+  "status": "complete",
+  "directions": [
+    {
+      "label": "Bislama → English",
+      "sentences": [
+        {
+          "line": 1,
+          "source": "Hao nao ol nius we i kamaot long ol niuspepa mo narafala wei emi stiarem ol lukluk we yumi gat long saed long wol tedei? ",
+          "reference": "How does the news shape the way we see the world? ",
+          "translations": {
+            "anthropic/claude-opus-4.6": {
+              "text": "So how do the news that comes out from newspapers and other ways steer the views that we have about the world today?",
+              "scores": {
+                "openrouter-openai-gpt-4o": {
+                  "score": 85,
+                  "reasoning": "The translation is mostly accurate but slightly verbose compared to the source, affecting fluency."
+                },
+                "openrouter-claude-sonnet-4.6": {
+                  "score": 62,
+                  "reasoning": "The translation captures the core meaning accurately but is overly literal and awkward in English ('the news that comes out from newspapers and other ways steer the views'), whereas the reference shows a much more natural and concise rendering; the translation preserves more detail from the source but sacrifices fluency significantly."
+                },
+                "openrouter-gemini-3.1-pro": {
+                  "score": 80,
+                  "reasoning": "The translation accurately captures the full meaning of the source text, including details omitted by the reference, but suffers from grammatical errors like 'how do the news' and slightly awkward phrasing."
+                }
+              },
+              "metrics": {
+                "chrf": 35.28,
+                "bleu": 5.12,
+                "ter": 154.55
+              }
+            }
+          }
+        },
+        {
+          "line": 2,
+          "source": "Hem nao wol we yumi luk luk long hem. Ol difren graon blong wol i luk olsem ia",
+          "reference": "Here's the world based on the way it looks -- based on landmass",
+          "translations": {
+            "anthropic/claude-opus-4.6": {
+              "text": "That is the world that we are looking at. The different lands of the world look like this.",
+              "scores": {
+                "openrouter-openai-gpt-4o": {
+                  "score": 85,
+                  "reasoning": "The translation is mostly accurate but slightly deviates in phrasing from the source."
+                },
+                "openrouter-claude-sonnet-4.6": {
+                  "score": 52,
+                  "reasoning": "The translation captures the general meaning of looking at the world and its different landmasses, but it loses the nuance of 'based on the way it looks' and adds 'look like this' which isn't quite accurate, while also being more verbose and less natural than the reference translation."
+                },
+                "openrouter-gemini-3.1-pro": {
+                  "score": 100,
+                  "reasoning": "The translation is highly accurate and fluent, capturing the literal meaning of the source text perfectly and arguably better than the reference translation."
+                }
+              },
+              "metrics": {
+                "chrf": 25.06,
+                "bleu": 4.24,
+                "ter": 115.38
+              }
+            }
+          }
+        },
+        {
+          "line": 3,
+          "source": "Mo ol nius emi jenjem tin-ting blong ol man Amerika olsem ia nao ",
+          "reference": "And here's how news shapes what Americans see",
+          "translations": {
+            "anthropic/claude-opus-4.6": {
+              "text": "And the news changed the thinking of the American people just like that",
+              "scores": {
+                "openrouter-openai-gpt-4o": {
+                  "score": 70,
+                  "reasoning": "The translation captures the general idea but misses nuances and specific phrasing from the source."
+                },
+                "openrouter-claude-sonnet-4.6": {
+                  "score": 52,
+                  "reasoning": "The translation captures the core meaning of news changing American thinking, but 'just like that' is an awkward rendering of 'olsem ia nao' which functions more as a discourse marker introducing an explanation, and the reference suggests a more nuanced meaning about shaping perception rather than a one-time change."
+                },
+                "openrouter-gemini-3.1-pro": {
+                  "score": 95,
+                  "reasoning": "The translation is highly accurate and fluent, capturing the literal meaning of the source text perfectly, though 'olsem ia nao' could also be translated as 'this is how' depending on the context."
+                }
+              },
+              "metrics": {
+                "chrf": 24.16,
+                "bleu": 3.67,
+                "ter": 150
+              }
+            }
+          }
+        },
+        {
+          "line": 4,
+          "source": "Map ia. Map ia i soem nam blong ol seken we olgeta nwetwok blong nius blong Amerika mo ol rigin nius oganaesesen i bin yusum blong talemaot stori long saed blong ol nius long everi kantri raon long wol, long Februari 2007-wan yia i pas nomo. ",
+          "reference": "This map -- (Applause) -- this map shows the number of seconds that American network and cable news organizations dedicated to news stories, by country, in February of 2007 -- just one year ago. ",
+          "translations": {
+            "anthropic/claude-opus-4.6": {
+              "text": "This map. This map shows the names of the sources that American news networks and regional news organizations used to report stories about news in every country around the world, in February 2007—just one year ago.",
+              "scores": {
+                "openrouter-openai-gpt-4o": {
+                  "score": 60,
+                  "reasoning": "The translation is partially accurate but incorrectly translates 'nam blong ol seken' as 'names of the sources' instead of 'number of seconds', affecting the overall meaning."
+                },
+                "openrouter-claude-sonnet-4.6": {
+                  "score": 28,
+                  "reasoning": "The translation significantly misinterprets key terms: 'nam' (number) is translated as 'names,' 'seken' (seconds) is omitted entirely, 'nwetwok' (network) loses the cable distinction, and 'yusum' (dedicated/used) with 'talemaot stori' is rendered as 'used to report stories about news' rather than 'dedicated to news stories,' fundamentally changing the meaning from a map showing seconds of coverage to one showing names of sources."
+                },
+                "openrouter-gemini-3.1-pro": {
+                  "score": 65,
+                  "reasoning": "The translation is fluent but contains a major accuracy error by translating 'nam blong ol seken' (number of seconds) as 'names of the sources', which fundamentally changes the meaning of what the map displays."
+                }
+              },
+              "metrics": {
+                "chrf": 52.16,
+                "bleu": 14.53,
+                "ter": 64.71
+              }
+            }
+          }
+        },
+        {
+          "line": 5,
+          "source": "Nao long manis ia nao Not Korea i bin agri blong pispisim ol niuklia wok blong olgeta",
+          "reference": "Now, this was a month when North Korea agreed to dismantle its nuclear facilities. ",
+          "translations": {
+            "anthropic/claude-opus-4.6": {
+              "text": "So in this month North Korea agreed to dismantle their nuclear operations.",
+              "scores": {
+                "openrouter-openai-gpt-4o": {
+                  "score": 85,
+                  "reasoning": "The translation is mostly accurate but slightly alters the temporal emphasis compared to the source."
+                },
+                "openrouter-claude-sonnet-4.6": {
+                  "score": 82,
+                  "reasoning": "The translation accurately conveys the core meaning (North Korea agreeing to dismantle nuclear operations/facilities in a specific month), with minor differences in word choice ('operations' vs 'facilities') and the omission of the emphatic 'Now' and 'this was' phrasing, but it reads fluently in English."
+                },
+                "openrouter-gemini-3.1-pro": {
+                  "score": 95,
+                  "reasoning": "The translation accurately conveys the meaning of the source text and is grammatically correct, with only minor stylistic differences from the reference."
+                }
+              },
+              "metrics": {
+                "chrf": 51.86,
+                "bleu": 26.59,
+                "ter": 50
+              }
+            }
+          }
+        },
+        {
+          "line": 6,
+          "source": "Long Indonesia i gat wan bigfala wota i bin ron",
+          "reference": "There was massive flooding in Indonesia",
+          "translations": {
+            "anthropic/claude-opus-4.6": {
+              "text": "In Indonesia there was a big flood that occurred.",
+              "scores": {
+                "openrouter-openai-gpt-4o": {
+                  "score": 95,
+                  "reasoning": "The translation is accurate and fluent, but slightly less concise than the reference."
+                },
+                "openrouter-claude-sonnet-4.6": {
+                  "score": 85,
+                  "reasoning": "The translation accurately conveys the meaning of the source text (flooding in Indonesia) with good fluency, though it is slightly more verbose than necessary with 'that occurred' being redundant, and 'big flood' is a reasonable rendering of 'bigfala wota i bin ron' (literally 'big water that ran')."
+                },
+                "openrouter-gemini-3.1-pro": {
+                  "score": 95,
+                  "reasoning": "The translation accurately conveys the meaning of the source text, though the phrasing 'that occurred' makes it slightly wordier and less natural than the reference."
+                }
+              },
+              "metrics": {
+                "chrf": 37.68,
+                "bleu": 4.99,
+                "ter": 100
+              }
+            }
+          }
+        },
+        {
+          "line": 7,
+          "source": "mo long Paris, IPCC i bin rilisim wan stadi we i talemaot wok blong ol man long saed long global woming.",
+          "reference": "And in Paris, the IPCC released its study confirming man's impact on global warming. ",
+          "translations": {
+            "anthropic/claude-opus-4.6": {
+              "text": "and in Paris, the IPCC released a study that highlighted the role of humans in global warming.",
+              "scores": {
+                "openrouter-openai-gpt-4o": {
+                  "score": 90,
+                  "reasoning": "The translation is accurate and fluent, but it slightly differs in emphasis from the reference translation by using 'highlighted' instead of 'confirming'."
+                },
+                "openrouter-claude-sonnet-4.6": {
+                  "score": 88,
+                  "reasoning": "The translation accurately conveys the core meaning of the source text, correctly identifying Paris, the IPCC, the study release, and the human role in global warming, with only minor differences in phrasing compared to the reference translation."
+                },
+                "openrouter-gemini-3.1-pro": {
+                  "score": 98,
+                  "reasoning": "The translation accurately and fluently conveys the meaning of the source text, using natural phrasing that closely aligns with the reference."
+                }
+              },
+              "metrics": {
+                "chrf": 56.92,
+                "bleu": 32.59,
+                "ter": 57.14
+              }
+            }
+          }
+        },
+        {
+          "line": 8,
+          "source": "U.S. nomo hemi bin risponsibol from 79 % long ful kavarej blong ol nius ia",
+          "reference": "The U.S. accounted for 79 percent of total news coverage",
+          "translations": {
+            "anthropic/claude-opus-4.6": {
+              "text": "The U.S. alone was responsible for 79% of the full coverage of this news.",
+              "scores": {
+                "openrouter-openai-gpt-4o": {
+                  "score": 85,
+                  "reasoning": "The translation is mostly accurate but slightly less fluent than the reference translation."
+                },
+                "openrouter-claude-sonnet-4.6": {
+                  "score": 82,
+                  "reasoning": "The translation accurately conveys the core meaning (U.S. responsible for 79% of news coverage) with the addition of 'alone' which is supported by 'nomo' in the source, though 'full coverage' is slightly redundant compared to the more natural 'total news coverage' in the reference."
+                },
+                "openrouter-gemini-3.1-pro": {
+                  "score": 95,
+                  "reasoning": "The translation accurately and fluently conveys the meaning of the source text, closely matching the reference while providing a slightly more literal but perfectly natural phrasing."
+                }
+              },
+              "metrics": {
+                "chrf": 40.47,
+                "bleu": 23.83,
+                "ter": 100
+              }
+            }
+          }
+        },
+        {
+          "line": 9,
+          "source": "mo taem we yumi tekemaot U.S. mo luk luk long narafala 21 % yumi luk plante long Iraq – hemia bigfala grin samting ia long wei – i nogat tumas narafala samting ",
+          "reference": "And when we take out the U.S. and look at the remaining 21 percent, we see a lot of Iraq -- that's that big green thing there -- and little else. ",
+          "translations": {
+            "anthropic/claude-opus-4.6": {
+              "text": "and when we take out the U.S. and look at the other 21% we see a lot in Iraq – that's the big green thing there in the way – there's not much else",
+              "scores": {
+                "openrouter-openai-gpt-4o": {
+                  "score": 85,
+                  "reasoning": "The translation is mostly accurate but slightly deviates in fluency with 'in the way' instead of 'there'."
+                },
+                "openrouter-claude-sonnet-4.6": {
+                  "score": 88,
+                  "reasoning": "The translation is accurate and captures the meaning well, with only minor differences from the reference such as 'in the way' instead of 'there' and slight structural variations that don't significantly affect comprehension or fluency."
+                },
+                "openrouter-gemini-3.1-pro": {
+                  "score": 85,
+                  "reasoning": "The translation is mostly accurate and fluent, but mistranslates 'long wei' (over there) as 'in the way'."
+                }
+              },
+              "metrics": {
+                "chrf": 59.61,
+                "bleu": 46.7,
+                "ter": 45.16
+              }
+            }
+          }
+        },
+        {
+          "line": 10,
+          "source": "Tugeta kavarej blong Rasia, Jaena mo India i kasem 1 % nomo. ",
+          "reference": "The combined coverage of Russia, China and India, for example, reached just one percent. ",
+          "translations": {
+            "anthropic/claude-opus-4.6": {
+              "text": "Together, coverage of Russia, China and India reaches only 1%.",
+              "scores": {
+                "openrouter-openai-gpt-4o": {
+                  "score": 95,
+                  "reasoning": "The translation is accurate and fluent, with only minor differences in phrasing compared to the reference."
+                },
+                "openrouter-claude-sonnet-4.6": {
+                  "score": 88,
+                  "reasoning": "The translation accurately conveys the meaning of the source text with only minor differences from the reference (omitting 'for example' and using 'reaches' instead of 'reached'), and reads fluently in English."
+                },
+                "openrouter-gemini-3.1-pro": {
+                  "score": 95,
+                  "reasoning": "The translation is highly accurate and fluent, correctly conveying the exact meaning of the source text without the unprompted addition of 'for example' found in the reference."
+                }
+              },
+              "metrics": {
+                "chrf": 48.22,
+                "bleu": 34.6,
+                "ter": 64.29
+              }
+            }
+          }
+        }
+      ],
+      "stats": [
+        {
+          "modelId": "anthropic/claude-opus-4.6",
+          "perJudge": {
+            "openrouter-openai-gpt-4o": {
+              "mean": 83.5,
+              "count": 10
+            },
+            "openrouter-claude-sonnet-4.6": {
+              "mean": 70.7,
+              "count": 10
+            },
+            "openrouter-gemini-3.1-pro": {
+              "mean": 90.3,
+              "count": 10
+            }
+          },
+          "overallMean": 81.5,
+          "variance": 19.6
+        }
+      ],
+      "metrics": {
+        "anthropic/claude-opus-4.6": {
+          "corpus": {
+            "chrf": 47.33,
+            "bleu": 23.72,
+            "ter": 77.42
+          },
+          "sentences": [
+            {
+              "chrf": 35.28,
+              "bleu": 5.12,
+              "ter": 154.55
+            },
+            {
+              "chrf": 25.06,
+              "bleu": 4.24,
+              "ter": 115.38
+            },
+            {
+              "chrf": 24.16,
+              "bleu": 3.67,
+              "ter": 150
+            },
+            {
+              "chrf": 52.16,
+              "bleu": 14.53,
+              "ter": 64.71
+            },
+            {
+              "chrf": 51.86,
+              "bleu": 26.59,
+              "ter": 50
+            },
+            {
+              "chrf": 37.68,
+              "bleu": 4.99,
+              "ter": 100
+            },
+            {
+              "chrf": 56.92,
+              "bleu": 32.59,
+              "ter": 57.14
+            },
+            {
+              "chrf": 40.47,
+              "bleu": 23.83,
+              "ter": 100
+            },
+            {
+              "chrf": 59.61,
+              "bleu": 46.7,
+              "ter": 45.16
+            },
+            {
+              "chrf": 48.22,
+              "bleu": 34.6,
+              "ter": 64.29
+            }
+          ]
+        }
+      }
+    },
+    {
+      "label": "English → Bislama",
+      "sentences": [
+        {
+          "line": 1,
+          "source": "How does the news shape the way we see the world? ",
+          "reference": "Hao nao ol nius we i kamaot long ol niuspepa mo narafala wei emi stiarem ol lukluk we yumi gat long saed long wol tedei? ",
+          "translations": {
+            "anthropic/claude-opus-4.6": {
+              "text": "Olsem wanem nius i stiarim fasin blong yumi luk long wol?",
+              "scores": {
+                "openrouter-openai-gpt-4o": {
+                  "score": 85,
+                  "reasoning": "The translation is mostly accurate but slightly less fluent and detailed compared to the reference."
+                },
+                "openrouter-claude-sonnet-4.6": {
+                  "score": 72,
+                  "reasoning": "The translation captures the core meaning accurately with natural Bislama phrasing ('stiarim fasin blong yumi luk long wol'), though it is more concise than the reference and omits the nuance of different news sources (newspapers and other media) that the reference translation includes."
+                },
+                "openrouter-gemini-3.1-pro": {
+                  "score": 98,
+                  "reasoning": "The translation is highly accurate, concise, and natural, capturing the exact meaning of the source text much more directly than the overly wordy reference translation."
+                }
+              },
+              "metrics": {
+                "chrf": 19.54,
+                "bleu": 2.78,
+                "ter": 84
+              }
+            }
+          }
+        },
+        {
+          "line": 2,
+          "source": "Here's the world based on the way it looks -- based on landmass",
+          "reference": "Hem nao wol we yumi luk luk long hem. Ol difren graon blong wol i luk olsem ia",
+          "translations": {
+            "anthropic/claude-opus-4.6": {
+              "text": "Hemia wol ya folem fasin we hem i luk olsem -- folem saes blong graon",
+              "scores": {
+                "openrouter-openai-gpt-4o": {
+                  "score": 85,
+                  "reasoning": "The translation is mostly accurate but slightly deviates in structure and phrasing from the source."
+                },
+                "openrouter-claude-sonnet-4.6": {
+                  "score": 72,
+                  "reasoning": "The translation captures the core meaning of showing the world based on landmass appearance, with 'folem saes blong graon' reasonably conveying 'based on landmass' and 'folem fasin we hem i luk olsem' conveying 'based on the way it looks', though it's slightly less natural than the reference and omits some nuance."
+                },
+                "openrouter-gemini-3.1-pro": {
+                  "score": 90,
+                  "reasoning": "The translation accurately conveys the meaning of the source text and is arguably closer to the original English than the reference translation, using natural Bislama phrasing."
+                }
+              },
+              "metrics": {
+                "chrf": 31.06,
+                "bleu": 9.57,
+                "ter": 77.78
+              }
+            }
+          }
+        },
+        {
+          "line": 3,
+          "source": "And here's how news shapes what Americans see",
+          "reference": "Mo ol nius emi jenjem tin-ting blong ol man Amerika olsem ia nao ",
+          "translations": {
+            "anthropic/claude-opus-4.6": {
+              "text": "Mo hemia olsem wanem nius i jenisim samting we ol Amerikan oli lukim",
+              "scores": {
+                "openrouter-openai-gpt-4o": {
+                  "score": 85,
+                  "reasoning": "The translation is mostly accurate but slightly less fluent than the reference, with minor differences in phrasing."
+                },
+                "openrouter-claude-sonnet-4.6": {
+                  "score": 62,
+                  "reasoning": "The translation conveys the general meaning but uses 'jenisim' (change/alter) instead of 'jenjem tin-ting' (shape thinking/perception), and 'lukim' (see/look) is a reasonable but slightly literal rendering compared to the reference's more idiomatic expression of how news shapes Americans' perceptions."
+                },
+                "openrouter-gemini-3.1-pro": {
+                  "score": 90,
+                  "reasoning": "The translation is accurate and grammatically correct, though slightly more literal than the reference translation which interprets 'what Americans see' as 'the thinking of Americans'."
+                }
+              },
+              "metrics": {
+                "chrf": 30.78,
+                "bleu": 4.37,
+                "ter": 84.62
+              }
+            }
+          }
+        },
+        {
+          "line": 4,
+          "source": "This map -- (Applause) -- this map shows the number of seconds that American network and cable news organizations dedicated to news stories, by country, in February of 2007 -- just one year ago. ",
+          "reference": "Map ia. Map ia i soem nam blong ol seken we olgeta nwetwok blong nius blong Amerika mo ol rigin nius oganaesesen i bin yusum blong talemaot stori long saed blong ol nius long everi kantri raon long wol, long Februari 2007-wan yia i pas nomo. ",
+          "translations": {
+            "anthropic/claude-opus-4.6": {
+              "text": "Dispela map -- (Klap) -- dispela map i soem namba blong ol sekon we ol niujs organisesen blong Amerikan netwok mo keibol i bin yusum blong ol niujs stori, long evri kantri, long Februari 2007 -- wan yia nomo bifo.",
+              "scores": {
+                "openrouter-openai-gpt-4o": {
+                  "score": 75,
+                  "reasoning": "The translation is mostly accurate but contains some grammatical errors and awkward phrasing that affect fluency."
+                },
+                "openrouter-claude-sonnet-4.6": {
+                  "score": 35,
+                  "reasoning": "The translation uses Tok Pisin vocabulary and structures (e.g., 'dispela', 'blong ol sekon', 'niujs organisesen') rather than proper Bislama, making it largely inaccurate and non-fluent for Bislama speakers, though the general meaning is partially conveyed."
+                },
+                "openrouter-gemini-3.1-pro": {
+                  "score": 50,
+                  "reasoning": "The translation incorrectly uses the Tok Pisin word 'dispela' instead of the Bislama equivalent 'ia' or 'hemia', and contains spelling errors such as 'niujs'."
+                }
+              },
+              "metrics": {
+                "chrf": 43.93,
+                "bleu": 13.32,
+                "ter": 76.09
+              }
+            }
+          }
+        },
+        {
+          "line": 5,
+          "source": "Now, this was a month when North Korea agreed to dismantle its nuclear facilities. ",
+          "reference": "Nao long manis ia nao Not Korea i bin agri blong pispisim ol niuklia wok blong olgeta",
+          "translations": {
+            "anthropic/claude-opus-4.6": {
+              "text": "Nao, hemia wan manis we Not Korea i agri blong tekemaot ol nuklia fasiliti blong hem.",
+              "scores": {
+                "openrouter-openai-gpt-4o": {
+                  "score": 75,
+                  "reasoning": "The translation is mostly accurate but uses 'tekemaot' instead of 'pispisim', which slightly alters the meaning, and 'manis' is correctly used for 'month'."
+                },
+                "openrouter-claude-sonnet-4.6": {
+                  "score": 62,
+                  "reasoning": "The translation conveys the core meaning accurately (North Korea agreeing to dismantle nuclear facilities) but uses 'tekemaot' instead of 'pispisim' for dismantle, omits the temporal marker 'long manis ia nao' which specifies 'this was a month when,' and uses 'fasiliti blong hem' instead of 'wok blong olgeta,' affecting both accuracy and natural Bislama fluency."
+                },
+                "openrouter-gemini-3.1-pro": {
+                  "score": 95,
+                  "reasoning": "The translation accurately conveys the meaning of the source sentence with natural Bislama phrasing, using valid alternative vocabulary compared to the reference."
+                }
+              },
+              "metrics": {
+                "chrf": 38.04,
+                "bleu": 11.64,
+                "ter": 58.82
+              }
+            }
+          }
+        },
+        {
+          "line": 6,
+          "source": "There was massive flooding in Indonesia",
+          "reference": "Long Indonesia i gat wan bigfala wota i bin ron",
+          "translations": {
+            "anthropic/claude-opus-4.6": {
+              "text": "I bin gat bigfala flaoding long Indonesia",
+              "scores": {
+                "openrouter-openai-gpt-4o": {
+                  "score": 85,
+                  "reasoning": "The translation is mostly accurate but slightly lacks fluency compared to the reference."
+                },
+                "openrouter-claude-sonnet-4.6": {
+                  "score": 62,
+                  "reasoning": "The translation conveys the core meaning (big flooding in Indonesia) but uses non-standard Bislama vocabulary ('flaoding' instead of 'wota i ron') and awkward structure ('I bin gat' instead of the more natural 'i gat'), though it remains generally understandable."
+                },
+                "openrouter-gemini-3.1-pro": {
+                  "score": 95,
+                  "reasoning": "The translation is highly accurate and fluent, using the widely understood borrowed term 'flaoding' alongside correct Bislama grammar to convey the exact meaning of the source."
+                }
+              },
+              "metrics": {
+                "chrf": 40.59,
+                "bleu": 6.05,
+                "ter": 60
+              }
+            }
+          }
+        },
+        {
+          "line": 7,
+          "source": "And in Paris, the IPCC released its study confirming man's impact on global warming. ",
+          "reference": "mo long Paris, IPCC i bin rilisim wan stadi we i talemaot wok blong ol man long saed long global woming.",
+          "translations": {
+            "anthropic/claude-opus-4.6": {
+              "text": "Mo long Paris, IPCC i rilisim stadi blong hem we i konfemem se ol man oli stap mekem wol i kam hot.",
+              "scores": {
+                "openrouter-openai-gpt-4o": {
+                  "score": 85,
+                  "reasoning": "The translation accurately conveys the main idea but uses 'wol i kam hot' instead of 'global warming,' which slightly affects fluency."
+                },
+                "openrouter-claude-sonnet-4.6": {
+                  "score": 72,
+                  "reasoning": "The translation conveys the core meaning accurately (IPCC releasing a study confirming human impact on global warming) but differs from the reference in phrasing ('konfemem' vs 'talemaot', 'ol man oli stap mekem wol i kam hot' vs 'wok blong ol man long saed long global woming') and omits 'wan' before 'stadi' and the past marker 'bin', though it remains fluent and understandable in Bislama."
+                },
+                "openrouter-gemini-3.1-pro": {
+                  "score": 100,
+                  "reasoning": "The translation accurately conveys the meaning of the source sentence and uses highly natural Bislama phrasing, particularly by translating 'global warming' as 'mekem wol i kam hot'."
+                }
+              },
+              "metrics": {
+                "chrf": 39.36,
+                "bleu": 20.7,
+                "ter": 61.9
+              }
+            }
+          }
+        },
+        {
+          "line": 8,
+          "source": "The U.S. accounted for 79 percent of total news coverage",
+          "reference": "U.S. nomo hemi bin risponsibol from 79 % long ful kavarej blong ol nius ia",
+          "translations": {
+            "anthropic/claude-opus-4.6": {
+              "text": "Yunaeted Stets i tekem 79 pesen blong olgeta nius kaverij",
+              "scores": {
+                "openrouter-openai-gpt-4o": {
+                  "score": 85,
+                  "reasoning": "The translation is mostly accurate but slightly less formal and misses the nuance of 'accounted for' as 'risponsibol from' in the reference."
+                },
+                "openrouter-claude-sonnet-4.6": {
+                  "score": 62,
+                  "reasoning": "The translation conveys the core meaning accurately (U.S., 79 percent, news coverage) but uses slightly different vocabulary and phrasing ('tekem' instead of 'risponsibol from', 'kaverij' vs 'kavarej') and omits the completive marker 'bin' and the discourse particle 'ia' that appear in the reference, affecting naturalness in Bislama."
+                },
+                "openrouter-gemini-3.1-pro": {
+                  "score": 95,
+                  "reasoning": "The translation accurately conveys the meaning of the source sentence and uses natural Bislama phrasing, arguably reading more smoothly than the reference."
+                }
+              },
+              "metrics": {
+                "chrf": 17.59,
+                "bleu": 2.48,
+                "ter": 80
+              }
+            }
+          }
+        },
+        {
+          "line": 9,
+          "source": "And when we take out the U.S. and look at the remaining 21 percent, we see a lot of Iraq -- that's that big green thing there -- and little else. ",
+          "reference": "mo taem we yumi tekemaot U.S. mo luk luk long narafala 21 % yumi luk plante long Iraq – hemia bigfala grin samting ia long wei – i nogat tumas narafala samting ",
+          "translations": {
+            "anthropic/claude-opus-4.6": {
+              "text": "Mo taem yumi tekemaot U.S. mo luk long narafala 21 pesen, yumi lukim plante Iraq -- hemia nao bigfala grin samting ia -- mo smol nomo blong ol narafala.",
+              "scores": {
+                "openrouter-openai-gpt-4o": {
+                  "score": 85,
+                  "reasoning": "The translation is mostly accurate but slightly less fluent due to the phrase 'smol nomo blong ol narafala' which could be clearer."
+                },
+                "openrouter-claude-sonnet-4.6": {
+                  "score": 72,
+                  "reasoning": "The translation conveys the core meaning accurately but differs slightly from the reference in phrasing ('smol nomo blong ol narafala' vs 'i nogat tumas narafala samting') and omits 'long wei', though both versions are reasonably fluent and understandable in Bislama."
+                },
+                "openrouter-gemini-3.1-pro": {
+                  "score": 98,
+                  "reasoning": "The translation is highly accurate and fluent, capturing the meaning of the source text perfectly with natural Bislama phrasing."
+                }
+              },
+              "metrics": {
+                "chrf": 56.56,
+                "bleu": 35.56,
+                "ter": 46.88
+              }
+            }
+          }
+        },
+        {
+          "line": 10,
+          "source": "The combined coverage of Russia, China and India, for example, reached just one percent. ",
+          "reference": "Tugeta kavarej blong Rasia, Jaena mo India i kasem 1 % nomo. ",
+          "translations": {
+            "anthropic/claude-opus-4.6": {
+              "text": "Toktok blong Rasia, Jaena mo India, taem yu putum olgeta tugeta, hem i kasem wan pesen nomo.",
+              "scores": {
+                "openrouter-openai-gpt-4o": {
+                  "score": 85,
+                  "reasoning": "The translation is mostly accurate but slightly less fluent due to the informal phrasing 'taem yu putum olgeta tugeta' instead of a more direct translation like 'tugeta kavarej'."
+                },
+                "openrouter-claude-sonnet-4.6": {
+                  "score": 72,
+                  "reasoning": "The translation conveys the correct meaning that the combined coverage of Russia, China, and India reached only one percent, but uses 'Toktok' (talk/news) instead of 'kavarej' (coverage) which slightly shifts the meaning, and writes out 'wan pesen' instead of '1 %' while maintaining good fluency overall."
+                },
+                "openrouter-gemini-3.1-pro": {
+                  "score": 92,
+                  "reasoning": "The translation uses natural Bislama phrasing to convey the meaning accurately, although both the translation and reference omit 'for example'."
+                }
+              },
+              "metrics": {
+                "chrf": 56.97,
+                "bleu": 27.65,
+                "ter": 91.67
+              }
+            }
+          }
+        }
+      ],
+      "stats": [
+        {
+          "modelId": "anthropic/claude-opus-4.6",
+          "perJudge": {
+            "openrouter-openai-gpt-4o": {
+              "mean": 83,
+              "count": 10
+            },
+            "openrouter-claude-sonnet-4.6": {
+              "mean": 64.3,
+              "count": 10
+            },
+            "openrouter-gemini-3.1-pro": {
+              "mean": 90.3,
+              "count": 10
+            }
+          },
+          "overallMean": 79.2,
+          "variance": 26
+        }
+      ],
+      "metrics": {
+        "anthropic/claude-opus-4.6": {
+          "corpus": {
+            "chrf": 39.55,
+            "bleu": 16.33,
+            "ter": 70.81
+          },
+          "sentences": [
+            {
+              "chrf": 19.54,
+              "bleu": 2.78,
+              "ter": 84
+            },
+            {
+              "chrf": 31.06,
+              "bleu": 9.57,
+              "ter": 77.78
+            },
+            {
+              "chrf": 30.78,
+              "bleu": 4.37,
+              "ter": 84.62
+            },
+            {
+              "chrf": 43.93,
+              "bleu": 13.32,
+              "ter": 76.09
+            },
+            {
+              "chrf": 38.04,
+              "bleu": 11.64,
+              "ter": 58.82
+            },
+            {
+              "chrf": 40.59,
+              "bleu": 6.05,
+              "ter": 60
+            },
+            {
+              "chrf": 39.36,
+              "bleu": 20.7,
+              "ter": 61.9
+            },
+            {
+              "chrf": 17.59,
+              "bleu": 2.48,
+              "ter": 80
+            },
+            {
+              "chrf": 56.56,
+              "bleu": 35.56,
+              "ter": 46.88
+            },
+            {
+              "chrf": 56.97,
+              "bleu": 27.65,
+              "ter": 91.67
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "review": {
+    "model": "openrouter-claude-sonnet-4.5",
+    "text": "The model demonstrates solid bidirectional translation capability for Bislama-English, with Bislama→English slightly outperforming English→Bislama (LLM-judge 81.5 vs 79.2, BLEU 23.72 vs 16.33). Both directions show considerable variance across test items, with some sentences achieving excellent scores (e.g., BIS→ENG #9: 85 LLM-judge, 46.7 BLEU) while others struggle significantly (e.g., ENG→BIS #8: 2.48 BLEU, 80 TER), suggesting inconsistent handling of certain linguistic phenomena or domain-specific content. Overall, the chrF++ and LLM-judge scores indicate the model captures meaning reasonably well despite lower BLEU scores, which is typical for lower-resource language pairs where lexical variation is high."
+  }
+}
