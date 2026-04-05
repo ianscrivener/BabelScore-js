@@ -142,24 +142,28 @@ for (const r of summary) {
 }
 lines.push('');
 
-// ── Detail table ──────────────────────────────────────────────────────────────
-lines.push('## Detail — by Translator × Direction');
-lines.push('');
-const detailHeader = ['Project', 'Translator', 'Direction', 'n', 'Avg', ...allJudges.map(j => shortJudge(j))];
-lines.push('| ' + detailHeader.join(' | ') + ' |');
-lines.push('| ' + detailHeader.map(() => '---').join(' | ') + ' |');
-for (const r of aggregated) {
-  const cells = [
-    r.project,
-    r.translatorId,
-    r.direction,
-    String(r.n),
-    `**${fmt(r.avgScore)}**`,
-    ...allJudges.map(j => fmt(r.judgeAvgs[j] ?? null)),
-  ];
-  lines.push('| ' + cells.join(' | ') + ' |');
+// ── Detail tables — one section per direction ─────────────────────────────────
+// Collect unique directions in order of first appearance
+const allDirections = [...new Set(aggregated.map(r => r.direction))];
+const detailHeader = ['Project', 'Translator', 'n', 'Avg', ...allJudges.map(j => shortJudge(j))];
+
+for (const direction of allDirections) {
+  lines.push(`## Detail — by Translator · ${direction}`);
+  lines.push('');
+  lines.push('| ' + detailHeader.join(' | ') + ' |');
+  lines.push('| ' + detailHeader.map(() => '---').join(' | ') + ' |');
+  for (const r of aggregated.filter(r => r.direction === direction)) {
+    const cells = [
+      r.project,
+      r.translatorId,
+      String(r.n),
+      `**${fmt(r.avgScore)}**`,
+      ...allJudges.map(j => fmt(r.judgeAvgs[j] ?? null)),
+    ];
+    lines.push('| ' + cells.join(' | ') + ' |');
+  }
+  lines.push('');
 }
-lines.push('');
 
 // ── File list ─────────────────────────────────────────────────────────────────
 lines.push('## Source Files');
