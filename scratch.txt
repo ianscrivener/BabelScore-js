@@ -1,0 +1,12 @@
+google/gemma-4-26b-a4b-it
+google/gemma-4-31b-it
+qwen/qwen3.6-plus:free
+
+
+qwenThinking mode for general tasks: 
+    temperature=1.0, 
+    top_p=0.95, 
+    top_k=20, 
+    min_p=0.0, 
+    presence_penalty=1.5, 
+    repetition_penalty=1.0

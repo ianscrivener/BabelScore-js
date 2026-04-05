@@ -400,6 +400,63 @@ async function callLLM(model, messages, maxTokens = 512, responseFormat = null) 
   }
 }
 
+// ---------------------------------------------------------------------------
+// Model validation — verify each model ID exists at its endpoint before running
+// ---------------------------------------------------------------------------
+
+async function validateModels(models) {
+  // Deduplicate by base_url + model
+  const seen = new Set();
+  const unique = models.filter((m) => {
+    const key = `${m.base_url}::${m.model}`;
+    if (seen.has(key)) return false;
+    seen.add(key);
+    return true;
+  });
+
+  // Group by base_url so we only call GET /models once per provider
+  const byBaseUrl = {};
+  for (const m of unique) {
+    if (!byBaseUrl[m.base_url]) byBaseUrl[m.base_url] = [];
+    byBaseUrl[m.base_url].push(m);
+  }
+
+  const errors = [];
+
+  for (const [baseUrl, groupModels] of Object.entries(byBaseUrl)) {
+    const apiKey = resolveApiKey(groupModels[0].api_key);
+    const headers = {};
+    if (apiKey) headers['Authorization'] = `Bearer ${apiKey}`;
+
+    let availableIds;
+    try {
+      const res = await fetch(`${baseUrl}/models`, { headers });
+      if (!res.ok) {
+        const text = await res.text();
+        for (const m of groupModels) {
+          errors.push(`  ✗ [${m.id}] cannot list models at ${baseUrl} — HTTP ${res.status}: ${text.slice(0, 120)}`);
+        }
+        continue;
+      }
+      const data = await res.json();
+      availableIds = new Set((data.data ?? []).map((entry) => entry.id));
+    } catch (err) {
+      for (const m of groupModels) {
+        errors.push(`  ✗ [${m.id}] cannot reach ${baseUrl} — ${err.message}`);
+      }
+      continue;
+    }
+
+    for (const m of groupModels) {
+      if (!availableIds.has(m.model)) {
+        errors.push(`  ✗ [${m.id}] model "${m.model}" not found at ${baseUrl}`);
+      }
+    }
+  }
+
+  return errors;
+}
+
 async function translateText(model, text, fromLang, toLang) {
   // Standard OpenAI-compatible chat/completions
   const vars = { from_lang: fromLang, to_lang: toLang, text };
@@ -911,6 +968,18 @@ process.on('SIGINT', async () => {
   await unloadAllLmStudio();
   process.exit(130);
 });
+
+// Validate all models before doing anything expensive
+const allModels = [...translators, ...judges, ...(reviewerModel ? [reviewerModel] : [])];
+process.stdout.write('Validating models ... ');
+const modelErrors = await validateModels(allModels);
+if (modelErrors.length > 0) {
+  console.log('FAILED\n');
+  for (const err of modelErrors) console.error(err);
+  console.error('\nAbort: fix model IDs in config.json before running.');
+  process.exit(1);
+}
+console.log('OK\n');
 
 if (lmStudioAutoLoad.length > 0) {
   console.log('Loading LM Studio models...');
